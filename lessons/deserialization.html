@@ -1,0 +1,26 @@
+<h2>Deserialization in Java</h2>
+
+<p>
+<b>Deserialization</b> is the process of
+converting a <b>byte stream</b> back into
+an object.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+ObjectInputStream ois =
+new ObjectInputStream(new FileInputStream("data.ser"));<br>
+Student s = (Student) ois.readObject();
+</p>
+
+<hr>
+
+<h2>Key Points</h2>
+
+<p>
+✔ Class must be Serializable<br>
+✔ Same class required at receiver side
+</p>

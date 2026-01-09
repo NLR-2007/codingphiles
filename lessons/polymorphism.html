@@ -1,0 +1,249 @@
+<h2>Polymorphism in Java</h2>
+
+<p>
+<b>Polymorphism</b> is one of the core
+Object-Oriented Programming (OOP) concepts.
+</p>
+
+<p>
+The word polymorphism means
+<b>“one name, many forms”</b>.
+</p>
+
+<p>
+In Java, polymorphism allows the same method
+or object to behave differently in different situations.
+</p>
+
+<hr>
+
+<h2>Why Polymorphism is Needed?</h2>
+
+<p>
+Polymorphism provides:
+<br>
+✔ Flexibility in code<br>
+✔ Reusability<br>
+✔ Loose coupling<br>
+✔ Support for dynamic behavior
+</p>
+
+<hr>
+
+<h2>Types of Polymorphism in Java</h2>
+
+<p>
+Java supports two types of polymorphism:
+</p>
+
+<p>
+✔ Compile-Time Polymorphism<br>
+✔ Runtime Polymorphism
+</p>
+
+<hr>
+
+<h2>1. Compile-Time Polymorphism</h2>
+
+<p>
+Compile-time polymorphism is achieved
+using <b>Method Overloading</b>.
+</p>
+
+<p>
+The method call is resolved at
+<b>compile time</b>.
+</p>
+
+<h3>Method Overloading</h3>
+
+<p>
+When multiple methods have the same name
+but different parameters, it is called
+<b>Method Overloading</b>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class MathOperation {<br>
+&nbsp;&nbsp;int add(int a, int b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;int add(int a, int b, int c) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b + c;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Same method name<br>
+✔ Different number of parameters
+</p>
+
+<hr>
+
+<h2>Rules for Method Overloading</h2>
+
+<p>
+✔ Method name must be same<br>
+✔ Parameter list must be different<br>
+✔ Return type alone is not sufficient
+</p>
+
+<hr>
+
+<h2>2. Runtime Polymorphism</h2>
+
+<p>
+Runtime polymorphism is achieved
+using <b>Method Overriding</b>.
+</p>
+
+<p>
+The method call is resolved at
+<b>runtime</b>.
+</p>
+
+<h3>Method Overriding</h3>
+
+<p>
+When a child class provides a specific
+implementation of a parent class method,
+it is called <b>Method Overriding</b>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Animal {<br>
+&nbsp;&nbsp;void sound() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Animal makes sound");<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Dog extends Animal {<br>
+&nbsp;&nbsp;void sound() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Dog barks");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Animal a = new Dog();<br>
+a.sound();
+</p>
+
+<p>
+Output:
+<br>
+Dog barks
+</p>
+
+<p>
+✔ Parent reference, child object<br>
+✔ Method resolved at runtime
+</p>
+
+<hr>
+
+<h2>Rules for Method Overriding</h2>
+
+<p>
+✔ Method name must be same<br>
+✔ Parameters must be same<br>
+✔ IS-A relationship must exist<br>
+✔ Access level cannot be reduced
+</p>
+
+<hr>
+
+<h2>Upcasting in Polymorphism</h2>
+
+<p>
+Upcasting means referring to a child object
+using a parent class reference.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Animal a = new Dog();
+</p>
+
+<p>
+This is the foundation of runtime polymorphism.
+</p>
+
+<hr>
+
+<h2>Polymorphism with Interfaces</h2>
+
+<p>
+Polymorphism is commonly used with interfaces.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+interface Shape {<br>
+&nbsp;&nbsp;void draw();<br>
+}<br><br>
+class Circle implements Shape {<br>
+&nbsp;&nbsp;public void draw() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Drawing Circle");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Shape s = new Circle();<br>
+s.draw();
+</p>
+
+<hr>
+
+<h2>Advantages of Polymorphism</h2>
+
+<p>
+✔ Improves code readability<br>
+✔ Supports extensibility<br>
+✔ Reduces code duplication<br>
+✔ Enables dynamic method dispatch
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Payment → CreditCard, UPI, NetBanking<br>
+✔ Shape → Circle, Rectangle, Triangle<br>
+✔ Notification → Email, SMS, Push
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Confusing overloading with overriding<br>
+✔ Expecting runtime polymorphism without inheritance<br>
+✔ Reducing access level in overridden method
+</p>
+
+<hr>
+
+<h2>Polymorphism (Interview / Exam Ready)</h2>
+
+<p>
+Polymorphism in Java means one interface
+or method name having multiple implementations.
+It is achieved using method overloading
+(compile-time polymorphism) and method overriding
+(runtime polymorphism), allowing flexible
+and dynamic behavior in programs.
+</p>

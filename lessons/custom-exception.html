@@ -1,0 +1,183 @@
+<h2>Custom (User-Defined) Exceptions in Java</h2>
+
+<p>
+<b>Custom Exceptions</b> are exceptions
+created by the programmer to handle
+<b>application-specific error conditions</b>.
+</p>
+
+<p>
+They help represent real-world business
+logic errors clearly and meaningfully.
+</p>
+
+<hr>
+
+<h2>What is a Custom Exception?</h2>
+
+<p>
+A custom exception is a class created by
+extending:
+</p>
+
+<p>
+✔ Exception (Checked Exception)<br>
+✔ RuntimeException (Unchecked Exception)
+</p>
+
+<p>
+It behaves like built-in Java exceptions
+but is tailored to application needs.
+</p>
+
+<hr>
+
+<h2>Why Do We Need Custom Exceptions?</h2>
+
+<p>
+Custom exceptions are used to:
+</p>
+
+<p>
+✔ Represent business logic errors<br>
+✔ Improve code readability<br>
+✔ Provide meaningful error messages<br>
+✔ Separate normal logic from error handling
+</p>
+
+<hr>
+
+<h2>Creating a Custom Checked Exception</h2>
+
+<p>
+To create a checked exception,
+extend the <b>Exception</b> class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class InvalidAgeException extends Exception {<br>
+&nbsp;&nbsp;InvalidAgeException(String msg) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;super(msg);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Using Custom Checked Exception</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;void checkAge(int age) throws InvalidAgeException {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (age < 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new InvalidAgeException("Age must be 18 or above");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test t = new Test();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.checkAge(15);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (InvalidAgeException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(e.getMessage());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Creating a Custom Unchecked Exception</h2>
+
+<p>
+To create an unchecked exception,
+extend the <b>RuntimeException</b> class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class InsufficientBalanceException extends RuntimeException {<br>
+&nbsp;&nbsp;InsufficientBalanceException(String msg) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;super(msg);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Using Custom Unchecked Exception</h2>
+
+<p>
+class Bank {<br>
+&nbsp;&nbsp;void withdraw(int balance, int amount) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (amount > balance) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new InsufficientBalanceException("Insufficient balance");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ No need to use throws<br>
+✔ No compile-time checking
+</p>
+
+<hr>
+
+<h2>Checked vs Unchecked Custom Exceptions</h2>
+
+<p>
+✔ Checked → Extend Exception<br>
+✔ Unchecked → Extend RuntimeException<br><br>
+✔ Checked → Must be handled<br>
+✔ Unchecked → Optional handling<br><br>
+✔ Checked → Business-critical errors<br>
+✔ Unchecked → Programming logic errors
+</p>
+
+<hr>
+
+<h2>Best Practices for Custom Exceptions</h2>
+
+<p>
+✔ Use meaningful exception names<br>
+✔ Extend correct parent class<br>
+✔ Provide descriptive messages<br>
+✔ Do not overuse custom exceptions
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Banking app → InsufficientBalanceException<br>
+✔ Voting system → InvalidAgeException<br>
+✔ Login system → InvalidCredentialsException<br>
+✔ E‑commerce → OutOfStockException
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Creating too many custom exceptions<br>
+✔ Using generic Exception instead of custom one<br>
+✔ Not providing proper error message
+</p>
+
+<hr>
+
+<h2>Custom Exceptions (Interview / Exam Ready)</h2>
+
+<p>
+Custom exceptions in Java are user-defined
+exceptions created by extending the Exception
+or RuntimeException class. They are used to
+represent application-specific error conditions,
+improve code clarity, and enforce business rules
+with meaningful error handling.
+</p>

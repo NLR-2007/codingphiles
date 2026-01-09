@@ -1,0 +1,206 @@
+<h2>Interface in Java</h2>
+
+<p>
+An <b>Interface</b> in Java is a blueprint
+that defines a set of abstract methods
+that a class must implement.
+</p>
+
+<p>
+It is used to achieve <b>full abstraction</b>
+and <b>multiple inheritance</b> in Java.
+</p>
+
+<hr>
+
+<h2>What is an Interface?</h2>
+
+<p>
+An interface specifies <b>what a class must do</b>,
+but not <b>how it does it</b>.
+</p>
+
+<p>
+It represents a <b>contract</b> between
+the class and the outside world.
+</p>
+
+<hr>
+
+<h2>Why Do We Need Interface?</h2>
+
+<p>
+Interfaces are used to:
+<br>
+✔ Achieve 100% abstraction<br>
+✔ Support multiple inheritance<br>
+✔ Promote loose coupling<br>
+✔ Improve code flexibility and scalability
+</p>
+
+<hr>
+
+<h2>Syntax of Interface</h2>
+
+<p>
+interface InterfaceName {<br>
+&nbsp;&nbsp;void method1();<br>
+&nbsp;&nbsp;void method2();<br>
+}
+</p>
+
+<hr>
+
+<h2>Implementing an Interface</h2>
+
+<p>
+A class implements an interface using
+the <b>implements</b> keyword.
+</p>
+
+<h3>Example</h3>
+
+<p>
+interface Vehicle {<br>
+&nbsp;&nbsp;void start();<br>
+}<br><br>
+class Car implements Vehicle {<br>
+&nbsp;&nbsp;public void start() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Car starts with key");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Interface method implemented in class<br>
+✔ Method must be public
+</p>
+
+<hr>
+
+<h2>Multiple Inheritance Using Interface</h2>
+
+<p>
+Java does not support multiple inheritance
+using classes, but it supports it using interfaces.
+</p>
+
+<h3>Example</h3>
+
+<p>
+interface A {<br>
+&nbsp;&nbsp;void show();<br>
+}<br><br>
+interface B {<br>
+&nbsp;&nbsp;void display();<br>
+}<br><br>
+class Demo implements A, B {<br>
+&nbsp;&nbsp;public void show() { }<br>
+&nbsp;&nbsp;public void display() { }<br>
+}
+</p>
+
+<hr>
+
+<h2>Interface Variables</h2>
+
+<p>
+All variables in an interface are:
+<br>
+✔ public<br>
+✔ static<br>
+✔ final
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+interface Test {<br>
+&nbsp;&nbsp;int x = 10;<br>
+}
+</p>
+
+<p>
+Equivalent to:
+<br>
+public static final int x = 10;
+</p>
+
+<hr>
+
+<h2>Interface Methods (Java 8+)</h2>
+
+<p>
+From Java 8 onwards, interfaces can have:
+<br>
+✔ Default methods<br>
+✔ Static methods
+</p>
+
+<h3>Default Method</h3>
+
+<p>
+interface MyInterface {<br>
+&nbsp;&nbsp;default void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Default Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<h3>Static Method</h3>
+
+<p>
+interface MyInterface {<br>
+&nbsp;&nbsp;static void display() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Static Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Interface vs Abstract Class</h2>
+
+<p>
+✔ Interface → Supports multiple inheritance<br>
+✔ Abstract Class → Does not support multiple inheritance<br><br>
+✔ Interface → All methods abstract (before Java 8)<br>
+✔ Abstract Class → Can have concrete methods<br><br>
+✔ Interface → Variables are public static final<br>
+✔ Abstract Class → Instance variables allowed
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Payment → UPI, Card, NetBanking<br>
+✔ Database → MySQL, Oracle, MongoDB<br>
+✔ Notification → Email, SMS, Push
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting to implement all interface methods<br>
+✔ Using interface like a class<br>
+✔ Reducing method visibility (must be public)
+</p>
+
+<hr>
+
+<h2>Interface (Interview / Exam Ready)</h2>
+
+<p>
+An interface in Java is a blueprint that
+contains abstract methods and static final
+variables. It is used to achieve abstraction
+and multiple inheritance. Classes implement
+interfaces using the <b>implements</b> keyword,
+providing concrete implementations of methods.
+</p>

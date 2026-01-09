@@ -1,0 +1,73 @@
+<h2>Wildcards in Java Generics</h2>
+
+<p>
+<b>Wildcards</b> are represented using
+the <b>?</b> symbol.
+</p>
+
+<p>
+They allow flexibility when working
+with unknown generic types.
+</p>
+
+<hr>
+
+<h2>Types of Wildcards</h2>
+
+<p>
+✔ Unbounded Wildcard (?)<br>
+✔ Upper Bounded Wildcard (? extends T)<br>
+✔ Lower Bounded Wildcard (? super T)
+</p>
+
+<hr>
+
+<h2>Unbounded Wildcard</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+void display(List&lt;?&gt; list) {<br>
+&nbsp;&nbsp;// any type<br>
+}
+</p>
+
+<hr>
+
+<h2>Upper Bounded Wildcard</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+void sum(List&lt;? extends Number&gt; list) {<br>
+&nbsp;&nbsp;// Number or subclass<br>
+}
+</p>
+
+<hr>
+
+<h2>Lower Bounded Wildcard</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+void add(List&lt;? super Integer&gt; list) {<br>
+&nbsp;&nbsp;// Integer or superclass<br>
+}
+</p>
+
+<hr>
+
+<h2>Advantages</h2>
+
+<p>
+✔ Greater flexibility<br>
+✔ Better API design<br>
+✔ Works well with collections
+</p>

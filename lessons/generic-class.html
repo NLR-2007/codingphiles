@@ -1,0 +1,48 @@
+<h2>Generic Classes in Java</h2>
+
+<p>
+A <b>Generic Class</b> allows a class to
+work with different data types using
+<b>type parameters</b>.
+</p>
+
+<p>
+Generics provide <b>type safety</b> and
+reduce the need for type casting.
+</p>
+
+<hr>
+
+<h2>Syntax</h2>
+
+<p>
+class ClassName&lt;T&gt; {<br>
+&nbsp;&nbsp;T data;<br>
+}
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+class Box&lt;T&gt; {<br>
+&nbsp;&nbsp;T value;<br><br>
+&nbsp;&nbsp;void set(T value) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.value = value;<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;T get() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return value;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Advantages</h2>
+
+<p>
+✔ Type safety<br>
+✔ Code reusability<br>
+✔ Compile‑time checking
+</p>

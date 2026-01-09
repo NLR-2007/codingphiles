@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CodingPhiles | Launch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to top, #ffb703, #ffd166, #fff4c2);
+  cursor: pointer;
+}
+
+/* ================= STAGE ================= */
+#stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ================= BALAJI ================= */
+#balaji-wrapper {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  max-width: 70vw;
+  border-radius: 50%;
+  box-shadow:
+    0 0 40px rgba(255, 200, 0, 0.8),
+    0 0 90px rgba(255, 215, 0, 0.6);
+  animation: glow 3s infinite;
+  z-index: 3;
+}
+
+#balaji-wrapper img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 35px rgba(255,200,0,.6); }
+  50% { box-shadow: 0 0 90px rgba(255,215,0,1); }
+  100% { box-shadow: 0 0 35px rgba(255,200,0,.6); }
+}
+
+/* ================= TEXT ================= */
+#content {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+  color: #5a2d0c;
+  z-index: 4;
+}
+
+#brand {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+#launch-date {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #7a3e12;
+}
+
+#countdown {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.live {
+  color: #b30000;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* ================= FIREWORKS ================= */
+canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* ================= HANUMAN ================= */
+#hanuman {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  width: 55px;
+  height: 110px;
+  transform: translateX(-50%);
+  background: linear-gradient(to top, #c1121f, #ffbe0b);
+  border-radius: 28px 28px 10px 10px;
+  box-shadow: 0 0 40px rgba(255, 69, 0, 0.9);
+  display: none;
+  z-index: 5;
+}
+
+.fly {
+  animation: flyUp 3s ease-in forwards;
+}
+
+@keyframes flyUp {
+  from { bottom: -120px; }
+  to { bottom: 120%; }
+}
+
+/* ================= FOOTER ================= */
+footer {
+  position: absolute;
+  bottom: 14px;
+  width: 100%;
+  text-align: center;
+  z-index: 6;
+}
+
+#nlr-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px;
+}
+
+#nlr-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed #7b2cbf;
+  animation: rotate 6s linear infinite;
+}
+
+#nlr-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #7b2cbf;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #333;
+}
+</style>
+</head>
+
+<body>
+<div id="stage">
+
+  <div id="balaji-wrapper">
+    <img src="https://i.pinimg.com/1200x/62/57/e1/6257e1cc487693eb2810500e4eee8b80.jpg">
+  </div>
+
+  <div id="content">
+    <div id="brand">CODINGPHILES</div>
+    <div id="launch-date">Launching at 4:30 PM (IST)</div>
+    <div id="countdown">Tap anywhere to enable sound</div>
+  </div>
+
+  <canvas id="fireworks"></canvas>
+  <div id="hanuman"></div>
+
+  <footer>
+    <div id="nlr-wrap">
+      <div id="nlr-border"></div>
+      <div id="nlr-text">NLR</div>
+    </div>
+    <p><strong>Developed by NLR GROUP OF COMPANY</strong></p>
+    <p>Crafted with code · Built for learners · Driven by purpose</p>
+  </footer>
+
+</div>
+
+<script>
+/* ================= AUDIO ================= */
+const bellAudio = new Audio("bell.mp3");
+const crackerAudio = new Audio("crack.mp3");
+crackerAudio.loop = true;
+
+let audioUnlocked = false;
+
+document.body.addEventListener("click", () => {
+  if (!audioUnlocked) {
+    bellAudio.play().then(() => {
+      bellAudio.pause();
+      bellAudio.currentTime = 0;
+      audioUnlocked = true;
+      startCountdown();
+    });
+  }
+}, { once: true });
+
+/* ================= LAUNCH TIME LOGIC ================= */
+function getNextLaunchTime() {
+  const now = new Date();
+  const launch = new Date();
+  launch.setHours(16, 30, 0, 0); // 4:30 PM
+
+  if (launch <= now) {
+    launch.setDate(launch.getDate() + 1); // move to tomorrow
+  }
+  return launch.getTime();
+}
+
+let launchTime = getNextLaunchTime();
+
+const countdown = document.getElementById("countdown");
+const hanuman = document.getElementById("hanuman");
+
+/* ================= COUNTDOWN ================= */
+function startCountdown() {
+  countdown.innerText = "Launching soon...";
+  const timer = setInterval(() => {
+    const diff = launchTime - Date.now();
+
+    if (diff <= 0) {
+      clearInterval(timer);
+
+      bellAudio.play();
+
+      setTimeout(() => {
+        countdown.innerHTML = `<span class="live">🚀 CODINGPHILES IS LIVE</span>`;
+        crackerAudio.play();
+        startFireworks();
+        showHanuman();
+      }, 1200);
+
+      setTimeout(() => {
+        crackerAudio.pause();
+        window.location.href = "home.html";
+      }, 10000);
+
+      return;
+    }
+
+    const h = String(Math.floor(diff / 3600000)).padStart(2,"0");
+    const m = String(Math.floor(diff / 60000) % 60).padStart(2,"0");
+    const s = String(Math.floor(diff / 1000) % 60).padStart(2,"0");
+    countdown.innerText = `Launching in ${h}:${m}:${s}`;
+  }, 1000);
+}
+
+/* ================= FIREWORKS ================= */
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.onresize = resize;
+
+let particles = [];
+const colors = ["#ff0000","#00ff00","#00b4ff","#ffd700","#ff00ff","#00ffff"];
+
+function burst(x,y){
+  for(let i=0;i<120;i++){
+    particles.push({
+      x,y,
+      vx:(Math.random()-0.5)*8,
+      vy:(Math.random()-0.5)*8,
+      life:100,
+      color:colors[Math.floor(Math.random()*colors.length)]
+    });
+  }
+}
+
+function startFireworks(){
+  setInterval(()=>{
+    burst(Math.random()*canvas.width, Math.random()*canvas.height*0.6);
+  },300);
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach((p,i)=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.life--;
+    ctx.fillStyle=p.color;
+    ctx.fillRect(p.x,p.y,3,3);
+    if(p.life<=0) particles.splice(i,1);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ================= HANUMAN ================= */
+function showHanuman(){
+  hanuman.style.display = "block";
+  hanuman.classList.add("fly");
+}
+</script>
+</body>
+</html>

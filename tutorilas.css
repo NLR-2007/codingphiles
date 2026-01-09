@@ -1,0 +1,407 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #f6f7fb;
+  color: #333;
+  height: 100vh;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#heading h2 {
+  font-family: "Jersey 10", cursive;
+  font-size: 32px;
+}
+
+#heading h2 span {
+  color: #7b3fe4;
+}
+
+#heading p {
+  font-size: 13px;
+  color: #777;
+}
+
+#navbar a {
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+#navbar a:hover {
+  color: #7b3fe4;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: calc(100vh - 70px);
+  gap: 18px;
+  padding: 18px;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.sidebar {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Topic title */
+.topic-title {
+  font-weight: 700;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #f2f2f8;
+}
+
+.topic-title:hover {
+  background: #e8e4ff;
+}
+
+/* Subtopics */
+.subtopic-list {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-left: 8px;
+}
+
+.subtopic-list.open {
+  max-height: 600px;
+}
+
+.subtopic-list li {
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.subtopic-list li:hover {
+  background: #f3eaff;
+}
+
+/* Active lesson */
+.subtopic-list li.active {
+  background: #7b3fe4;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===============================
+   CONTENT AREA (MATCHES IMAGE)
+================================ */
+.content {
+  background: #f3eaff; /* soft purple */
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* Content typography */
+.content h1 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.content h2 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* ===============================
+   SCROLLBAR (OPTIONAL POLISH)
+================================ */
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+  background: #c7bfff;
+  border-radius: 10px;
+}
+/* ===============================
+   CONTENT HEADER
+================================ */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+/* Three dot button */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.menu-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Dropdown menu */
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 38px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  min-width: 160px;
+  display: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.menu-dropdown div {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-dropdown div:hover {
+  background: #f3eaff;
+}
+/* ===============================
+   SIDEBAR TOGGLE (DESKTOP)
+================================ */
+
+/* Toggle button */
+.toggle-btn {
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+/* Sidebar transition */
+.sidebar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hidden sidebar */
+.sidebar.hidden {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+/* Expand content when sidebar hidden */
+.container.full-width {
+  grid-template-columns: 0 1fr;
+}
+
+/* Smooth content resize */
+.content {
+  transition: all 0.3s ease;
+}
+/* ===============================
+   FIXED HEADER (GUARANTEED)
+================================ */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 28px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* LEFT SIDE */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* TOGGLE BUTTON */
+#sidebarToggle {
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  line-height: 1;
+  /* background-color: aliceblue; */
+}
+
+#sidebarToggle:hover {
+  background: aliceblue;
+}
+
+/* BRAND */
+.brand h2 {
+  font-family: "Jersey 10", cursive;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.brand h2 span {
+  color: #7b3fe4;
+}
+
+.brand p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* NAV */
+.header-nav a {
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-nav a:hover {
+  color: #7b3fe4;
+}
+/* TOGGLE BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  /* background-color: aliceblue; */
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .header-nav a {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+}
+/* ===============================
+   FOOTER
+================================ */
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+/* Brand */
+.footer-brand h3 {
+  font-family: "Jersey 10", cursive;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.footer-brand h3 span {
+  color: #7b3fe4;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: #7b3fe4;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 13px;
+  color: #777;
+}

@@ -1,0 +1,208 @@
+<h2>String vs StringBuffer vs StringBuilder in Java</h2>
+
+<p>
+In Java, <b>String</b>, <b>StringBuffer</b>, and <b>StringBuilder</b>
+are used to handle text data, but they differ in
+<b>mutability, performance, and thread safety</b>.
+</p>
+
+<p>
+Understanding these differences is very important
+for writing efficient and industry‑level Java programs.
+</p>
+
+<h2>1. String</h2>
+
+<p>
+<b>String</b> is an immutable class.
+Once a String object is created,
+its value cannot be changed.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java";<br>
+s.concat(" Programming");<br>
+System.out.println(s);
+</p>
+
+<p>
+Output:
+<br>
+Java
+</p>
+
+<p>
+Explanation:
+<br>
+✔ A new object is created<br>
+✔ Original string remains unchanged
+</p>
+
+<h3>Features of String</h3>
+
+<p>
+✔ Immutable<br>
+✔ Thread-safe (due to immutability)<br>
+✔ Stored in String Constant Pool (literals)
+</p>
+
+<h2>2. StringBuffer</h2>
+
+<p>
+<b>StringBuffer</b> is a mutable class
+used to modify strings without creating new objects.
+</p>
+
+<p>
+It is <b>thread-safe</b> because its methods
+are synchronized.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuffer sb = new StringBuffer("Java");<br>
+sb.append(" Programming");<br>
+System.out.println(sb);
+</p>
+
+<p>
+Output:
+<br>
+Java Programming
+</p>
+
+<h3>Features of StringBuffer</h3>
+
+<p>
+✔ Mutable<br>
+✔ Thread-safe (synchronized)<br>
+✔ Slower than StringBuilder
+</p>
+
+<h2>3. StringBuilder</h2>
+
+<p>
+<b>StringBuilder</b> is similar to StringBuffer,
+but it is <b>not thread-safe</b>.
+</p>
+
+<p>
+Because it is not synchronized,
+it provides better performance.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuilder sb = new StringBuilder("Java");<br>
+sb.append(" Programming");<br>
+System.out.println(sb);
+</p>
+
+<p>
+Output:
+<br>
+Java Programming
+</p>
+
+<h3>Features of StringBuilder</h3>
+
+<p>
+✔ Mutable<br>
+✔ Not thread-safe<br>
+✔ Faster than String and StringBuffer
+</p>
+
+<h2>Key Differences</h2>
+
+<h3>Mutability</h3>
+
+<p>
+✔ String → Immutable<br>
+✔ StringBuffer → Mutable<br>
+✔ StringBuilder → Mutable
+</p>
+
+<h3>Thread Safety</h3>
+
+<p>
+✔ String → Thread-safe (immutable)<br>
+✔ StringBuffer → Thread-safe (synchronized)<br>
+✔ StringBuilder → Not thread-safe
+</p>
+
+<h3>Performance</h3>
+
+<p>
+✔ Fastest → StringBuilder<br>
+✔ Medium → StringBuffer<br>
+✔ Slowest → String (for frequent modifications)
+</p>
+
+<h3>Memory</h3>
+
+<p>
+✔ String → More objects created on modification<br>
+✔ StringBuffer / StringBuilder → Same object reused
+</p>
+
+<h2>Comparison Table (Conceptual)</h2>
+
+<p>
+String → Immutable, Secure, Slower for changes<br>
+StringBuffer → Mutable, Thread-safe, Slower than Builder<br>
+StringBuilder → Mutable, Fastest, Not thread-safe
+</p>
+
+<h2>When to Use What?</h2>
+
+<p>
+Use <b>String</b> when:
+<br>
+✔ Data does not change<br>
+✔ Security is important<br>
+✔ Read-only text is required
+</p>
+
+<p>
+Use <b>StringBuffer</b> when:
+<br>
+✔ Application is multi-threaded<br>
+✔ Thread safety is required<br>
+✔ Frequent modifications are needed
+</p>
+
+<p>
+Use <b>StringBuilder</b> when:
+<br>
+✔ Application is single-threaded<br>
+✔ Performance is critical<br>
+✔ Heavy string manipulation is needed
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+✔ String → Usernames, passwords, constants<br>
+✔ StringBuffer → Multi-threaded logging systems<br>
+✔ StringBuilder → Loops, data formatting, reports
+</p>
+
+<h2>String vs StringBuffer vs StringBuilder (Interview / Exam Ready)</h2>
+
+<p>
+String is immutable and thread-safe,
+StringBuffer is mutable and thread-safe,
+and StringBuilder is mutable and not thread-safe.
+Among them, StringBuilder provides the best performance,
+while StringBuffer is suitable for multi-threaded environments.
+</p>

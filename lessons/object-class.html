@@ -1,0 +1,247 @@
+<h2>Object Class in Java</h2>
+
+<p>
+The <b>Object</b> class is the <b>root class</b>
+of the Java class hierarchy.
+</p>
+
+<p>
+Every class in Java directly or indirectly
+inherits from the <b>Object</b> class.
+</p>
+
+<hr>
+
+<h2>Why Object Class is Important?</h2>
+
+<p>
+Because all classes inherit from Object,
+its methods are available to <b>every Java object</b>.
+</p>
+
+<p>
+This enables:
+<br>
+✔ Common behavior for all objects<br>
+✔ Runtime polymorphism<br>
+✔ Framework-level operations
+</p>
+
+<hr>
+
+<h2>Object Class Hierarchy</h2>
+
+<p>
+Object<br>
+&nbsp;&nbsp;↳ All Java Classes
+</p>
+
+<p>
+Even if you do not write <b>extends Object</b>,
+Java adds it automatically.
+</p>
+
+<hr>
+
+<h2>Common Methods of Object Class</h2>
+
+<p>
+The Object class provides several important methods:
+</p>
+
+<p>
+✔ toString()<br>
+✔ equals(Object obj)<br>
+✔ hashCode()<br>
+✔ getClass()<br>
+✔ clone()<br>
+✔ finalize()<br>
+✔ wait(), notify(), notifyAll()
+</p>
+
+<hr>
+
+<h2>toString() Method</h2>
+
+<p>
+The <b>toString()</b> method returns
+a string representation of an object.
+</p>
+
+<p>
+Default implementation prints:
+<br>
+ClassName@HashCode
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student { }<br>
+Student s = new Student();<br>
+System.out.println(s);
+</p>
+
+<p>
+Equivalent to:
+<br>
+System.out.println(s.toString());
+</p>
+
+<hr>
+
+<h2>equals() Method</h2>
+
+<p>
+The <b>equals()</b> method is used to
+compare two objects for equality.
+</p>
+
+<p>
+Default behavior compares <b>memory references</b>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Student s1 = new Student();<br>
+Student s2 = new Student();<br>
+System.out.println(s1.equals(s2)); // false
+</p>
+
+<p>
+✔ Can be overridden to compare object data
+</p>
+
+<hr>
+
+<h2>hashCode() Method</h2>
+
+<p>
+The <b>hashCode()</b> method returns
+a unique integer value for an object.
+</p>
+
+<p>
+It is mainly used in:
+<br>
+✔ HashMap<br>
+✔ HashSet<br>
+✔ Hashtable
+</p>
+
+<p>
+Rule:
+<br>
+If equals() is overridden, hashCode() should
+also be overridden.
+</p>
+
+<hr>
+
+<h2>getClass() Method</h2>
+
+<p>
+The <b>getClass()</b> method returns
+the runtime class of an object.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Student s = new Student();<br>
+System.out.println(s.getClass().getName());
+</p>
+
+<hr>
+
+<h2>clone() Method</h2>
+
+<p>
+The <b>clone()</b> method creates
+a copy of an object.
+</p>
+
+<p>
+✔ Class must implement Cloneable interface<br>
+✔ Creates shallow copy
+</p>
+
+<hr>
+
+<h2>finalize() Method</h2>
+
+<p>
+The <b>finalize()</b> method is called
+before garbage collection.
+</p>
+
+<p>
+Used to perform cleanup activities.
+</p>
+
+<p>
+(Note: Deprecated in modern Java versions)
+</p>
+
+<hr>
+
+<h2>wait(), notify(), notifyAll()</h2>
+
+<p>
+These methods are used in
+<b>multithreading</b>.
+</p>
+
+<p>
+✔ wait() → thread waits<br>
+✔ notify() → wakes one waiting thread<br>
+✔ notifyAll() → wakes all waiting threads
+</p>
+
+<hr>
+
+<h2>Why Object Class Methods Are Overridden?</h2>
+
+<p>
+Developers often override:
+<br>
+✔ toString() → meaningful output<br>
+✔ equals() → logical comparison<br>
+✔ hashCode() → collection consistency
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ toString() → logging object details<br>
+✔ equals() → comparing entities (User, Product)<br>
+✔ hashCode() → storing objects in HashMap
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Not overriding hashCode() with equals()<br>
+✔ Expecting equals() to compare values by default<br>
+✔ Misusing clone() without Cloneable
+</p>
+
+<hr>
+
+<h2>Object Class (Interview / Exam Ready)</h2>
+
+<p>
+The Object class is the root class of Java.
+All classes inherit from it either directly
+or indirectly. It provides common methods
+such as toString(), equals(), hashCode(),
+getClass(), and wait/notify methods, which
+are fundamental for object comparison,
+hash-based collections, reflection, and
+multithreading.
+</p>

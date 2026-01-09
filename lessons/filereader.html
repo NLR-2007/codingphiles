@@ -1,0 +1,19 @@
+<h2>FileReader in Java</h2>
+
+<p>
+<b>FileReader</b> is used to read
+<b>character data</b> from a file.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+FileReader fr = new FileReader("data.txt");<br>
+int i;<br>
+while ((i = fr.read()) != -1) {<br>
+&nbsp;&nbsp;System.out.print((char)i);<br>
+}<br>
+fr.close();
+</p>

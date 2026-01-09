@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | CodingPhiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:#020617;
+      --border:rgba(255,255,255,0.08);
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --primary:#1976d2;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:"Nunito",sans-serif;
+      background:linear-gradient(135deg,#0f172a,#020617);
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    header{
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--border);
+    }
+
+    .brand h1{
+      font-family:"Jersey 10",cursive;
+      font-size:40px;
+      letter-spacing:2px;
+    }
+
+    .user-box{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .user-box img{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+    }
+
+    .logout{
+      background:none;
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:8px 14px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    main{
+      max-width:1100px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .panel{
+      background:rgba(255,255,255,0.04);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:30px;
+    }
+
+    h2{
+      margin-bottom:20px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-bottom:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px;
+      cursor:pointer;
+      text-align:center;
+      transition:.25s;
+    }
+
+    .card:hover,
+    .card.active{
+      border-color:var(--primary);
+      background:rgba(25,118,210,0.15);
+    }
+
+    .controls{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    select{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:#020617;
+      color:var(--text);
+    }
+
+    .start-btn{
+      margin-top:30px;
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:var(--primary);
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      font-size:12px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      margin-top:40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <h1>CodingPhiles</h1>
+  </div>
+
+  <div class="user-box">
+    <img id="userPhoto" alt="User photo">
+    <span id="userName"></span>
+    <button class="logout" id="logoutBtn">Logout</button>
+  </div>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Select Subject</h2>
+
+    <div class="grid" id="subjects">
+      <div class="card" data-subject="Java">Java</div>
+      <div class="card" data-subject="Python">Python</div>
+      <div class="card" data-subject="DSA">Data Structures</div>
+      <div class="card" data-subject="Web">Web Development</div>
+    </div>
+
+    <div class="controls">
+      <select id="difficulty">
+        <option value="">Select Difficulty</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+
+      <select id="count">
+        <option value="">Number of Questions</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="250">250</option>
+        <option value="500">500</option>
+      </select>
+    </div>
+
+    <button class="start-btn" id="startQuiz">
+      Proceed to Instructions
+    </button>
+  </div>
+</main>
+
+<footer>
+  Developed by NLR GROUP OF COMPANY
+</footer>
+
+<!-- ===============================
+     FIREBASE AUTH (INLINE)
+=============================== -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyBSGtLrPDsQspV5VculhPZFgdZ8U7UqGfI",
+    authDomain: "codingphiles.firebaseapp.com",
+    projectId: "codingphiles",
+    storageBucket: "codingphiles.firebasestorage.app",
+    messagingSenderId: "498853832402",
+    appId: "1:498853832402:web:17f9da41f5f16c37542f0b"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 🔒 Protect dashboard
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "index.html";
+      return;
+    }
+    document.getElementById("userName").textContent = user.displayName;
+    document.getElementById("userPhoto").src = user.photoURL;
+  });
+
+  // Logout
+  document.getElementById("logoutBtn").onclick = async () => {
+    await signOut(auth);
+    window.location.href = "index.html";
+  };
+
+  // Subject selection
+  let selectedSubject = "";
+  document.querySelectorAll(".card").forEach(card => {
+    card.onclick = () => {
+      document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+      selectedSubject = card.dataset.subject;
+    };
+  });
+
+  // Proceed
+  document.getElementById("startQuiz").onclick = () => {
+    const difficulty = document.getElementById("difficulty").value;
+    const count = document.getElementById("count").value;
+
+    if (!selectedSubject || !difficulty || !count) {
+      alert("Please select subject, difficulty, and question count.");
+      return;
+    }
+
+    // Save for next page
+    localStorage.setItem("quizSubject", selectedSubject);
+    localStorage.setItem("quizDifficulty", difficulty);
+    localStorage.setItem("quizCount", count);
+
+    // Next page (we’ll build it next)
+    window.location.href = "instructions.html";
+  };
+  onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "index.html";
+    return;
+  }
+
+  document.getElementById("userName").textContent = user.displayName;
+  document.getElementById("userPhoto").src = user.photoURL;
+
+  // ✅ ADD THIS LINE
+  localStorage.setItem("quizUserName", user.displayName);
+});
+
+</script>
+
+</body>
+</html>

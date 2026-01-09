@@ -1,0 +1,29 @@
+<h2>Connecting to Database using JDBC</h2>
+
+<p>
+To connect a Java application to a database,
+we use the <b>DriverManager</b> class.
+</p>
+
+<hr>
+
+<h2>Steps to Connect</h2>
+
+<p>
+✔ Load the driver<br>
+✔ Create connection<br>
+✔ Create statement<br>
+✔ Execute query<br>
+✔ Close connection
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+Connection con = DriverManager.getConnection(<br>
+&nbsp;&nbsp;"jdbc:mysql://localhost:3306/test",<br>
+&nbsp;&nbsp;"root", "password"<br>
+);
+</p>

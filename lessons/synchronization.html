@@ -1,0 +1,251 @@
+<h2>Synchronization in Java</h2>
+
+<p>
+<b>Synchronization</b> in Java is used to
+control access to <b>shared resources</b>
+in a multithreaded environment.
+</p>
+
+<p>
+It prevents data inconsistency and ensures
+<b>thread safety</b>.
+</p>
+
+<hr>
+
+<h2>Why Synchronization is Needed?</h2>
+
+<p>
+When multiple threads access the same
+resource simultaneously, it may lead to:
+</p>
+
+<p>
+✔ Data inconsistency<br>
+✔ Race condition<br>
+✔ Incorrect output
+</p>
+
+<p>
+Synchronization ensures that
+<b>only one thread</b> accesses the shared
+resource at a time.
+</p>
+
+<hr>
+
+<h2>What is Race Condition?</h2>
+
+<p>
+A <b>race condition</b> occurs when multiple
+threads try to modify shared data at the
+same time.
+</p>
+
+<p>
+Result depends on execution order of threads,
+which is unpredictable.
+</p>
+
+<hr>
+
+<h2>Example Without Synchronization</h2>
+
+<p>
+class Counter {<br>
+&nbsp;&nbsp;int count = 0;<br><br>
+&nbsp;&nbsp;void increment() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Counter c = new Counter();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// Multiple threads accessing increment()<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+❌ Output may be incorrect due to race condition
+</p>
+
+<hr>
+
+<h2>What is Synchronization?</h2>
+
+<p>
+Synchronization is the process of
+<b>locking an object or method</b>
+so that only one thread can execute it
+at a time.
+</p>
+
+<p>
+Java provides synchronization using:
+</p>
+
+<p>
+✔ synchronized method<br>
+✔ synchronized block
+</p>
+
+<hr>
+
+<h2>Synchronized Method</h2>
+
+<p>
+A synchronized method locks the
+<b>object</b> for the entire method.
+</p>
+
+<h3>Syntax</h3>
+
+<p>
+synchronized returnType methodName() {<br>
+&nbsp;&nbsp;// critical section<br>
+}
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Counter {<br>
+&nbsp;&nbsp;int count = 0;<br><br>
+&nbsp;&nbsp;synchronized void increment() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Only one thread executes method at a time
+</p>
+
+<hr>
+
+<h2>Synchronized Block</h2>
+
+<p>
+A synchronized block locks only a
+<b>specific section</b> of code.
+</p>
+
+<p>
+It provides better performance
+than synchronized methods.
+</p>
+
+<h3>Syntax</h3>
+
+<p>
+synchronized(object) {<br>
+&nbsp;&nbsp;// critical section<br>
+}
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Counter {<br>
+&nbsp;&nbsp;int count = 0;<br><br>
+&nbsp;&nbsp;void increment() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;synchronized(this) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Object Lock vs Class Lock</h2>
+
+<p>
+✔ Object lock → synchronized instance method / block<br>
+✔ Class lock → synchronized static method
+</p>
+
+<h3>Static Synchronization</h3>
+
+<p>
+static synchronized void show() {<br>
+&nbsp;&nbsp;// class-level lock<br>
+}
+</p>
+
+<hr>
+
+<h2>Advantages of Synchronization</h2>
+
+<p>
+✔ Prevents race condition<br>
+✔ Ensures data consistency<br>
+✔ Provides thread safety
+</p>
+
+<hr>
+
+<h2>Disadvantages of Synchronization</h2>
+
+<p>
+✔ Performance overhead<br>
+✔ Reduced concurrency<br>
+✔ Possibility of deadlock
+</p>
+
+<hr>
+
+<h2>Synchronization vs Non-Synchronization</h2>
+
+<p>
+✔ Synchronized → Safe but slower<br>
+✔ Non-synchronized → Fast but unsafe
+</p>
+
+<hr>
+
+<h2>Best Practices</h2>
+
+<p>
+✔ Synchronize only critical sections<br>
+✔ Prefer synchronized blocks over methods<br>
+✔ Avoid nested synchronization<br>
+✔ Do not synchronize unnecessary code
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Bank account transactions<br>
+✔ Seat booking systems<br>
+✔ Shared counters<br>
+✔ Inventory management
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Synchronizing entire method unnecessarily<br>
+✔ Ignoring synchronization for shared data<br>
+✔ Assuming synchronization improves performance
+</p>
+
+<hr>
+
+<h2>Synchronization (Interview / Exam Ready)</h2>
+
+<p>
+Synchronization in Java is a mechanism used
+to control access to shared resources in a
+multithreaded environment. It prevents race
+conditions and ensures data consistency by
+allowing only one thread to execute critical
+sections of code at a time. Java supports
+synchronization using synchronized methods
+and synchronized blocks.
+</p>

@@ -1,0 +1,179 @@
+<h2>Multiple catch Blocks in Java</h2>
+
+<p>
+Java allows <b>multiple catch blocks</b>
+with a single <b>try</b> block to handle
+different types of exceptions separately.
+</p>
+
+<p>
+This provides more precise and meaningful
+exception handling.
+</p>
+
+<hr>
+
+<h2>What are Multiple catch Blocks?</h2>
+
+<p>
+When a try block can throw more than one
+type of exception, multiple catch blocks
+are used to handle each exception type.
+</p>
+
+<p>
+Each catch block handles a
+<b>specific exception</b>.
+</p>
+
+<hr>
+
+<h2>Syntax of Multiple catch</h2>
+
+<p>
+try {<br>
+&nbsp;&nbsp;// risky code<br>
+} catch (ExceptionType1 e) {<br>
+&nbsp;&nbsp;// handling code<br>
+} catch (ExceptionType2 e) {<br>
+&nbsp;&nbsp;// handling code<br>
+}
+</p>
+
+<hr>
+
+<h2>Example: Multiple catch Blocks</h2>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int[] arr = {1, 2, 3};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = 10 / 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(arr[5]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Arithmetic Exception occurred");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (ArrayIndexOutOfBoundsException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Array Index Out of Bounds");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (Exception e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("General Exception");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Rule (Exception Hierarchy Rule)</h2>
+
+<p>
+✔ Child (specific) exception must be caught
+<b>before</b> parent (generic) exception.
+</p>
+
+<p>
+✔ Otherwise, compiler error occurs.
+</p>
+
+<h3>Wrong Order (Compile-Time Error)</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;// code<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;// generic<br>
+} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;// unreachable code<br>
+}
+</p>
+
+<hr>
+
+<h2>Correct Order</h2>
+
+<p>
+try {<br>
+&nbsp;&nbsp;// code<br>
+} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;// specific<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;// generic<br>
+}
+</p>
+
+<hr>
+
+<h2>Multiple catch vs Single catch</h2>
+
+<p>
+✔ Multiple catch → Specific handling<br>
+✔ Single catch → Generic handling
+</p>
+
+<p>
+✔ Multiple catch → Better error messages<br>
+✔ Single catch → Less control
+</p>
+
+<hr>
+
+<h2>Java 7: Multi-catch (Brief)</h2>
+
+<p>
+From Java 7 onwards, multiple exceptions
+can be handled in a single catch block.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+catch (ArithmeticException | NullPointerException e) {<br>
+&nbsp;&nbsp;System.out.println("Exception occurred");<br>
+}
+</p>
+
+<hr>
+
+<h2>Advantages of Multiple catch</h2>
+
+<p>
+✔ Handles different exceptions separately<br>
+✔ Improves program readability<br>
+✔ Better debugging and maintenance
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Banking app → divide by zero, invalid input<br>
+✔ File handling → file not found, IO error<br>
+✔ Web app → null input, format issues
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Writing generic catch first<br>
+✔ Catching Exception unnecessarily<br>
+✔ Duplicating same handling code
+</p>
+
+<hr>
+
+<h2>Multiple catch (Interview / Exam Ready)</h2>
+
+<p>
+Multiple catch blocks in Java allow handling
+different types of exceptions separately.
+Each catch block handles a specific exception,
+and they must be ordered from most specific
+to most general to avoid compile-time errors.
+This improves clarity and robustness of
+exception handling.
+</p>

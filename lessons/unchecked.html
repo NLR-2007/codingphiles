@@ -1,0 +1,227 @@
+<h2>Unchecked Exceptions in Java</h2>
+
+<p>
+<b>Unchecked Exceptions</b> are exceptions that
+are <b>not checked at compile time</b>.
+</p>
+
+<p>
+They occur at <b>runtime</b> and usually happen
+due to programming mistakes.
+</p>
+
+<hr>
+
+<h2>What are Unchecked Exceptions?</h2>
+
+<p>
+Unchecked exceptions are exceptions that
+the compiler does <b>not force</b> the programmer
+to handle.
+</p>
+
+<p>
+They extend the <b>RuntimeException</b> class.
+</p>
+
+<hr>
+
+<h2>Why Are They Called Unchecked?</h2>
+
+<p>
+They are called <b>unchecked</b> because:
+</p>
+
+<p>
+✔ The compiler does not check them<br>
+✔ Program compiles successfully even if not handled
+</p>
+
+<p>
+However, they may crash the program at runtime.
+</p>
+
+<hr>
+
+<h2>Hierarchy of Unchecked Exceptions</h2>
+
+<p>
+Throwable<br>
+&nbsp;&nbsp;↳ Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;↳ RuntimeException<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ Unchecked Exceptions
+</p>
+
+<hr>
+
+<h2>Common Unchecked Exceptions</h2>
+
+<p>
+✔ ArithmeticException<br>
+✔ NullPointerException<br>
+✔ ArrayIndexOutOfBoundsException<br>
+✔ NumberFormatException<br>
+✔ ClassCastException
+</p>
+
+<hr>
+
+<h2>ArithmeticException</h2>
+
+<p>
+Occurs when an illegal arithmetic operation
+is performed.
+</p>
+
+<h3>Example</h3>
+
+<p>
+int a = 10 / 0; // ArithmeticException
+</p>
+
+<hr>
+
+<h2>NullPointerException</h2>
+
+<p>
+Occurs when trying to access an object
+that has no reference.
+</p>
+
+<h3>Example</h3>
+
+<p>
+String s = null;<br>
+System.out.println(s.length()); // NullPointerException
+</p>
+
+<hr>
+
+<h2>ArrayIndexOutOfBoundsException</h2>
+
+<p>
+Occurs when accessing an invalid index of an array.
+</p>
+
+<h3>Example</h3>
+
+<p>
+int[] arr = {1, 2, 3};<br>
+System.out.println(arr[5]); // Exception
+</p>
+
+<hr>
+
+<h2>NumberFormatException</h2>
+
+<p>
+Occurs when converting an invalid string
+into a number.
+</p>
+
+<h3>Example</h3>
+
+<p>
+int n = Integer.parseInt("abc"); // Exception
+</p>
+
+<hr>
+
+<h2>ClassCastException</h2>
+
+<p>
+Occurs when an object is cast to an
+incompatible type.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Object o = "Java";<br>
+Integer i = (Integer) o; // Exception
+</p>
+
+<hr>
+
+<h2>Handling Unchecked Exceptions</h2>
+
+<p>
+Unchecked exceptions can be handled using:
+</p>
+
+<p>
+✔ try-catch block<br>
+✔ Proper validation and logic
+</p>
+
+<h3>Example</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;int a = 10 / 0;<br>
+} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;System.out.println("Cannot divide by zero");<br>
+}
+</p>
+
+<hr>
+
+<h2>Unchecked vs Checked Exceptions</h2>
+
+<p>
+✔ Unchecked → Runtime checked<br>
+✔ Checked → Compile-time checked<br><br>
+✔ Unchecked → Extend RuntimeException<br>
+✔ Checked → Extend Exception<br><br>
+✔ Unchecked → Optional handling<br>
+✔ Checked → Mandatory handling
+</p>
+
+<hr>
+
+<h2>Why Java Allows Unchecked Exceptions?</h2>
+
+<p>
+Java allows unchecked exceptions because:
+</p>
+
+<p>
+✔ They represent programming errors<br>
+✔ Handling all of them makes code complex<br>
+✔ Best handled by fixing logic, not catching
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Login system → NullPointerException<br>
+✔ Calculator → ArithmeticException<br>
+✔ Input parsing → NumberFormatException
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Ignoring runtime errors<br>
+✔ Catching generic Exception everywhere<br>
+✔ Not validating input
+</p>
+
+<hr>
+
+<h2>Unchecked Exceptions (Interview / Exam Ready)</h2>
+
+<p>
+Unchecked exceptions in Java are exceptions
+that occur at runtime and are not checked
+by the compiler. They extend the
+RuntimeException class and usually result
+from programming errors such as invalid
+calculations, null references, or incorrect
+type casting. Handling them is optional,
+but proper coding practices can prevent them.
+</p>

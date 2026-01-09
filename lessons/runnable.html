@@ -1,0 +1,212 @@
+<h2>Runnable Interface in Java</h2>
+
+<p>
+The <b>Runnable</b> interface in Java is used
+to create a thread by separating the
+<b>task (logic)</b> from the <b>thread</b>.
+</p>
+
+<p>
+It is the <b>preferred way</b> to create threads
+in Java.
+</p>
+
+<hr>
+
+<h2>What is Runnable Interface?</h2>
+
+<p>
+The <b>Runnable</b> interface is present in
+the <b>java.lang</b> package.
+</p>
+
+<p>
+It contains only one abstract method:
+</p>
+
+<p>
+<b>void run()</b>
+</p>
+
+<p>
+Any class that implements Runnable can
+define the code that a thread will execute.
+</p>
+
+<hr>
+
+<h2>Why Runnable Interface?</h2>
+
+<p>
+Runnable is used to:
+</p>
+
+<p>
+✔ Separate task from thread execution<br>
+✔ Support multiple inheritance<br>
+✔ Improve object‑oriented design<br>
+✔ Share the same task among multiple threads
+</p>
+
+<hr>
+
+<h2>Creating Thread Using Runnable</h2>
+
+<p>
+Steps:
+</p>
+
+<p>
+✔ Implement Runnable interface<br>
+✔ Override run() method<br>
+✔ Create Thread object<br>
+✔ Pass Runnable object to Thread<br>
+✔ Call start()
+</p>
+
+<hr>
+
+<h2>Example: Implementing Runnable</h2>
+
+<p>
+class MyTask implements Runnable {<br>
+&nbsp;&nbsp;public void run() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thread running using Runnable");<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MyTask task = new MyTask();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Thread t = new Thread(task);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t.start();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>How Runnable Works Internally</h2>
+
+<p>
+✔ Runnable defines the task (run method)<br>
+✔ Thread executes the task<br>
+✔ Thread.start() internally calls run()
+</p>
+
+<p>
+Runnable itself does not start a thread.
+</p>
+
+<hr>
+
+<h2>Runnable vs Thread Class</h2>
+
+<p>
+✔ Runnable → Implements interface<br>
+✔ Thread → Extends class<br><br>
+
+✔ Runnable → Can extend another class<br>
+✔ Thread → Cannot extend another class<br><br>
+
+✔ Runnable → Better design (composition)<br>
+✔ Thread → Less flexible
+</p>
+
+<hr>
+
+<h2>Sharing Runnable Object Between Threads</h2>
+
+<p>
+The same Runnable object can be shared
+by multiple threads.
+</p>
+
+<h3>Example</h3>
+
+<p>
+MyTask task = new MyTask();<br>
+Thread t1 = new Thread(task);<br>
+Thread t2 = new Thread(task);<br>
+t1.start();<br>
+t2.start();
+</p>
+
+<p>
+✔ Useful for shared resources<br>
+✔ Requires synchronization
+</p>
+
+<hr>
+
+<h2>Runnable with Lambda Expression (Java 8+)</h2>
+
+<p>
+Runnable is a <b>functional interface</b>.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Runnable r = () -> {<br>
+&nbsp;&nbsp;System.out.println("Thread using lambda");<br>
+};<br>
+Thread t = new Thread(r);<br>
+t.start();
+</p>
+
+<hr>
+
+<h2>Advantages of Runnable Interface</h2>
+
+<p>
+✔ Supports multiple inheritance<br>
+✔ Cleaner design<br>
+✔ Better separation of concerns<br>
+✔ Widely used in frameworks
+</p>
+
+<hr>
+
+<h2>Disadvantages</h2>
+
+<p>
+✔ Thread methods not directly available<br>
+✔ Slightly more code than extending Thread
+</p>
+
+<hr>
+
+<h2>Real‑Time Examples</h2>
+
+<p>
+✔ Web server request handling<br>
+✔ Background tasks<br>
+✔ Database operations<br>
+✔ File processing threads
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Calling run() instead of start()<br>
+✔ Forgetting to pass Runnable to Thread<br>
+✔ Ignoring synchronization for shared data
+</p>
+
+<hr>
+
+<h2>Runnable Interface (Interview / Exam Ready)</h2>
+
+<p>
+The Runnable interface in Java is used to
+define a task that can be executed by a thread.
+A class implements Runnable and overrides the
+run() method, while the Thread class is used
+to execute it. Runnable is preferred over
+extending Thread because it supports multiple
+inheritance and better object‑oriented design.
+</p>

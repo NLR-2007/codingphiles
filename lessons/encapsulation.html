@@ -1,0 +1,148 @@
+<h2>Encapsulation in Java</h2>
+
+<p>
+<b>Encapsulation</b> is one of the core
+Object-Oriented Programming (OOP) concepts.
+</p>
+
+<p>
+It is the process of <b>wrapping data (variables)
+and code (methods) together into a single unit</b>.
+</p>
+
+<hr>
+
+<h2>What Does Encapsulation Mean?</h2>
+
+<p>
+Encapsulation means:
+<br>
+✔ Hiding internal data<br>
+✔ Allowing access only through methods<br>
+✔ Protecting object state
+</p>
+
+<p>
+In Java, encapsulation is achieved using:
+<br>
+✔ <b>private</b> data members<br>
+✔ <b>public</b> getter and setter methods
+</p>
+
+<hr>
+
+<h2>Why Encapsulation is Needed?</h2>
+
+<p>
+Encapsulation provides:
+<br>
+✔ Data security<br>
+✔ Controlled access to variables<br>
+✔ Better maintainability<br>
+✔ Flexibility to change implementation
+</p>
+
+<hr>
+
+<h2>How to Achieve Encapsulation?</h2>
+
+<p>
+Steps to implement encapsulation:
+</p>
+
+<p>
+1. Declare variables as <b>private</b><br>
+2. Provide <b>public getter and setter</b> methods
+</p>
+
+<hr>
+
+<h2>Example of Encapsulation</h2>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;private int age;<br><br>
+&nbsp;&nbsp;public int getAge() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return age;<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;public void setAge(int age) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(age > 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = age;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ age is hidden from outside access<br>
+✔ Validation is applied before setting value
+</p>
+
+<hr>
+
+<h2>Accessing Encapsulated Data</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Student s = new Student();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;s.setAge(20);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(s.getAge());<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Advantages of Encapsulation</h2>
+
+<p>
+✔ Data hiding<br>
+✔ Increased security<br>
+✔ Easy debugging<br>
+✔ Code reusability<br>
+✔ Improved flexibility
+</p>
+
+<hr>
+
+<h2>Encapsulation vs Data Hiding</h2>
+
+<p>
+✔ Data Hiding → Achieved using access modifiers<br>
+✔ Encapsulation → Combination of data hiding + abstraction
+</p>
+
+<hr>
+
+<h2>Real-Time Example</h2>
+
+<p>
+✔ Bank Account → balance is private<br>
+✔ ATM → access through PIN verification<br>
+✔ Employee → salary accessed via methods
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Making variables public<br>
+✔ Not using validation in setters<br>
+✔ Exposing internal object state
+</p>
+
+<hr>
+
+<h2>Encapsulation (Interview / Exam Ready)</h2>
+
+<p>
+Encapsulation in Java is the process of
+wrapping data and methods into a single unit
+and restricting direct access to data by
+making variables private and accessing them
+through public getter and setter methods.
+It improves security, maintainability,
+and flexibility.
+</p>

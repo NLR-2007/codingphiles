@@ -1,0 +1,225 @@
+<h2>Thread Class in Java</h2>
+
+<p>
+The <b>Thread</b> class in Java is used
+to create and control threads.
+</p>
+
+<p>
+It is present in the <b>java.lang</b> package
+and provides built‑in support for
+<b>multithreading</b>.
+</p>
+
+<hr>
+
+<h2>What is Thread Class?</h2>
+
+<p>
+The <b>Thread</b> class represents a
+thread of execution in a Java program.
+</p>
+
+<p>
+✔ Each thread is an instance of Thread class<br>
+✔ JVM schedules threads for execution
+</p>
+
+<hr>
+
+<h2>Why Thread Class?</h2>
+
+<p>
+Thread class is used to:
+</p>
+
+<p>
+✔ Create threads<br>
+✔ Start thread execution<br>
+✔ Control thread behavior<br>
+✔ Manage thread life cycle
+</p>
+
+<hr>
+
+<h2>Creating Thread Using Thread Class</h2>
+
+<p>
+Steps:
+</p>
+
+<p>
+✔ Extend Thread class<br>
+✔ Override run() method<br>
+✔ Create object of class<br>
+✔ Call start()
+</p>
+
+<hr>
+
+<h2>Example: Extending Thread Class</h2>
+
+<p>
+class MyThread extends Thread {<br>
+&nbsp;&nbsp;public void run() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thread is running");<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MyThread t = new MyThread();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t.start();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>start() vs run()</h2>
+
+<p>
+✔ start() → Creates new thread and executes run()<br>
+✔ run() → Executes like normal method
+</p>
+
+<p>
+⚠ Always use start() to begin a new thread
+</p>
+
+<hr>
+
+<h2>Important Methods of Thread Class</h2>
+
+<p>
+Commonly used Thread class methods:
+</p>
+
+<p>
+✔ start()<br>
+✔ run()<br>
+✔ sleep()<br>
+✔ join()<br>
+✔ getName()<br>
+✔ setName()<br>
+✔ getPriority()<br>
+✔ setPriority()<br>
+✔ isAlive()<br>
+✔ currentThread()
+</p>
+
+<hr>
+
+<h2>Thread sleep()</h2>
+
+<p>
+Pauses execution of current thread
+for specified time.
+</p>
+
+<p>
+Thread.sleep(1000); // 1 second
+</p>
+
+<hr>
+
+<h2>Thread join()</h2>
+
+<p>
+Makes one thread wait for another
+thread to finish execution.
+</p>
+
+<hr>
+
+<h2>Thread Priority</h2>
+
+<p>
+Thread priority decides execution preference.
+</p>
+
+<p>
+✔ MIN_PRIORITY → 1<br>
+✔ NORM_PRIORITY → 5<br>
+✔ MAX_PRIORITY → 10
+</p>
+
+<hr>
+
+<h2>Thread currentThread()</h2>
+
+<p>
+Returns reference to currently executing thread.
+</p>
+
+<p>
+Thread t = Thread.currentThread();
+</p>
+
+<hr>
+
+<h2>Thread isAlive()</h2>
+
+<p>
+Checks whether a thread is alive.
+</p>
+
+<p>
+✔ true → thread is running or ready<br>
+✔ false → thread is terminated
+</p>
+
+<hr>
+
+<h2>Thread Class vs Runnable Interface</h2>
+
+<p>
+✔ Thread → Inherits Thread class<br>
+✔ Runnable → Implements Runnable interface<br><br>
+✔ Thread → Cannot extend another class<br>
+✔ Runnable → Can extend another class<br><br>
+✔ Runnable → Preferred approach
+</p>
+
+<hr>
+
+<h2>Limitations of Thread Class</h2>
+
+<p>
+✔ Java does not support multiple inheritance<br>
+✔ Extending Thread blocks extending other classes
+</p>
+
+<hr>
+
+<h2>Real‑Time Examples</h2>
+
+<p>
+✔ File download threads<br>
+✔ Game animation threads<br>
+✔ Background services<br>
+✔ Server request handling
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Calling run() instead of start()<br>
+✔ Calling start() twice<br>
+✔ Ignoring thread synchronization
+</p>
+
+<hr>
+
+<h2>Thread Class (Interview / Exam Ready)</h2>
+
+<p>
+The Thread class in Java is used to create
+and manage threads. A thread can be created
+by extending the Thread class and overriding
+the run() method. The start() method is used
+to begin execution, and the Thread class
+provides several methods to control thread
+behavior and life cycle.
+</p>

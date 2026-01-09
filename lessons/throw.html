@@ -1,0 +1,199 @@
+<h2>throw Keyword in Java</h2>
+
+<p>
+The <b>throw</b> keyword in Java is used
+to <b>explicitly create and throw an exception</b>
+from a method or block of code.
+</p>
+
+<p>
+It is mainly used for
+<b>custom error handling</b>.
+</p>
+
+<hr>
+
+<h2>What is throw?</h2>
+
+<p>
+The <b>throw</b> keyword is used to:
+</p>
+
+<p>
+✔ Create an exception object<br>
+✔ Pass it to the JVM<br>
+✔ Interrupt normal program flow
+</p>
+
+<p>
+Only one exception can be thrown at a time.
+</p>
+
+<hr>
+
+<h2>Syntax of throw</h2>
+
+<p>
+throw new ExceptionType("Error message");
+</p>
+
+<hr>
+
+<h2>Simple Example of throw</h2>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int age = 15;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (age < 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new ArithmeticException("Not eligible to vote");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>throw with try-catch</h2>
+
+<p>
+An exception thrown using <b>throw</b>
+can be handled using try-catch.
+</p>
+
+<p>
+try {<br>
+&nbsp;&nbsp;throw new NullPointerException("Null value");<br>
+} catch (NullPointerException e) {<br>
+&nbsp;&nbsp;System.out.println(e.getMessage());<br>
+}
+</p>
+
+<hr>
+
+<h2>throw Checked Exception</h2>
+
+<p>
+If a <b>checked exception</b> is thrown,
+it must be:
+</p>
+
+<p>
+✔ Handled using try-catch<br>
+✔ Or declared using throws
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+throw new IOException("File not found");
+</p>
+
+<p>
+❌ Compile-time error if not handled
+</p>
+
+<hr>
+
+<h2>throw Unchecked Exception</h2>
+
+<p>
+Unchecked exceptions can be thrown
+without handling.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+throw new ArithmeticException("Invalid calculation");
+</p>
+
+<hr>
+
+<h2>throw vs throws</h2>
+
+<p>
+✔ <b>throw</b> → Used to throw an exception<br>
+✔ <b>throws</b> → Used to declare exceptions
+</p>
+
+<p>
+✔ throw → Used inside method body<br>
+✔ throws → Used in method signature
+</p>
+
+<p>
+✔ throw → Throws one exception at a time<br>
+✔ throws → Can declare multiple exceptions
+</p>
+
+<hr>
+
+<h2>throw with User-Defined Exception</h2>
+
+<p>
+User-defined exceptions are commonly
+thrown using the <b>throw</b> keyword.
+</p>
+
+<p>
+class InvalidAgeException extends Exception {<br>
+&nbsp;&nbsp;InvalidAgeException(String msg) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;super(msg);<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Test {<br>
+&nbsp;&nbsp;void checkAge(int age) throws InvalidAgeException {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (age < 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new InvalidAgeException("Age must be 18 or above");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Rules of throw</h2>
+
+<p>
+✔ Only Throwable objects can be thrown<br>
+✔ Control stops immediately after throw<br>
+✔ Code after throw is unreachable
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Banking app → insufficient balance<br>
+✔ Login system → invalid credentials<br>
+✔ Voting system → age validation
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Writing code after throw statement<br>
+✔ Throwing generic Exception unnecessarily<br>
+✔ Not handling checked exceptions
+</p>
+
+<hr>
+
+<h2>throw Keyword (Interview / Exam Ready)</h2>
+
+<p>
+The <b>throw</b> keyword in Java is used
+to explicitly throw an exception from a
+method or block of code. It allows developers
+to create custom error conditions and is
+commonly used with user-defined exceptions
+for validation and business logic enforcement.
+</p>

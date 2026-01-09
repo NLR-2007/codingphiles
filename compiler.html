@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Compiler | CodingPhiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       RESET
+    ================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background-color: aliceblue;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ===============================
+       HEADER
+    ================================ */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 40px;
+      background: #fff;
+      border-bottom: 1px solid #e6e6e6;
+      position: relative;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand h2 {
+      font-family: "Jersey 10", sans-serif;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      line-height: 1;
+    }
+
+    .brand h2 span {
+      color: #6a0dad;
+    }
+
+    .brand p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* NAV */
+    .header-nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #6a0dad;
+      font-weight: 600;
+    }
+
+    .header-nav a:hover {
+      background-color: #efe6ff;
+    }
+
+    /* TOGGLE */
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #6a0dad;
+      user-select: none;
+    }
+
+    /* ===============================
+       COMPILER SECTION
+    ================================ */
+    .compiler-section {
+      padding: clamp(20px, 5vw, 40px);
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      flex: 1;
+    }
+
+    .compiler-section h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .compiler-section p {
+      color: #555;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    /* CARD */
+    .compiler-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .compiler-card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .compiler-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .compiler-card a {
+      display: inline-block;
+      text-decoration: none;
+      background: #6a0dad;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .compiler-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(106,13,173,0.35);
+    }
+
+    .note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* ===============================
+       FOOTER
+    ================================ */
+    footer {
+      background: #fff;
+      border-top: 1px solid #e6e6e6;
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer strong {
+      color: #6a0dad;
+    }
+
+    /* ===============================
+       MOBILE + TOGGLE
+    ================================ */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .header-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: aliceblue;
+        flex-direction: column;
+        padding: 10px 0;
+        border-top: 1px solid #e6e6e6;
+      }
+
+      .header-nav.active {
+        display: flex;
+      }
+
+      .header-nav a {
+        justify-content: center;
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+/* ===============================
+   FOOTER
+================================ */
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+/* Brand */
+.footer-brand h3 {
+  font-family: "Jersey 10", cursive;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.footer-brand h3 span {
+  color: #7b3fe4;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: #7b3fe4;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 13px;
+  color: #777;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-left">
+      <div class="brand">
+        <h2>Coding<span>Philes</span></h2>
+        <p>Where Philes meet Coding</p>
+      </div>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰</div>
+
+    <nav class="header-nav" id="navMenu">
+      <a href="index.html">🏡 Home</a>
+      <a href="tutorials.html">📘 Tutorials</a>
+      <a href="quiz.html">🎖️ Quiz</a>
+    </nav>
+  </header>
+
+  <!-- COMPILER -->
+  <section class="compiler-section">
+    <h1>Java Online Compiler</h1>
+    <p>Practice Java coding instantly using a trusted external compiler.</p>
+
+    <div class="compiler-card">
+      <h2>Launch Java Compiler</h2>
+      <p>
+        You will be redirected to an external compiler tool  
+        in a new tab for secure and reliable execution.
+      </p>
+
+      <a href="https://onecompiler.com/java" target="_blank" rel="noopener noreferrer">
+        🚀 Open Java Compiler
+      </a>
+
+      <p class="note">
+        Note: This compiler is provided by a third-party service.  
+        CodingPhiles does not host or claim ownership of the compiler engine.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h3>Coding<span>Philes</span></h3>
+      <p>Where Philes meet Coding</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="codingphiles-quiz/index.html">Quiz</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2025 CodingPhiles. All rights reserved.
+    </div>
+<p class="footer-copy" style="font-size:12px;color:#777;">
+<strong>  CodingPhiles is not affiliated with or endorsed by OneCompiler.</strong>
+</p>
+
+  </div>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <!-- TOGGLE SCRIPT -->
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("navMenu");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      toggle.textContent = nav.classList.contains("active") ? "✖" : "☰";
+    });
+  </script>
+
+</body>
+</html>

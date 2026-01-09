@@ -1,0 +1,29 @@
+<h2>PreparedStatement in JDBC</h2>
+
+<p>
+<b>PreparedStatement</b> is used to execute
+parameterized SQL queries.
+</p>
+
+<hr>
+
+<h2>Advantages</h2>
+
+<p>
+✔ Prevents SQL Injection<br>
+✔ Better performance<br>
+✔ Precompiled queries
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+PreparedStatement ps = con.prepareStatement(<br>
+&nbsp;&nbsp;"INSERT INTO student VALUES (?, ?)"<br>
+);<br>
+ps.setInt(1, 101);<br>
+ps.setString(2, "John");<br>
+ps.executeUpdate();
+</p>

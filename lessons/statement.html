@@ -1,0 +1,24 @@
+<h2>Statement in JDBC</h2>
+
+<p>
+<b>Statement</b> is used to execute
+simple SQL queries.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+Statement stmt = con.createStatement();<br>
+ResultSet rs = stmt.executeQuery("SELECT * FROM student");
+</p>
+
+<hr>
+
+<h2>Disadvantages</h2>
+
+<p>
+✔ Not secure (SQL Injection)<br>
+✔ Poor performance for repeated queries
+</p>

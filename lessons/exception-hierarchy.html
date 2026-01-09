@@ -1,0 +1,260 @@
+<h2>Exception Hierarchy in Java</h2>
+
+<p>
+The <b>Exception Hierarchy</b> in Java
+represents the structure of all exception
+classes in a parent‑child relationship.
+</p>
+
+<p>
+All exceptions and errors in Java are derived
+from a single root class called <b>Throwable</b>.
+</p>
+
+<hr>
+
+<h2>Root Class: Throwable</h2>
+
+<p>
+<b>Throwable</b> is the superclass of all
+errors and exceptions in Java.
+</p>
+
+<p>
+Only objects of classes that extend
+Throwable can be thrown using the
+<b>throw</b> keyword.
+</p>
+
+<hr>
+
+<h2>Throwable Has Two Main Subclasses</h2>
+
+<p>
+✔ <b>Error</b><br>
+✔ <b>Exception</b>
+</p>
+
+<hr>
+
+<h2>Exception Hierarchy Diagram</h2>
+
+<p>
+Throwable<br>
+&nbsp;&nbsp;↳ Error<br>
+&nbsp;&nbsp;↳ Exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;↳ RuntimeException<br>
+&nbsp;&nbsp;&nbsp;&nbsp;↳ Other Checked Exceptions
+</p>
+
+<hr>
+
+<h2>Error</h2>
+
+<p>
+<b>Error</b> represents serious problems
+that occur due to system failures.
+</p>
+
+<p>
+Errors are:
+<br>
+✔ Not recoverable<br>
+✔ Not meant to be handled by programs
+</p>
+
+<h3>Examples of Error</h3>
+
+<p>
+✔ OutOfMemoryError<br>
+✔ StackOverflowError<br>
+✔ VirtualMachineError
+</p>
+
+<p>
+✔ Errors occur due to JVM or hardware issues
+</p>
+
+<hr>
+
+<h2>Exception</h2>
+
+<p>
+<b>Exception</b> represents conditions
+that a program can handle.
+</p>
+
+<p>
+Exceptions are caused due to:
+<br>
+✔ Logical mistakes<br>
+✔ Invalid input<br>
+✔ External resources
+</p>
+
+<hr>
+
+<h2>Types of Exceptions</h2>
+
+<p>
+Exceptions are divided into two categories:
+</p>
+
+<p>
+✔ Checked Exceptions<br>
+✔ Unchecked Exceptions
+</p>
+
+<hr>
+
+<h2>Checked Exceptions</h2>
+
+<p>
+Checked exceptions are checked
+at <b>compile time</b>.
+</p>
+
+<p>
+They must be:
+<br>
+✔ Handled using try‑catch<br>
+✔ Or declared using throws
+</p>
+
+<h3>Examples</h3>
+
+<p>
+✔ IOException<br>
+✔ FileNotFoundException<br>
+✔ SQLException<br>
+✔ ClassNotFoundException
+</p>
+
+<hr>
+
+<h2>Unchecked Exceptions</h2>
+
+<p>
+Unchecked exceptions occur
+at <b>runtime</b>.
+</p>
+
+<p>
+They extend the <b>RuntimeException</b> class.
+</p>
+
+<h3>Examples</h3>
+
+<p>
+✔ ArithmeticException<br>
+✔ NullPointerException<br>
+✔ ArrayIndexOutOfBoundsException<br>
+✔ NumberFormatException
+</p>
+
+<p>
+✔ Not mandatory to handle
+</p>
+
+<hr>
+
+<h2>RuntimeException</h2>
+
+<p>
+<b>RuntimeException</b> is a subclass
+of Exception.
+</p>
+
+<p>
+It represents programming mistakes
+that can be avoided by proper coding.
+</p>
+
+<p>
+Examples:
+<br>
+✔ Dividing by zero<br>
+✔ Accessing null object<br>
+✔ Invalid array index
+</p>
+
+<hr>
+
+<h2>Custom (User‑Defined) Exceptions</h2>
+
+<p>
+Developers can create their own
+exceptions by extending:
+</p>
+
+<p>
+✔ Exception (checked)<br>
+✔ RuntimeException (unchecked)
+</p>
+
+<h3>Example</h3>
+
+<p>
+class InvalidAgeException extends Exception {<br>
+&nbsp;&nbsp;InvalidAgeException(String msg) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;super(msg);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Rules in Exception Hierarchy</h2>
+
+<p>
+✔ Child exception cannot be broader than parent<br>
+✔ Catch block must follow hierarchy order<br>
+✔ Specific exception must be caught before generic
+</p>
+
+<hr>
+
+<h2>Why Exception Hierarchy is Important?</h2>
+
+<p>
+Exception hierarchy helps:
+<br>
+✔ Organize exceptions logically<br>
+✔ Handle specific errors precisely<br>
+✔ Support polymorphism in exception handling
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ File operations → IOException<br>
+✔ Database access → SQLException<br>
+✔ User input → NumberFormatException
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Catching Exception instead of specific exception<br>
+✔ Ignoring checked exceptions<br>
+✔ Misunderstanding Error vs Exception
+</p>
+
+<hr>
+
+<h2>Exception Hierarchy (Interview / Exam Ready)</h2>
+
+<p>
+The exception hierarchy in Java starts with
+the Throwable class, which has two subclasses:
+Error and Exception. Errors represent serious
+system issues and are not handled, whereas
+exceptions represent recoverable conditions.
+Exceptions are further divided into checked
+and unchecked exceptions, enabling structured
+and flexible error handling in Java programs.
+</p>

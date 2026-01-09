@@ -1,0 +1,167 @@
+
+<h2>Stack Memory in Java</h2>
+
+<p>
+<b>Stack Memory</b> is a runtime memory area in Java
+used to store <b>method calls</b>, <b>local variables</b>,
+and <b>reference variables</b>.
+</p>
+
+<p>
+Stack memory follows the <b>LIFO</b> principle
+(Last In, First Out).
+</p>
+
+<!-- Optional Image -->
+<!-- <img src="stack-memory-diagram.png" alt="Java Stack Memory Diagram"> -->
+
+<h2>Why do we need Stack Memory?</h2>
+
+<p>
+Stack memory is required to manage method execution
+and store temporary data during program execution.
+</p>
+
+<p>
+Without stack memory:
+<br>
+✔ Method calls cannot be tracked<br>
+✔ Local variables cannot be stored<br>
+✔ Program execution flow breaks
+</p>
+
+<h2>What is Stored in Stack Memory?</h2>
+
+<p>
+Stack memory stores:
+</p>
+
+<p>
+✔ Method call information<br>
+✔ Local variables<br>
+✔ Reference variables to heap objects<br>
+✔ Return addresses
+</p>
+
+<h2>How Stack Memory Works</h2>
+
+<p>
+Each time a method is called,
+a <b>stack frame</b> is created.
+</p>
+
+<p>
+When the method finishes execution,
+its stack frame is removed automatically.
+</p>
+
+<p>
+This process is known as
+<b>push</b> and <b>pop</b>.
+</p>
+
+<h2>Stack Memory Example</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;void display() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a = 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(a);<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test t = new Test();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t.display();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Variable <b>a</b> is stored in stack memory<br>
+✔ Reference <b>t</b> is stored in stack memory<br>
+✔ Object <b>Test</b> is stored in heap memory
+</p>
+
+<h2>Characteristics of Stack Memory</h2>
+
+<p>
+✔ Stores method calls and local variables<br>
+✔ Each thread has its own stack<br>
+✔ Faster access compared to heap<br>
+✔ Memory is automatically allocated and deallocated<br>
+✔ Fixed size
+</p>
+
+<h2>Stack Overflow Error</h2>
+
+<p>
+When stack memory is full,
+the JVM throws a <b>StackOverflowError</b>.
+</p>
+
+<p>
+Common causes:
+<br>
+✔ Infinite recursion<br>
+✔ Too many nested method calls
+</p>
+
+<h2>Stack Memory vs Heap Memory</h2>
+
+<p>
+<b>Stack Memory:</b><br>
+✔ Stores local variables and method calls<br>
+✔ Faster access<br>
+✔ Limited size
+</p>
+
+<p>
+<b>Heap Memory:</b><br>
+✔ Stores objects and instance variables<br>
+✔ Slower access<br>
+✔ Larger size
+</p>
+
+<h2>Advantages of Stack Memory</h2>
+
+<p>
+✔ Very fast memory access<br>
+✔ Automatic memory management<br>
+✔ No memory leaks
+</p>
+
+<h2>Limitations of Stack Memory</h2>
+
+<p>
+✔ Limited size<br>
+✔ Cannot store objects<br>
+✔ Stack overflow may occur
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+Stack memory is used for:
+<br>
+✔ Method execution tracking<br>
+✔ Function calls<br>
+✔ Storing local variables<br>
+✔ Managing recursion
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Infinite recursion<br>
+✔ Large local variables<br>
+✔ Deeply nested method calls
+</p>
+
+<h2>Stack Memory (Interview / Exam Ready)</h2>
+
+<p>
+Stack memory in Java is a runtime memory area
+used to store method calls, local variables,
+and reference variables. It follows LIFO
+and provides fast memory access.
+</p>
+

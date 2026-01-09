@@ -1,0 +1,19 @@
+<h2>FileInputStream in Java</h2>
+
+<p>
+<b>FileInputStream</b> is used to read
+<b>binary data</b> from a file.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+FileInputStream fis = new FileInputStream("data.txt");<br>
+int i;<br>
+while ((i = fis.read()) != -1) {<br>
+&nbsp;&nbsp;System.out.print((char)i);<br>
+}<br>
+fis.close();
+</p>

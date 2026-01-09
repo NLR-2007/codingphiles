@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodingPhiles | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family:"Nunito",sans-serif;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#0f172a,#020617);
+      color:#fff;
+    }
+
+    .box{
+      background:#020617;
+      padding:40px;
+      border-radius:14px;
+      width:320px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    h1{
+      font-family:"Jersey 10",cursive;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:13px;
+      color:#94a3b8;
+      margin-bottom:30px;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      background:#fff;
+      color:#111;
+    }
+
+    button:hover{
+      background:#e5e7eb;
+    }
+
+    footer{
+      position:fixed;
+      bottom:15px;
+      font-size:12px;
+      color:#94a3b8;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>CodingPhiles</h1>
+    <p>Quiz Platform</p>
+    <!-- <p><b></b></p> -->
+
+    <button id="googleLogin">Continue with Google</button>
+  </div>
+
+  <footer>
+    Developed by NLR GROUP OF COMPANY
+  </footer>
+
+  <!-- ===============================
+       FIREBASE + AUTH (INLINE)
+  ================================ -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+    // 🔹 Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBSGtLrPDsQspV5VculhPZFgdZ8U7UqGfI",
+      authDomain: "codingphiles.firebaseapp.com",
+      projectId: "codingphiles",
+      storageBucket: "codingphiles.firebasestorage.app",
+      messagingSenderId: "498853832402",
+      appId: "1:498853832402:web:17f9da41f5f16c37542f0b"
+    };
+
+    // 🔹 Init Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // 🔹 Login button
+    document.getElementById("googleLogin").addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, provider);
+        window.location.href = "dashboard.html";
+      } catch (err) {
+        alert(err.message);
+        console.error(err);
+      }
+    });
+
+    // 🔹 Auto redirect if already logged in
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        window.location.href = "dashboard.html";
+      }
+    });
+  </script>
+
+</body>
+</html>

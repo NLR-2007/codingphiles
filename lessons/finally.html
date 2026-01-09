@@ -1,0 +1,196 @@
+<h2>finally Block in Java</h2>
+
+<p>
+The <b>finally</b> block in Java is used to
+execute <b>important code</b> whether an
+exception occurs or not.
+</p>
+
+<p>
+It is mainly used for <b>resource cleanup</b>.
+</p>
+
+<hr>
+
+<h2>What is finally Block?</h2>
+
+<p>
+The <b>finally</b> block is associated with
+a try-catch block.
+</p>
+
+<p>
+✔ Executes always<br>
+✔ Runs after try or catch<br>
+✔ Used for cleanup code
+</p>
+
+<hr>
+
+<h2>Why Do We Need finally?</h2>
+
+<p>
+The finally block is needed to:
+</p>
+
+<p>
+✔ Close files<br>
+✔ Close database connections<br>
+✔ Release resources<br>
+✔ Maintain program reliability
+</p>
+
+<hr>
+
+<h2>Syntax of finally</h2>
+
+<p>
+try {<br>
+&nbsp;&nbsp;// risky code<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;// exception handling<br>
+} finally {<br>
+&nbsp;&nbsp;// cleanup code<br>
+}
+</p>
+
+<hr>
+
+<h2>finally with Exception</h2>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = 10 / 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Exception handled");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} finally {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Finally block executed");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Output:<br>
+Exception handled<br>
+Finally block executed
+</p>
+
+<hr>
+
+<h2>finally without Exception</h2>
+
+<p>
+try {<br>
+&nbsp;&nbsp;int a = 10 / 2;<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;System.out.println("Exception");<br>
+} finally {<br>
+&nbsp;&nbsp;System.out.println("Finally always executes");<br>
+}
+</p>
+
+<hr>
+
+<h2>finally without catch</h2>
+
+<p>
+A finally block can exist without a catch block.
+</p>
+
+<p>
+try {<br>
+&nbsp;&nbsp;System.out.println("Try block");<br>
+} finally {<br>
+&nbsp;&nbsp;System.out.println("Finally block");<br>
+}
+</p>
+
+<p>
+✔ Used when no exception handling is required<br>
+✔ Cleanup is mandatory
+</p>
+
+<hr>
+
+<h2>Cases When finally Does NOT Execute</h2>
+
+<p>
+Finally block does not execute when:
+</p>
+
+<p>
+✔ System.exit() is called<br>
+✔ JVM crashes<br>
+✔ Power failure occurs
+</p>
+
+<hr>
+
+<h2>finally and return Statement</h2>
+
+<p>
+If return is present in try or catch,
+finally executes <b>before</b> returning.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+try {<br>
+&nbsp;&nbsp;return 10;<br>
+} finally {<br>
+&nbsp;&nbsp;System.out.println("Finally executed");<br>
+}
+</p>
+
+<hr>
+
+<h2>finally vs try-with-resources</h2>
+
+<p>
+✔ finally → Manual resource cleanup<br>
+✔ try-with-resources → Automatic resource cleanup
+</p>
+
+<p>
+✔ finally → Older approach<br>
+✔ try-with-resources → Recommended (Java 7+)
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Closing database connection<br>
+✔ Closing file streams<br>
+✔ Releasing network resources
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Writing business logic in finally<br>
+✔ Using finally for exception handling<br>
+✔ Forgetting finally for resource cleanup
+</p>
+
+<hr>
+
+<h2>finally Block (Interview / Exam Ready)</h2>
+
+<p>
+The <b>finally</b> block in Java is used to
+execute important cleanup code whether an
+exception occurs or not. It is commonly used
+to close resources such as files, database
+connections, and streams, ensuring proper
+program execution and reliability.
+</p>

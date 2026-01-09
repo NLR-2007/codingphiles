@@ -1,0 +1,176 @@
+<h2>Default Constructor in Java</h2>
+
+<p>
+A <b>Default Constructor</b> is a constructor
+that has <b>no parameters</b>.
+</p>
+
+<p>
+It is used to initialize objects
+with <b>default values</b>.
+</p>
+
+<hr>
+
+<h2>What is a Default Constructor?</h2>
+
+<p>
+A constructor without any arguments
+is called a default constructor.
+</p>
+
+<p>
+If a class does <b>not</b> define any constructor,
+Java automatically provides a default constructor.
+</p>
+
+<hr>
+
+<h2>Automatic Default Constructor (Provided by Java)</h2>
+
+<p>
+If no constructor is written,
+the Java compiler creates a default constructor.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;int x;<br>
+}
+</p>
+
+<p>
+Internally, Java creates:
+</p>
+
+<p>
+Demo() { }
+</p>
+
+<p>
+This constructor initializes:
+<br>
+✔ int → 0<br>
+✔ float → 0.0<br>
+✔ boolean → false<br>
+✔ Object references → null
+</p>
+
+<hr>
+
+<h2>User-Defined Default Constructor</h2>
+
+<p>
+A programmer can also explicitly
+define a default constructor.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br><br>
+&nbsp;&nbsp;Student() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id = 100;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Here, the constructor initializes
+the variable <b>id</b> with a custom value.
+</p>
+
+<hr>
+
+<h2>Calling a Default Constructor</h2>
+
+<p>
+A default constructor is called automatically
+when an object is created.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Student s = new Student();
+</p>
+
+<hr>
+
+<h2>Important Points</h2>
+
+<p>
+✔ Default constructor has no parameters<br>
+✔ It initializes objects with default values<br>
+✔ It is called automatically<br>
+✔ Once a constructor is defined, Java does not create one
+</p>
+
+<hr>
+
+<h2>When Default Constructor is NOT Provided by Java</h2>
+
+<p>
+If a class has any parameterized constructor,
+Java will <b>not</b> provide a default constructor.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;Test(int x) { }<br>
+}
+</p>
+
+<p>
+In this case:
+<br>
+✔ Default constructor is NOT created automatically<br>
+✔ You must define it explicitly if needed
+</p>
+
+<hr>
+
+<h2>Real-Time Example</h2>
+
+<p>
+In real life:
+<br>
+✔ A TV without settings starts with default brightness and volume<br>
+✔ A mobile phone starts with default system configuration
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Assuming default constructor always exists<br>
+✔ Forgetting to create default constructor when parameterized one exists<br>
+✔ Confusing default constructor with parameterized constructor
+</p>
+
+<hr>
+
+<h2>Default Constructor (Interview / Exam Ready)</h2>
+
+<p>
+A default constructor in Java is a constructor
+with no parameters. If no constructor is defined,
+the compiler provides one automatically to initialize
+objects with default values. If any constructor is
+defined by the programmer, the default constructor
+is not provided automatically.
+</p>

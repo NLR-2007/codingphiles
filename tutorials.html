@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Tutorials | CodingPhiles</title>
+
+  <link rel="stylesheet" href="tutorilas.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="header-left">
+    <button id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+
+    <div class="brand">
+      <h2>Coding<span>Philes</span></h2>
+      <p>Where Philes meet Coding</p>
+    </div>
+  </div>
+
+ <header class="main-header">
+  <!-- TOGGLE BUTTON -->
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <!-- NAVIGATION -->
+  <nav class="header-nav" id="navMenu">
+    <a href="index.html">🏠 Home</a>
+    <a href="compiler.html">💻 Compiler</a>
+    <a href="codingphiles-quiz/index.html">🎖️ Quiz Section</a>
+  </nav>
+</header>
+
+</header>
+
+
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <!-- CONTENT -->
+ <main class="content" id="content">
+
+  <!-- Content Header -->
+  <div class="content-header">
+    <h1>Introduction to Java</h1>
+
+    <!-- Three dot menu -->
+    <!-- <div class="menu-wrapper"> -->
+      <!-- <button class="menu-btn">⋮</button> -->
+      <!-- <div class="menu-dropdown"> -->
+        <!-- <div>📌 Bookmark</div> -->
+        <!-- <div>🌓 Dark Mode</div> -->
+        <!-- <div>🔗 Share</div> -->
+      </div>
+    </div>
+  </div>
+
+  <p>Select a topic from the sidebar.</p>
+
+</main>
+
+
+</div>
+<script>
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("navMenu");
+  const links = nav.querySelectorAll("a");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    toggle.textContent = nav.classList.contains("active") ? "✖" : "☰";
+  });
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      links.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+      nav.classList.remove("active");
+      toggle.textContent = "☰";
+    });
+  });
+</script>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h3>Coding<span>Philes</span></h3>
+      <p>Where Philes meet Coding</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2025 CodingPhiles. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="tutorials.js"></script>
+</body>
+</html>

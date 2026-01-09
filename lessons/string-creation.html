@@ -1,0 +1,164 @@
+<h2>String Object Creation in Java</h2>
+
+<p>
+In Java, a <b>String object</b> can be created
+in multiple ways.
+</p>
+
+<p>
+Understanding how String objects are created
+is very important for:
+<br>
+✔ Memory management<br>
+✔ Performance optimization<br>
+✔ Interview questions
+</p>
+
+<h2>Ways to Create String Objects</h2>
+
+<p>
+Java provides two main ways to create String objects:
+<br>
+✔ Using String Literal<br>
+✔ Using new Keyword
+</p>
+
+<h2>1. String Object Creation Using String Literal</h2>
+
+<p>
+When a String is created using a literal,
+it is stored in a special memory area called
+the <b>String Constant Pool (SCP)</b>.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s1 = "Java";<br>
+String s2 = "Java";
+</p>
+
+<h3>Explanation</h3>
+
+<p>
+✔ JVM checks the String Constant Pool<br>
+✔ If "Java" already exists, reference is reused<br>
+✔ No new object is created for s2
+</p>
+
+<p>
+As a result, both s1 and s2 point to
+the same String object.
+</p>
+
+<h2>Memory Representation (String Literal)</h2>
+
+<p>
+✔ Only one object is created in SCP<br>
+✔ Multiple references can point to it<br>
+✔ Memory efficient
+</p>
+
+<h2>2. String Object Creation Using new Keyword</h2>
+
+<p>
+When a String is created using the <b>new</b> keyword,
+a new object is always created in heap memory.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s3 = new String("Java");<br>
+String s4 = new String("Java");
+</p>
+
+<h3>Explanation</h3>
+
+<p>
+✔ JVM creates a new object in heap for each statement<br>
+✔ Even if the value is same, objects are different<br>
+✔ SCP may still contain the literal "Java"
+</p>
+
+<h2>Memory Representation (new Keyword)</h2>
+
+<p>
+✔ New object created in heap every time<br>
+✔ Less memory efficient<br>
+✔ Useful when separate objects are required
+</p>
+
+<h2>Comparison Example</h2>
+
+<p>
+String a = "Java";<br>
+String b = "Java";<br>
+String c = new String("Java");
+</p>
+
+<p>
+a == b → true (same reference)<br>
+a == c → false (different reference)<br>
+a.equals(c) → true (same content)
+</p>
+
+<h2>String Interning</h2>
+
+<p>
+<b>String Interning</b> is the process of
+adding a string to the String Constant Pool.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = new String("Java");<br>
+String t = s.intern();
+</p>
+
+<p>
+Now, t refers to the SCP object.
+</p>
+
+<h2>Which Method is Better?</h2>
+
+<p>
+✔ Use String Literal for better performance<br>
+✔ Use new keyword only when a separate object is needed
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Using == instead of equals() for comparison<br>
+✔ Creating unnecessary String objects<br>
+✔ Not understanding SCP behavior
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+String object creation is important in:
+<br>
+✔ Login systems<br>
+✔ Configuration values<br>
+✔ File paths and URLs<br>
+✔ Database queries
+</p>
+
+<h2>String Object Creation (Interview / Exam Ready)</h2>
+
+<p>
+In Java, String objects can be created using
+string literals (stored in the String Constant Pool)
+or using the new keyword (stored in heap memory).
+String literals are memory efficient, while
+the new keyword always creates a new object.
+</p>

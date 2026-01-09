@@ -1,0 +1,193 @@
+<h2>Deadlock in Java</h2>
+
+<p>
+A <b>Deadlock</b> in Java is a situation
+where two or more threads are
+<b>permanently blocked</b> because each
+thread is waiting for a resource held
+by another thread.
+</p>
+
+<p>
+In deadlock, threads stop executing forever.
+</p>
+
+<hr>
+
+<h2>What is Deadlock?</h2>
+
+<p>
+Deadlock occurs when:
+</p>
+
+<p>
+✔ Thread A holds Resource 1 and waits for Resource 2<br>
+✔ Thread B holds Resource 2 and waits for Resource 1
+</p>
+
+<p>
+Neither thread can proceed → program freezes.
+</p>
+
+<hr>
+
+<h2>Simple Deadlock Example</h2>
+
+<p>
+class DeadlockDemo {<br>
+&nbsp;&nbsp;static final Object lock1 = new Object();<br>
+&nbsp;&nbsp;static final Object lock2 = new Object();<br><br>
+
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Thread t1 = new Thread(() -> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (lock1) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try { Thread.sleep(100); } catch (Exception e) {}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (lock2) { }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Thread t2 = new Thread(() -> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (lock2) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try { Thread.sleep(100); } catch (Exception e) {}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized (lock1) { }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;t1.start();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t2.start();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+❌ Both threads wait forever → Deadlock
+</p>
+
+<hr>
+
+<h2>Necessary Conditions for Deadlock</h2>
+
+<p>
+Deadlock occurs only if all four conditions
+are satisfied:
+</p>
+
+<p>
+✔ Mutual Exclusion – Resource cannot be shared<br>
+✔ Hold and Wait – Thread holds one resource and waits for another<br>
+✔ No Preemption – Resource cannot be forcibly taken<br>
+✔ Circular Wait – Circular chain of waiting threads
+</p>
+
+<hr>
+
+<h2>Circular Wait Condition</h2>
+
+<p>
+Thread A → waits for Thread B<br>
+Thread B → waits for Thread C<br>
+Thread C → waits for Thread A
+</p>
+
+<p>
+This circular dependency causes deadlock.
+</p>
+
+<hr>
+
+<h2>How to Prevent Deadlock?</h2>
+
+<p>
+Deadlock can be prevented by breaking
+any one of the four conditions.
+</p>
+
+<hr>
+
+<h2>Deadlock Prevention Techniques</h2>
+
+<p>
+✔ Avoid nested locks<br>
+✔ Lock resources in same order<br>
+✔ Use tryLock() instead of synchronized<br>
+✔ Minimize synchronized blocks
+</p>
+
+<hr>
+
+<h2>Example: Avoiding Deadlock (Lock Ordering)</h2>
+
+<p>
+Always acquire locks in same order:
+</p>
+
+<p>
+synchronized(lock1) {<br>
+&nbsp;&nbsp;synchronized(lock2) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// safe code<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Deadlock Detection</h2>
+
+<p>
+Deadlocks can be detected using:
+</p>
+
+<p>
+✔ jconsole<br>
+✔ jvisualvm<br>
+✔ Thread dumps
+</p>
+
+<p>
+Thread dump shows threads waiting for locks.
+</p>
+
+<hr>
+
+<h2>Deadlock vs Starvation</h2>
+
+<p>
+✔ Deadlock → Threads wait forever<br>
+✔ Starvation → Thread never gets CPU due to low priority
+</p>
+
+<hr>
+
+<h2>Real‑Time Examples</h2>
+
+<p>
+✔ Banking transfers (two accounts locked)<br>
+✔ Database row locking<br>
+✔ File system locks<br>
+✔ Multithreaded servers
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Nested synchronized blocks<br>
+✔ Inconsistent lock ordering<br>
+✔ Excessive synchronization
+</p>
+
+<hr>
+
+<h2>Deadlock (Interview / Exam Ready)</h2>
+
+<p>
+Deadlock in Java is a situation where two or
+more threads are blocked forever, waiting for
+each other to release resources. It occurs
+when mutual exclusion, hold and wait, no
+preemption, and circular wait conditions are
+satisfied. Deadlocks can be prevented by
+proper lock ordering, minimizing synchronized
+blocks, and avoiding nested locks.
+</p>

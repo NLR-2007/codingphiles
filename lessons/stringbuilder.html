@@ -1,0 +1,222 @@
+<h2>StringBuilder in Java</h2>
+
+<p>
+<b>StringBuilder</b> is a class in Java used to
+create <b>mutable</b> (modifiable) strings.
+</p>
+
+<p>
+It is similar to StringBuffer, but it is
+<b>not thread-safe</b> and provides better performance.
+</p>
+
+<h2>Package of StringBuilder</h2>
+
+<p>
+StringBuilder belongs to the <b>java.lang</b> package,
+so it is available by default.
+</p>
+
+<h2>Why StringBuilder is Needed?</h2>
+
+<p>
+The String class is immutable, which means
+every modification creates a new object.
+</p>
+
+<p>
+StringBuilder allows modification of the same
+object, making it efficient for frequent changes.
+</p>
+
+<h2>Key Features of StringBuilder</h2>
+
+<p>
+✔ Mutable (content can be changed)<br>
+✔ Not thread-safe<br>
+✔ Faster than String and StringBuffer
+</p>
+
+<h2>Creating a StringBuilder Object</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuilder sb = new StringBuilder("Java");
+</p>
+
+<h2>Modifying StringBuilder</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuilder sb = new StringBuilder("Java");<br>
+sb.append(" Programming");<br>
+System.out.println(sb);
+</p>
+
+<p>
+Output:
+<br>
+Java Programming
+</p>
+
+<h2>Commonly Used StringBuilder Methods</h2>
+
+<h3>1. append()</h3>
+
+<p>
+Adds text at the end of the string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.append(" World");
+</p>
+
+<h3>2. insert()</h3>
+
+<p>
+Inserts text at a specified index.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.insert(4, " Language");
+</p>
+
+<h3>3. replace()</h3>
+
+<p>
+Replaces characters between given indexes.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.replace(0, 4, "Core");
+</p>
+
+<h3>4. delete()</h3>
+
+<p>
+Deletes characters between specified indexes.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.delete(0, 4);
+</p>
+
+<h3>5. reverse()</h3>
+
+<p>
+Reverses the content of the string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.reverse();
+</p>
+
+<h2>Capacity of StringBuilder</h2>
+
+<p>
+StringBuilder has an internal capacity
+that increases automatically when required.
+</p>
+
+<p>
+Default capacity = <b>16 + initial string length</b>
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuilder sb = new StringBuilder();<br>
+System.out.println(sb.capacity());
+</p>
+
+<h2>Thread Safety</h2>
+
+<p>
+StringBuilder is <b>not synchronized</b>,
+which means it is not thread-safe.
+</p>
+
+<p>
+Because of this, it performs faster
+than StringBuffer.
+</p>
+
+<h2>Performance Comparison</h2>
+
+<p>
+✔ String → Slow (immutable)<br>
+✔ StringBuffer → Medium (thread-safe)<br>
+✔ StringBuilder → Fast (non-thread-safe)
+</p>
+
+<h2>When to Use StringBuilder?</h2>
+
+<p>
+Use StringBuilder when:
+<br>
+✔ String is frequently modified<br>
+✔ Application is single-threaded<br>
+✔ Performance is critical
+</p>
+
+<h2>StringBuilder vs StringBuffer</h2>
+
+<p>
+✔ StringBuilder → Faster, not thread-safe<br>
+✔ StringBuffer → Slower, thread-safe
+</p>
+
+<h2>Limitations of StringBuilder</h2>
+
+<p>
+✔ Not safe for multi-threaded environments<br>
+✔ Requires external synchronization if used by multiple threads
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+StringBuilder is used in:
+<br>
+✔ Building dynamic strings<br>
+✔ Loop-based string concatenation<br>
+✔ Data formatting<br>
+✔ Performance-critical applications
+</p>
+
+<h2>StringBuilder (Interview / Exam Ready)</h2>
+
+<p>
+StringBuilder is a mutable, non-thread-safe
+class in Java used for efficient string
+manipulation in single-threaded or
+performance-critical applications.
+</p>

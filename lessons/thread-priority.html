@@ -1,0 +1,176 @@
+<h2>Thread Priority in Java</h2>
+
+<p>
+<b>Thread Priority</b> in Java is used to
+<b>suggest the order of execution</b> of
+threads to the Thread Scheduler.
+</p>
+
+<p>
+Threads with higher priority are generally
+executed before threads with lower priority,
+but this behavior depends on the JVM and OS.
+</p>
+
+<hr>
+
+<h2>What is Thread Priority?</h2>
+
+<p>
+Thread priority is an integer value
+associated with each thread that indicates
+its importance.
+</p>
+
+<p>
+✔ Higher priority → Higher chance of execution<br>
+✔ Lower priority → Lower chance of execution
+</p>
+
+<p>
+⚠ Priority does NOT guarantee execution order
+</p>
+
+<hr>
+
+<h2>Priority Range in Java</h2>
+
+<p>
+Java defines thread priorities in the range:
+</p>
+
+<p>
+✔ MIN_PRIORITY = 1<br>
+✔ NORM_PRIORITY = 5 (default)<br>
+✔ MAX_PRIORITY = 10
+</p>
+
+<hr>
+
+<h2>Default Thread Priority</h2>
+
+<p>
+If no priority is set, a thread inherits
+the priority of the thread that created it.
+</p>
+
+<p>
+✔ Default priority = <b>5</b>
+</p>
+
+<hr>
+
+<h2>Getting Thread Priority</h2>
+
+<p>
+The <b>getPriority()</b> method is used
+to retrieve thread priority.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Thread t = Thread.currentThread();<br>
+int p = t.getPriority();
+</p>
+
+<hr>
+
+<h2>Setting Thread Priority</h2>
+
+<p>
+The <b>setPriority()</b> method is used
+to change thread priority.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Thread t = new Thread();<br>
+t.setPriority(Thread.MAX_PRIORITY);
+</p>
+
+<p>
+⚠ Value must be between 1 and 10<br>
+Otherwise → IllegalArgumentException
+</p>
+
+<hr>
+
+<h2>Example: Thread Priority</h2>
+
+<p>
+class MyThread extends Thread {<br>
+&nbsp;&nbsp;public void run() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(Thread.currentThread().getName());<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MyThread t1 = new MyThread();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MyThread t2 = new MyThread();<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;t1.setPriority(Thread.MAX_PRIORITY);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t2.setPriority(Thread.MIN_PRIORITY);<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;t1.start();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t2.start();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Points</h2>
+
+<p>
+✔ Priority is only a hint to scheduler<br>
+✔ JVM and OS decide actual execution<br>
+✔ Do not rely on priority for program logic
+</p>
+
+<hr>
+
+<h2>Thread Priority vs Scheduling</h2>
+
+<p>
+✔ Priority affects scheduling preference<br>
+✔ Scheduling algorithm is platform dependent<br>
+✔ Same priority threads may execute randomly
+</p>
+
+<hr>
+
+<h2>Real‑Time Usage</h2>
+
+<p>
+✔ UI threads → Higher priority<br>
+✔ Background logging → Lower priority<br>
+✔ Monitoring services → Medium priority
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Assuming priority guarantees execution order<br>
+✔ Using priority instead of synchronization<br>
+✔ Setting invalid priority values
+</p>
+
+<hr>
+
+<h2>Thread Priority (Interview / Exam Ready)</h2>
+
+<p>
+Thread priority in Java is used to suggest
+the execution order of threads to the scheduler.
+Priorities range from 1 to 10, with 5 as the
+default. Higher priority threads have a better
+chance of execution, but priority does not
+guarantee execution order as scheduling is
+handled by the JVM and operating system.
+</p>

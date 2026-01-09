@@ -1,0 +1,179 @@
+<h2>static Keyword in Java</h2>
+
+<p>
+The <b>static</b> keyword in Java is used to
+define class‑level members.
+</p>
+
+<p>
+A static member belongs to the <b>class</b>,
+not to individual objects.
+</p>
+
+<hr>
+
+<h2>Why Do We Need the static Keyword?</h2>
+
+<p>
+Normally, each object has its own copy
+of instance variables.
+</p>
+
+<p>
+The <b>static</b> keyword allows sharing
+a single copy of a variable or method
+among all objects of a class.
+</p>
+
+<hr>
+
+<h2>static Variable</h2>
+
+<p>
+A <b>static variable</b> is shared by
+all objects of the class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br>
+&nbsp;&nbsp;static String college = "ABC College";<br>
+}
+</p>
+
+<p>
+Here:
+<br>
+✔ id → Instance variable (separate for each object)<br>
+✔ college → Static variable (shared)
+</p>
+
+<hr>
+
+<h2>static Method</h2>
+
+<p>
+A <b>static method</b> belongs to the class
+and can be called without creating an object.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;static void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Static Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Calling static method:
+</p>
+
+<p>
+Demo.show();
+</p>
+
+<hr>
+
+<h2>Rules of static Method</h2>
+
+<p>
+✔ Can access only static members directly<br>
+✔ Cannot use <b>this</b> keyword<br>
+✔ Called using class name
+</p>
+
+<hr>
+
+<h2>static Block</h2>
+
+<p>
+A <b>static block</b> is used to initialize
+static variables.
+</p>
+
+<p>
+It is executed <b>once</b> when the class
+is loaded into memory.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;static {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Static Block Executed");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Order of Execution</h2>
+
+<p>
+✔ Static block → executed first<br>
+✔ main() method → executed next<br>
+✔ Constructors → executed when object is created
+</p>
+
+<hr>
+
+<h2>static vs Instance Members</h2>
+
+<p>
+✔ static → Belongs to class<br>
+✔ Instance → Belongs to object<br><br>
+✔ static → Single copy shared<br>
+✔ Instance → Separate copy per object
+</p>
+
+<hr>
+
+<h2>Memory Allocation</h2>
+
+<p>
+Static members are stored in the
+<b>Class Area / Method Area</b>.
+</p>
+
+<p>
+They are loaded only once,
+saving memory.
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Math.PI (constant value)<br>
+✔ Utility methods (Collections.sort())<br>
+✔ Counter variables shared across objects
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Using this inside static method<br>
+✔ Accessing instance variables directly in static method<br>
+✔ Creating object just to access static members
+</p>
+
+<hr>
+
+<h2>static Keyword (Interview / Exam Ready)</h2>
+
+<p>
+The <b>static</b> keyword in Java is used to
+define class-level variables, methods, and blocks.
+Static members are shared among all objects,
+loaded once into memory, and can be accessed
+using the class name without creating objects.
+</p>

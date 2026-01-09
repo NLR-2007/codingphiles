@@ -1,0 +1,229 @@
+<h2>throws Keyword in Java</h2>
+
+<p>
+The <b>throws</b> keyword in Java is used
+to <b>declare exceptions</b> that a method
+may pass to the calling method.
+</p>
+
+<p>
+It does <b>not handle</b> exceptions,
+it only informs the caller about them.
+</p>
+
+<hr>
+
+<h2>What is throws?</h2>
+
+<p>
+The <b>throws</b> keyword is used in the
+<b>method signature</b> to declare
+exceptions that may occur during execution.
+</p>
+
+<p>
+It is mainly used for:
+<br>
+✔ Checked exceptions<br>
+✔ Exception propagation
+</p>
+
+<hr>
+
+<h2>Syntax of throws</h2>
+
+<p>
+returnType methodName() throws ExceptionType {<br>
+&nbsp;&nbsp;// code<br>
+}
+</p>
+
+<hr>
+
+<h2>Simple Example of throws</h2>
+
+<p>
+import java.io.FileReader;<br><br>
+class Demo {<br>
+&nbsp;&nbsp;void readFile() throws FileNotFoundException {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileReader fr = new FileReader("data.txt");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Compiler allows code<br>
+✔ Responsibility passed to caller
+</p>
+
+<hr>
+
+<h2>Handling Method That Uses throws</h2>
+
+<p>
+The calling method must:
+</p>
+
+<p>
+✔ Handle exception using try-catch<br>
+✔ OR declare exception using throws
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demo d = new Demo();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.readFile();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (FileNotFoundException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("File not found");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>throws with Multiple Exceptions</h2>
+
+<p>
+A method can declare multiple exceptions
+using <b>comma-separated</b> list.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+void process() throws IOException, SQLException {<br>
+&nbsp;&nbsp;// code<br>
+}
+</p>
+
+<hr>
+
+<h2>throws with Checked Exceptions</h2>
+
+<p>
+Checked exceptions must be:
+</p>
+
+<p>
+✔ Handled using try-catch<br>
+✔ OR declared using throws
+</p>
+
+<p>
+Otherwise, compile-time error occurs.
+</p>
+
+<hr>
+
+<h2>throws with Unchecked Exceptions</h2>
+
+<p>
+Declaring unchecked exceptions using
+<b>throws</b> is optional.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+void calc() throws ArithmeticException {<br>
+&nbsp;&nbsp;int a = 10 / 0;<br>
+}
+</p>
+
+<p>
+✔ Compiles even without throws
+</p>
+
+<hr>
+
+<h2>throws vs try-catch</h2>
+
+<p>
+✔ throws → Passes exception to caller<br>
+✔ try-catch → Handles exception immediately
+</p>
+
+<p>
+✔ throws → Cleaner code<br>
+✔ try-catch → More control over handling
+</p>
+
+<hr>
+
+<h2>throws vs throw</h2>
+
+<p>
+✔ throw → Used to explicitly throw exception<br>
+✔ throws → Used to declare exception
+</p>
+
+<p>
+✔ throw → Inside method body<br>
+✔ throws → In method signature
+</p>
+
+<p>
+✔ throw → One exception at a time<br>
+✔ throws → Multiple exceptions possible
+</p>
+
+<hr>
+
+<h2>Exception Propagation using throws</h2>
+
+<p>
+When a method declares an exception using throws,
+the exception propagates up the call stack.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+method1() throws IOException<br>
+&nbsp;&nbsp;↳ method2() throws IOException<br>
+&nbsp;&nbsp;&nbsp;&nbsp;↳ main() handles exception
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ File handling → IOException<br>
+✔ Database operations → SQLException<br>
+✔ Network operations → IOException
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting to handle method that uses throws<br>
+✔ Using throws everywhere unnecessarily<br>
+✔ Confusing throws with throw
+</p>
+
+<hr>
+
+<h2>throws Keyword (Interview / Exam Ready)</h2>
+
+<p>
+The <b>throws</b> keyword in Java is used
+to declare exceptions that a method may pass
+to the calling method. It is mainly used for
+checked exceptions and supports exception
+propagation, allowing the caller to decide
+how to handle the exception.
+</p>

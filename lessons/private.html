@@ -1,0 +1,213 @@
+<h2>private Access Modifier in Java</h2>
+
+<p>
+The <b>private</b> access modifier is used
+to restrict access to class members.
+</p>
+
+<p>
+A <b>private</b> member is accessible
+<b>only within the same class</b>.
+</p>
+
+<hr>
+
+<h2>What is private?</h2>
+
+<p>
+The <b>private</b> keyword is the
+<b>most restrictive</b> access modifier in Java.
+</p>
+
+<p>
+It is mainly used for:
+<br>
+✔ Data hiding<br>
+✔ Security<br>
+✔ Encapsulation
+</p>
+
+<hr>
+
+<h2>Where Can private Be Used?</h2>
+
+<p>
+The <b>private</b> access modifier can be applied to:
+</p>
+
+<p>
+✔ Variables<br>
+✔ Methods<br>
+✔ Constructors
+</p>
+
+<p>
+Note:
+<br>
+Classes themselves cannot be private.
+</p>
+
+<hr>
+
+<h2>private Variables</h2>
+
+<p>
+When a variable is declared as private,
+it cannot be accessed directly outside the class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;private int age;<br>
+}
+</p>
+
+<p>
+✔ age is hidden from outside access
+</p>
+
+<hr>
+
+<h2>Accessing private Variables</h2>
+
+<p>
+Private variables are accessed using
+<b>public getter and setter methods</b>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;private int age;<br><br>
+&nbsp;&nbsp;public void setAge(int age) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(age > 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.age = age;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;public int getAge() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return age;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>private Methods</h2>
+
+<p>
+A <b>private method</b> can be accessed
+only within the same class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;private void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Private Method");<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;void call() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;show();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ show() cannot be called from another class
+</p>
+
+<hr>
+
+<h2>private Constructor</h2>
+
+<p>
+A <b>private constructor</b> prevents
+object creation from outside the class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Singleton {<br>
+&nbsp;&nbsp;private Singleton() { }<br>
+}
+</p>
+
+<p>
+Used in:
+<br>
+✔ Singleton Design Pattern<br>
+✔ Utility classes
+</p>
+
+<hr>
+
+<h2>private and Inheritance</h2>
+
+<p>
+Private members are <b>not inherited</b>
+by child classes.
+</p>
+
+<p>
+✔ Child class cannot access private members<br>
+✔ They belong strictly to the parent class
+</p>
+
+<hr>
+
+<h2>private vs Other Access Modifiers</h2>
+
+<p>
+✔ private → Same class only<br>
+✔ default → Same package<br>
+✔ protected → Same package + subclass<br>
+✔ public → Anywhere
+</p>
+
+<hr>
+
+<h2>Advantages of private</h2>
+
+<p>
+✔ Strong data security<br>
+✔ Supports encapsulation<br>
+✔ Prevents unauthorized access<br>
+✔ Improves maintainability
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ BankAccount → balance is private<br>
+✔ ATM → PIN is private<br>
+✔ Employee → salary is private
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Trying to access private members outside class<br>
+✔ Forgetting getters and setters<br>
+✔ Assuming private members are inherited
+</p>
+
+<hr>
+
+<h2>private (Interview / Exam Ready)</h2>
+
+<p>
+The <b>private</b> access modifier in Java
+restricts access to class members so that
+they are accessible only within the same class.
+It is mainly used for data hiding and supports
+encapsulation by preventing direct access to
+internal variables and methods.
+</p>

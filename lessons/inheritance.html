@@ -1,0 +1,228 @@
+<h2>Inheritance in Java</h2>
+
+<p>
+<b>Inheritance</b> is one of the core
+Object-Oriented Programming (OOP) concepts.
+</p>
+
+<p>
+It allows one class to <b>acquire the properties
+and methods of another class</b>.
+</p>
+
+<hr>
+
+<h2>What is Inheritance?</h2>
+
+<p>
+Inheritance represents an <b>IS-A relationship</b>.
+</p>
+
+<p>
+It enables:
+<br>
+✔ Code reusability<br>
+✔ Method overriding<br>
+✔ Runtime polymorphism
+</p>
+
+<hr>
+
+<h2>Basic Syntax of Inheritance</h2>
+
+<p>
+class Parent {<br>
+&nbsp;&nbsp;// parent members<br>
+}<br><br>
+class Child extends Parent {<br>
+&nbsp;&nbsp;// child members<br>
+}
+</p>
+
+<p>
+Here:
+<br>
+✔ Parent → Superclass<br>
+✔ Child → Subclass
+</p>
+
+<hr>
+
+<h2>Example of Inheritance</h2>
+
+<p>
+class Animal {<br>
+&nbsp;&nbsp;void eat() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Eating");<br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+class Dog extends Animal {<br>
+&nbsp;&nbsp;void bark() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Barking");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Dog d = new Dog();<br>
+d.eat();<br>
+d.bark();
+</p>
+
+<p>
+✔ Dog inherits eat() from Animal
+</p>
+
+<hr>
+
+<h2>Types of Inheritance in Java</h2>
+
+<p>
+Java supports the following types using classes:
+</p>
+
+<p>
+✔ Single Inheritance<br>
+✔ Multilevel Inheritance<br>
+✔ Hierarchical Inheritance
+</p>
+
+<p>
+Java does <b>not</b> support multiple inheritance
+using classes (to avoid ambiguity).
+</p>
+
+<hr>
+
+<h2>1. Single Inheritance</h2>
+
+<p>
+One child class inherits from one parent class.
+</p>
+
+<p>
+class A { }<br>
+class B extends A { }
+</p>
+
+<hr>
+
+<h2>2. Multilevel Inheritance</h2>
+
+<p>
+A class inherits from a child class.
+</p>
+
+<p>
+class A { }<br>
+class B extends A { }<br>
+class C extends B { }
+</p>
+
+<hr>
+
+<h2>3. Hierarchical Inheritance</h2>
+
+<p>
+Multiple child classes inherit from one parent class.
+</p>
+
+<p>
+class A { }<br>
+class B extends A { }<br>
+class C extends A { }
+</p>
+
+<hr>
+
+<h2>Why Java Does Not Support Multiple Inheritance?</h2>
+
+<p>
+Multiple inheritance using classes can cause
+the <b>Diamond Problem</b>.
+</p>
+
+<p>
+Java avoids ambiguity by not allowing it.
+</p>
+
+<p>
+✔ Multiple inheritance is possible using interfaces
+</p>
+
+<hr>
+
+<h2>Method Overriding in Inheritance</h2>
+
+<p>
+When a child class provides its own implementation
+of a parent class method, it is called
+<b>Method Overriding</b>.
+</p>
+
+<p>
+Rules:
+<br>
+✔ Method name must be same<br>
+✔ Parameters must be same<br>
+✔ IS-A relationship must exist
+</p>
+
+<hr>
+
+<h2>super Keyword (Quick Overview)</h2>
+
+<p>
+The <b>super</b> keyword refers to the parent class object.
+</p>
+
+<p>
+Uses:
+<br>
+✔ Access parent class variables<br>
+✔ Call parent class methods<br>
+✔ Call parent class constructor
+</p>
+
+<hr>
+
+<h2>Advantages of Inheritance</h2>
+
+<p>
+✔ Code reusability<br>
+✔ Less duplication<br>
+✔ Easy maintenance<br>
+✔ Supports polymorphism
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Employee → Manager, Developer<br>
+✔ Vehicle → Car, Bike<br>
+✔ Account → Savings, Current
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting IS-A relationship<br>
+✔ Using inheritance instead of composition<br>
+✔ Trying multiple inheritance with classes
+</p>
+
+<hr>
+
+<h2>Inheritance (Interview / Exam Ready)</h2>
+
+<p>
+Inheritance in Java is an OOP concept where
+a child class acquires the properties and
+methods of a parent class using the <b>extends</b>
+keyword. It promotes code reusability and
+supports method overriding and polymorphism.
+</p>

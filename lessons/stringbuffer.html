@@ -1,0 +1,221 @@
+<h2>StringBuffer in Java</h2>
+
+<p>
+<b>StringBuffer</b> is a class in Java used to
+create <b>mutable</b> (modifiable) strings.
+</p>
+
+<p>
+Unlike the String class, StringBuffer allows
+changes to the string without creating new objects.
+</p>
+
+<h2>Package of StringBuffer</h2>
+
+<p>
+StringBuffer belongs to the <b>java.lang</b> package,
+so it is available by default.
+</p>
+
+<h2>Why StringBuffer is Needed?</h2>
+
+<p>
+The String class is immutable, which means
+frequent string modifications create many objects
+and reduce performance.
+</p>
+
+<p>
+StringBuffer solves this problem by allowing
+in-place modification.
+</p>
+
+<h2>Key Features of StringBuffer</h2>
+
+<p>
+✔ Mutable (content can be changed)<br>
+✔ Thread-safe (synchronized)<br>
+✔ Suitable for multi-threaded applications
+</p>
+
+<h2>Creating a StringBuffer Object</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuffer sb = new StringBuffer("Java");
+</p>
+
+<h2>Modifying StringBuffer</h2>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuffer sb = new StringBuffer("Java");<br>
+sb.append(" Programming");<br>
+System.out.println(sb);
+</p>
+
+<p>
+Output:
+<br>
+Java Programming
+</p>
+
+<h2>Commonly Used StringBuffer Methods</h2>
+
+<h3>1. append()</h3>
+
+<p>
+Adds text at the end of the existing string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.append(" World");
+</p>
+
+<h3>2. insert()</h3>
+
+<p>
+Inserts text at a specified position.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.insert(4, " Language");
+</p>
+
+<h3>3. replace()</h3>
+
+<p>
+Replaces characters between specified indexes.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.replace(0, 4, "Core");
+</p>
+
+<h3>4. delete()</h3>
+
+<p>
+Deletes characters between specified indexes.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.delete(0, 4);
+</p>
+
+<h3>5. reverse()</h3>
+
+<p>
+Reverses the content of the string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+sb.reverse();
+</p>
+
+<h2>Capacity of StringBuffer</h2>
+
+<p>
+StringBuffer has an internal capacity
+that grows automatically.
+</p>
+
+<p>
+Default capacity = <b>16 + initial string length</b>
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+StringBuffer sb = new StringBuffer();<br>
+System.out.println(sb.capacity());
+</p>
+
+<h2>Thread Safety in StringBuffer</h2>
+
+<p>
+StringBuffer methods are <b>synchronized</b>,
+which makes it thread-safe.
+</p>
+
+<p>
+This means only one thread can access
+the StringBuffer object at a time.
+</p>
+
+<h2>Performance</h2>
+
+<p>
+✔ Safer in multi-threaded environments<br>
+✔ Slower than StringBuilder due to synchronization
+</p>
+
+<h2>When to Use StringBuffer?</h2>
+
+<p>
+Use StringBuffer when:
+<br>
+✔ String is frequently modified<br>
+✔ Application is multi-threaded<br>
+✔ Thread safety is required
+</p>
+
+<h2>String vs StringBuffer</h2>
+
+<p>
+✔ String → Immutable<br>
+✔ StringBuffer → Mutable & Thread-safe
+</p>
+
+<h2>Limitations of StringBuffer</h2>
+
+<p>
+✔ Slower than StringBuilder<br>
+✔ Overhead due to synchronization
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+StringBuffer is used in:
+<br>
+✔ Multi-threaded applications<br>
+✔ Logging systems<br>
+✔ Server-side string manipulation
+</p>
+
+<h2>StringBuffer (Interview / Exam Ready)</h2>
+
+<p>
+StringBuffer is a mutable and thread-safe
+class in Java used to perform string
+manipulation efficiently in multi-threaded
+environments.
+</p>

@@ -1,0 +1,195 @@
+<h2>Checked Exceptions in Java</h2>
+
+<p>
+<b>Checked Exceptions</b> are exceptions that are
+<b>checked at compile time</b> by the Java compiler.
+</p>
+
+<p>
+If a checked exception occurs, the program
+<b>must handle it</b>, otherwise the code
+will not compile.
+</p>
+
+<hr>
+
+<h2>What are Checked Exceptions?</h2>
+
+<p>
+Checked exceptions represent conditions
+that a program can anticipate and recover from.
+</p>
+
+<p>
+They usually occur due to:
+<br>
+✔ External resources<br>
+✔ Input/output operations<br>
+✔ Database connectivity<br>
+✔ Network communication
+</p>
+
+<hr>
+
+<h2>Why Are They Called Checked Exceptions?</h2>
+
+<p>
+They are called <b>checked</b> because:
+</p>
+
+<p>
+✔ The compiler checks them at compile time<br>
+✔ The programmer is forced to handle them
+</p>
+
+<p>
+This improves program reliability.
+</p>
+
+<hr>
+
+<h2>Examples of Checked Exceptions</h2>
+
+<p>
+Common checked exceptions include:
+</p>
+
+<p>
+✔ IOException<br>
+✔ FileNotFoundException<br>
+✔ SQLException<br>
+✔ ClassNotFoundException<br>
+✔ InterruptedException
+</p>
+
+<hr>
+
+<h2>Checked Exception Example</h2>
+
+<p>
+import java.io.FileReader;<br><br>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileReader fr = new FileReader("data.txt");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+❌ Compile‑time error because exception is not handled
+</p>
+
+<hr>
+
+<h2>Handling Checked Exceptions</h2>
+
+<p>
+Checked exceptions can be handled in two ways:
+</p>
+
+<p>
+✔ Using try‑catch block<br>
+✔ Using throws keyword
+</p>
+
+<hr>
+
+<h2>Handling Using try‑catch</h2>
+
+<p>
+try {<br>
+&nbsp;&nbsp;FileReader fr = new FileReader("data.txt");<br>
+} catch (FileNotFoundException e) {<br>
+&nbsp;&nbsp;System.out.println("File not found");<br>
+}
+</p>
+
+<p>
+✔ Exception handled locally<br>
+✔ Program continues normally
+</p>
+
+<hr>
+
+<h2>Handling Using throws</h2>
+
+<p>
+The <b>throws</b> keyword is used to
+declare exceptions in the method signature.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+void readFile() throws IOException {<br>
+&nbsp;&nbsp;FileReader fr = new FileReader("data.txt");<br>
+}
+</p>
+
+<p>
+✔ Responsibility passed to caller method
+</p>
+
+<hr>
+
+<h2>Checked Exceptions vs Unchecked Exceptions</h2>
+
+<p>
+✔ Checked → Compile‑time checked<br>
+✔ Unchecked → Runtime checked<br><br>
+✔ Checked → Must be handled<br>
+✔ Unchecked → Not mandatory to handle<br><br>
+✔ Checked → Extend Exception<br>
+✔ Unchecked → Extend RuntimeException
+</p>
+
+<hr>
+
+<h2>Why Java Enforces Checked Exceptions?</h2>
+
+<p>
+Java enforces checked exceptions to:
+</p>
+
+<p>
+✔ Force error handling<br>
+✔ Improve program robustness<br>
+✔ Avoid unexpected program termination
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ File operations → IOException<br>
+✔ Database connection → SQLException<br>
+✔ Thread sleep → InterruptedException
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting to handle checked exceptions<br>
+✔ Catching generic Exception instead of specific one<br>
+✔ Ignoring exceptions using empty catch block
+</p>
+
+<hr>
+
+<h2>Checked Exceptions (Interview / Exam Ready)</h2>
+
+<p>
+Checked exceptions in Java are exceptions
+that are checked at compile time. They must
+be either handled using try‑catch blocks or
+declared using the throws keyword. Examples
+include IOException, SQLException, and
+FileNotFoundException. Checked exceptions
+improve program reliability by enforcing
+proper error handling.
+</p>

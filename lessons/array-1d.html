@@ -1,0 +1,188 @@
+<h2>Single Dimensional Array in Java</h2>
+
+<p>
+A <b>Single Dimensional Array</b> is a collection of
+elements of the same data type stored in a linear sequence.
+</p>
+
+<p>
+Each element in the array is accessed using an index value.
+Indexing in Java arrays always starts from <b>0</b>.
+</p>
+
+<h2>Why do we need Arrays?</h2>
+
+<p>
+Arrays are used when we need to store
+multiple values of the same type using a single variable.
+</p>
+
+<p>
+Without arrays:
+<br>
+int a1, a2, a3, a4, a5;
+</p>
+
+<p>
+With arrays:
+<br>
+int[] a = new int[5];
+</p>
+
+<h2>Declaration of Single Dimensional Array</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+dataType[] arrayName;
+</p>
+
+<p>
+Example:
+<br>
+int[] numbers;
+</p>
+
+<h2>Array Creation</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+arrayName = new dataType[size];
+</p>
+
+<p>
+Example:
+<br>
+numbers = new int[5];
+</p>
+
+<h2>Declaration and Creation in One Line</h2>
+
+<p>
+int[] numbers = new int[5];
+</p>
+
+<h2>Array Initialization</h2>
+
+<p>
+Array elements can be initialized in two ways.
+</p>
+
+<h3>1. Using Index</h3>
+
+<p>
+int[] marks = new int[3];<br>
+marks[0] = 80;<br>
+marks[1] = 85;<br>
+marks[2] = 90;
+</p>
+
+<h3>2. Using Array Literal</h3>
+
+<p>
+int[] marks = {80, 85, 90};
+</p>
+
+<h2>Accessing Array Elements</h2>
+
+<p>
+Array elements are accessed using index numbers.
+</p>
+
+<p>
+Example:
+<br>
+System.out.println(marks[0]);
+</p>
+
+<h2>Array Index Rules</h2>
+
+<p>
+✔ Index starts from 0<br>
+✔ Last index is (length - 1)<br>
+✔ Accessing invalid index causes runtime error
+</p>
+
+<h2>Array Length</h2>
+
+<p>
+Java provides a built-in <b>length</b> property
+to find the size of an array.
+</p>
+
+<p>
+Example:
+<br>
+int size = marks.length;
+</p>
+
+<h2>Traversing a Single Dimensional Array</h2>
+
+<p>
+Traversing means accessing all elements one by one.
+</p>
+
+<h3>Using for Loop</h3>
+
+<p>
+for(int i = 0; i < marks.length; i++) {<br>
+&nbsp;&nbsp;System.out.println(marks[i]);<br>
+}
+</p>
+
+<h3>Using Enhanced for Loop</h3>
+
+<p>
+for(int m : marks) {<br>
+&nbsp;&nbsp;System.out.println(m);<br>
+}
+</p>
+
+<h2>Advantages of Single Dimensional Array</h2>
+
+<p>
+✔ Stores multiple values efficiently<br>
+✔ Easy access using index<br>
+✔ Improves code readability
+</p>
+
+<h2>Limitations of Single Dimensional Array</h2>
+
+<p>
+✔ Fixed size<br>
+✔ Stores only same data type<br>
+✔ Cannot grow dynamically
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+Single dimensional arrays are used in:
+<br>
+✔ Storing student marks<br>
+✔ Managing employee IDs<br>
+✔ Holding sensor values<br>
+✔ Processing lists of numbers
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ ArrayIndexOutOfBoundsException<br>
+✔ Forgetting array size<br>
+✔ Accessing uninitialized elements
+</p>
+
+<h2>Single Dimensional Array (Interview / Exam Ready)</h2>
+
+<p>
+A single dimensional array in Java is a linear
+data structure used to store multiple values
+of the same data type, accessed using index values
+starting from zero.
+</p>

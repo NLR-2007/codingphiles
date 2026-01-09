@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Result | CodingPhiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+<!-- PDF Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:rgba(255,255,255,0.05);
+      --border:rgba(255,255,255,0.08);
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --primary:#1976d2;
+      --green:#22c55e;
+      --red:#ef4444;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Nunito",sans-serif;
+      background:linear-gradient(135deg,#0f172a,#020617);
+      color:var(--text);
+      min-height:100vh;
+    }
+    header{
+      padding:24px 40px;
+      border-bottom:1px solid var(--border);
+    }
+    header h1{
+      font-family:"Jersey 10",cursive;
+      font-size:40px;
+    }
+    main{
+      max-width:900px;
+      margin:50px auto;
+      padding:0 20px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:30px;
+    }
+    .title{
+      text-align:center;
+      font-size:24px;
+      margin-bottom:20px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+      margin-bottom:25px;
+    }
+    .box{
+      background:rgba(255,255,255,0.06);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:18px;
+      text-align:center;
+    }
+    .box h3{
+      font-size:26px;
+    }
+    .box span{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .percentage{
+      text-align:center;
+      font-size:42px;
+      font-weight:700;
+      margin:20px 0;
+      color:var(--primary);
+    }
+    .status{
+      text-align:center;
+      font-size:18px;
+      margin-bottom:20px;
+    }
+    .status.pass{color:var(--green)}
+    .status.fail{color:var(--red)}
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    button{
+      padding:14px 26px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .primary{
+      background:var(--primary);
+      color:white;
+    }
+    .secondary{
+      background:none;
+      color:var(--text);
+      border:1px solid var(--border);
+    }
+    footer{
+      text-align:center;
+      padding:20px;
+      font-size:12px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      margin-top:60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>CodingPhiles</h1>
+</header>
+
+<main>
+  <div class="card">
+    <div class="title">Quiz Result Summary</div>
+
+    <div class="grid">
+      <div class="box"><h3 id="total">0</h3><span>Total</span></div>
+      <div class="box"><h3 id="attempted">0</h3><span>Attempted</span></div>
+      <div class="box"><h3 id="correct">0</h3><span>Correct</span></div>
+      <div class="box"><h3 id="wrong">0</h3><span>Wrong</span></div>
+      <div class="box"><h3 id="unattempted">0</h3><span>Unattempted</span></div>
+    </div>
+
+    <div class="percentage" id="percentage">0%</div>
+    <div class="status" id="status"></div>
+
+    <div class="actions">
+      <button class="primary" onclick="goDashboard()">Back to Dashboard</button>
+      <button class="secondary" onclick="goReview()">View Answer Review</button>
+      <button class="secondary" onclick="downloadResultPDF()">
+  Download Result (PDF)
+</button>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  Developed by NLR GROUP OF COMPANY
+</footer>
+
+<script>
+const questions = JSON.parse(localStorage.getItem("quizQuestions")) || [];
+const answers = JSON.parse(localStorage.getItem("quizAnswers")) || [];
+
+let correct = 0, wrong = 0, unattempted = 0;
+
+questions.forEach((q, i) => {
+  if (answers[i] === null || answers[i] === undefined) unattempted++;
+  else if (answers[i] === q.answer) correct++;
+  else wrong++;
+});
+
+const total = questions.length;
+const attempted = total - unattempted;
+const percentage = total ? Math.round((correct / total) * 100) : 0;
+
+document.getElementById("total").textContent = total;
+document.getElementById("attempted").textContent = attempted;
+document.getElementById("correct").textContent = correct;
+document.getElementById("wrong").textContent = wrong;
+document.getElementById("unattempted").textContent = unattempted;
+document.getElementById("percentage").textContent = percentage + "%";
+
+const statusEl = document.getElementById("status");
+if (percentage >= 40) {
+  statusEl.textContent = "Result: PASS";
+  statusEl.classList.add("pass");
+} else {
+  statusEl.textContent = "Result: FAIL";
+  statusEl.classList.add("fail");
+}
+
+function goDashboard(){ window.location.href="dashboard.html"; }
+function goReview(){ window.location.href="review.html"; }
+</script>
+<script>
+function downloadResultPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("portrait", "pt", "a4");
+
+  // ===== DATA =====
+  const name = localStorage.getItem("quizUserName") || "Student";
+  const subject = localStorage.getItem("quizSubject") || "N/A";
+  const difficulty = localStorage.getItem("quizDifficulty") || "N/A";
+  const date = new Date().toLocaleString();
+
+  const total = document.getElementById("total").textContent;
+  const attempted = document.getElementById("attempted").textContent;
+  const correct = document.getElementById("correct").textContent;
+  const wrong = document.getElementById("wrong").textContent;
+  const unattempted = document.getElementById("unattempted").textContent;
+  const percentage = document.getElementById("percentage").textContent;
+  const status = document.getElementById("status").textContent;
+
+  // ===== HEADER BAR =====
+  doc.setFillColor(25, 118, 210); // Blue
+  doc.rect(0, 0, 595, 90, "F");
+
+  doc.setFont("Times", "Bold");
+  doc.setFontSize(34);
+  doc.setTextColor(255, 255, 255);
+  doc.text("CodingPhiles", 200, 55);
+
+  doc.setFontSize(14);
+  doc.text("Quiz Result Summary", 230, 75);
+
+  // Reset color
+  doc.setTextColor(0, 0, 0);
+
+  // ===== USER CARD =====
+  doc.setFillColor(245, 247, 250);
+  doc.roundedRect(40, 110, 515, 110, 10, 10, "F");
+
+  doc.setFontSize(14);
+  doc.setFont("Times", "Normal");
+  doc.text(`Name        : ${name}`, 70, 150);
+  doc.text(`Subject     : ${subject}`, 70, 175);
+  doc.text(`Difficulty  : ${difficulty}`, 70, 200);
+  doc.text(`Date        : ${date}`, 70, 225);
+
+  // ===== PERFORMANCE CARD =====
+  doc.setFont("Times", "Bold");
+  doc.setFontSize(18);
+  doc.text("Performance Overview", 60, 280);
+
+  doc.setFillColor(255, 255, 255);
+  doc.roundedRect(40, 300, 515, 170, 10, 10, "S");
+
+  doc.setFont("Times", "Normal");
+  doc.setFontSize(14);
+
+  let y = 335;
+  const gap = 25;
+
+  doc.text(`Total Questions   : ${total}`, 80, y); y += gap;
+  doc.text(`Attempted         : ${attempted}`, 80, y); y += gap;
+  doc.text(`Correct           : ${correct}`, 80, y); y += gap;
+  doc.text(`Wrong             : ${wrong}`, 80, y); y += gap;
+  doc.text(`Unattempted       : ${unattempted}`, 80, y);
+
+  // ===== SCORE BLOCK =====
+  doc.setFont("Times", "Bold");
+  doc.setFontSize(26);
+  doc.setTextColor(25, 118, 210);
+  doc.text(`Score: ${percentage}`, 210, 515);
+
+  doc.setFontSize(18);
+  doc.setTextColor(
+    status.includes("PASS") ? 34 : 239,
+    status.includes("PASS") ? 197 : 68,
+    status.includes("PASS") ? 94 : 68
+  );
+  doc.text(status, 245, 545);
+
+  // Reset color
+  doc.setTextColor(0, 0, 0);
+
+  // ===== FOOTER =====
+  doc.setFontSize(11);
+  doc.setFont("Times", "Normal");
+  doc.text("Developed by NLR GROUP OF COMPANY", 190, 585);
+
+  // ===== SAVE =====
+  doc.save(`CodingPhiles_Result_${name.replace(/\s+/g,"_")}.pdf`);
+}
+</script>
+
+
+</body>
+</html>

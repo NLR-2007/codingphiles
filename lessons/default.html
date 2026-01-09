@@ -1,0 +1,186 @@
+<h2>default Access Modifier in Java</h2>
+
+<p>
+The <b>default</b> access modifier is applied
+when <b>no access modifier</b> is specified.
+</p>
+
+<p>
+It is also called <b>package‑private</b>.
+</p>
+
+<hr>
+
+<h2>What is default Access?</h2>
+
+<p>
+When no keyword (private, protected, public)
+is used, Java applies <b>default access</b>.
+</p>
+
+<p>
+Members with default access are accessible
+<b>only within the same package</b>.
+</p>
+
+<hr>
+
+<h2>Where Can default Be Used?</h2>
+
+<p>
+The default access modifier can be applied to:
+</p>
+
+<p>
+✔ Variables<br>
+✔ Methods<br>
+✔ Classes<br>
+✔ Constructors
+</p>
+
+<hr>
+
+<h2>default Variables</h2>
+
+<p>
+A variable with default access can be
+accessed only by classes in the same package.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id; // default access<br>
+}
+</p>
+
+<p>
+✔ Accessible within same package<br>
+✖ Not accessible outside the package
+</p>
+
+<hr>
+
+<h2>default Methods</h2>
+
+<p>
+A method with default access can be
+called only within the same package.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Default Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>default Class</h2>
+
+<p>
+A class without an access modifier
+has default access.
+</p>
+
+<p>
+Such a class:
+<br>
+✔ Can be used within the same package<br>
+✖ Cannot be accessed from another package
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Test { } // default class
+</p>
+
+<hr>
+
+<h2>default Constructor</h2>
+
+<p>
+A constructor without an access modifier
+has default access.
+</p>
+
+<p>
+It can be called only within the same package.
+</p>
+
+<hr>
+
+<h2>default and Packages</h2>
+
+<p>
+Default access is <b>package‑based</b>.
+</p>
+
+<p>
+✔ Same package → Access allowed<br>
+✖ Different package → Access denied
+</p>
+
+<p>
+Even subclasses in other packages
+<b>cannot</b> access default members.
+</p>
+
+<hr>
+
+<h2>default vs Other Access Modifiers</h2>
+
+<p>
+✔ private → Same class only<br>
+✔ default → Same package only<br>
+✔ protected → Same package + subclass<br>
+✔ public → Anywhere
+</p>
+
+<hr>
+
+<h2>Advantages of default Access</h2>
+
+<p>
+✔ Prevents unnecessary exposure<br>
+✔ Useful for internal package logic<br>
+✔ Supports modular design
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Utility classes used only inside package<br>
+✔ Helper methods for internal logic<br>
+✔ Package-level service classes
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Assuming default is public<br>
+✔ Trying to access default members from another package<br>
+✔ Confusing default with protected
+</p>
+
+<hr>
+
+<h2>default Access Modifier (Interview / Exam Ready)</h2>
+
+<p>
+The <b>default</b> access modifier in Java is
+applied when no access modifier is specified.
+It allows access to class members only within
+the same package and is also known as
+package‑private access.
+</p>

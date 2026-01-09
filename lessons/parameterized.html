@@ -1,0 +1,175 @@
+<h2>Parameterized Constructor in Java</h2>
+
+<p>
+A <b>Parameterized Constructor</b> is a constructor
+that accepts <b>one or more parameters</b>.
+</p>
+
+<p>
+It is used to initialize objects with
+<b>custom values</b> at the time of object creation.
+</p>
+
+<hr>
+
+<h2>Why Parameterized Constructor?</h2>
+
+<p>
+Default constructors initialize objects
+with default values.
+</p>
+
+<p>
+Parameterized constructors allow:
+<br>
+✔ Passing values during object creation<br>
+✔ Initializing objects with meaningful data<br>
+✔ Better control over object state
+</p>
+
+<hr>
+
+<h2>Syntax of Parameterized Constructor</h2>
+
+<p>
+class ClassName {<br>
+&nbsp;&nbsp;ClassName(dataType variable) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// initialization code<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Example of Parameterized Constructor</h2>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br>
+&nbsp;&nbsp;String name;<br><br>
+&nbsp;&nbsp;Student(int i, String n) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id = i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name = n;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Student s1 = new Student(101, "Lokesh");<br>
+Student s2 = new Student(102, "Yash");
+</p>
+
+<p>
+Here, each object gets its own values.
+</p>
+
+<hr>
+
+<h2>Using <b>this</b> Keyword in Parameterized Constructor</h2>
+
+<p>
+The <b>this</b> keyword is used when
+instance variables and parameters
+have the same name.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br><br>
+&nbsp;&nbsp;Student(int id) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.id = id;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ this.id → instance variable<br>
+✔ id → constructor parameter
+</p>
+
+<hr>
+
+<h2>Calling a Parameterized Constructor</h2>
+
+<p>
+A parameterized constructor is called
+automatically when an object is created
+with arguments.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Student s = new Student(101);
+</p>
+
+<hr>
+
+<h2>Multiple Parameterized Constructors</h2>
+
+<p>
+A class can have multiple parameterized
+constructors with different parameters.
+</p>
+
+<p>
+This is called <b>Constructor Overloading</b>.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;Demo(int x) { }<br>
+&nbsp;&nbsp;Demo(String s) { }<br>
+&nbsp;&nbsp;Demo(int x, int y) { }<br>
+}
+</p>
+
+<hr>
+
+<h2>Difference Between Default and Parameterized Constructor</h2>
+
+<p>
+✔ Default → No parameters, default values<br>
+✔ Parameterized → Takes parameters, custom values
+</p>
+
+<hr>
+
+<h2>Real-Time Example</h2>
+
+<p>
+✔ Bank Account → accountNumber, balance<br>
+✔ Student → id, name<br>
+✔ Employee → empId, salary
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting to pass arguments while creating object<br>
+✔ Assuming Java provides default constructor when parameterized exists<br>
+✔ Not using this keyword when needed
+</p>
+
+<hr>
+
+<h2>Parameterized Constructor (Interview / Exam Ready)</h2>
+
+<p>
+A parameterized constructor in Java is a constructor
+that accepts parameters and initializes objects
+with user-defined values at the time of object creation.
+It provides better control over object initialization.
+</p>

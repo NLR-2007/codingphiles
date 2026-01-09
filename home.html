@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coding Philes</title>
+
+  <!-- Responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div id="heading">
+    <h2>Coding<span>Philes</span></h2>        
+    <p>Where Philes meet Coding</p>
+  </div>
+
+  <!-- TOGGLE BUTTON -->
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <nav id="navbar">
+    <a href="compiler.html">💻 Compiler</a>
+    <a href="tutorials.html">📘 Tutorials</a>
+    <a href="codingphiles-quiz/index.html" target="_blank">🎖️ Quiz Section</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Learn Code. Practice Code. Crack Concepts.</h1>
+
+  <div class="slider">
+    <div class="slide-track">
+      <span>📘 Learn with step-by-step tutorials</span>
+      <span>💻 Practice code in online compiler</span>
+      <span>🧠 Test yourself with quizzes</span>
+      <span>🚀 All in one place – Coding Philes</span>
+
+      <span>📘 Learn with step-by-step tutorials</span>
+      <span>💻 Practice code in online compiler</span>
+      <span>🧠 Test yourself with quizzes</span>
+      <span>🚀 All in one place – Coding Philes</span>
+    </div>
+  </div>
+
+  <div class="hero-buttons">
+    <a href="tutorials.html" class="btn primary">Start Learning</a>
+    <a href="compiler.html" class="btn secondary">Try Compiler</a>
+  </div>
+</section>
+
+<footer class="nlr-footer reveal-footer">
+  <div class="nlr-seal">
+    <span class="nlr-ring"></span>
+    <span class="nlr-brand">NLR</span>
+  </div>
+
+  <p class="nlr-main">
+    Developed by <strong>NLR GROUP OF COMPANY</strong>
+  </p>
+
+  <p class="nlr-tagline">
+    Crafted with code · Built for learners · Driven by purpose
+  </p>
+</footer>
+
+<script>
+  // Footer reveal
+  const footer = document.querySelector('.reveal-footer');
+  if (footer) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add('show');
+          observer.unobserve(footer);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(footer);
+  }
+
+  // Toggle menu
+  const toggle = document.getElementById("menuToggle");
+  const navbar = document.getElementById("navbar");
+
+  toggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    toggle.textContent = navbar.classList.contains("active") ? "✖" : "☰";
+  });
+</script>
+
+</body>
+</html>

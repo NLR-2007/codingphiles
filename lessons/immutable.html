@@ -1,0 +1,184 @@
+<h2>Immutable Strings in Java</h2>
+
+<p>
+In Java, a <b>String</b> is <b>immutable</b>.
+Immutable means <b>unchangeable</b>.
+</p>
+
+<p>
+Once a String object is created,
+its value <b>cannot be modified</b>.
+Any change creates a new String object.
+</p>
+
+<h2>What Does Immutability Mean?</h2>
+
+<p>
+Immutability means:
+<br>
+✔ The content of a String cannot be changed<br>
+✔ Any modification creates a new object<br>
+✔ The original String remains unchanged
+</p>
+
+<h2>Example of Immutable String</h2>
+
+<p>
+String s = "Java";<br>
+s.concat(" Programming");<br>
+System.out.println(s);
+</p>
+
+<p>
+Output:
+<br>
+Java
+</p>
+
+<p>
+Explanation:
+<br>
+✔ concat() creates a new String object<br>
+✔ The new object is not assigned to any reference<br>
+✔ Original string remains unchanged
+</p>
+
+<h2>Correct Way to Modify a String</h2>
+
+<p>
+String s = "Java";<br>
+s = s.concat(" Programming");<br>
+System.out.println(s);
+</p>
+
+<p>
+Output:
+<br>
+Java Programming
+</p>
+
+<h2>Why Are Strings Immutable in Java?</h2>
+
+<h3>1. Security</h3>
+
+<p>
+Strings are used in:
+<br>
+✔ Passwords<br>
+✔ Database URLs<br>
+✔ Network connections
+</p>
+
+<p>
+If Strings were mutable, attackers
+could change sensitive data.
+</p>
+
+<h3>2. String Constant Pool (SCP)</h3>
+
+<p>
+String literals are stored in the
+<b>String Constant Pool</b>.
+</p>
+
+<p>
+Multiple references can point
+to the same String object.
+</p>
+
+<p>
+Immutability ensures that one reference
+cannot change the value for others.
+</p>
+
+<h3>3. Thread Safety</h3>
+
+<p>
+Because Strings cannot be modified,
+they are naturally thread-safe.
+</p>
+
+<p>
+Multiple threads can safely share
+the same String object.
+</p>
+
+<h3>4. Performance & Hashing</h3>
+
+<p>
+String hashcode is cached.
+</p>
+
+<p>
+Immutability ensures the hashcode
+does not change, improving performance
+in collections like HashMap.
+</p>
+
+<h2>Memory Diagram Explanation</h2>
+
+<p>
+String s1 = "Java";<br>
+String s2 = s1.concat(" Programming");
+</p>
+
+<p>
+✔ "Java" remains in SCP<br>
+✔ "Java Programming" is a new object<br>
+✔ s1 and s2 point to different objects
+</p>
+
+<h2>Immutable vs Mutable Strings</h2>
+
+<p>
+✔ String → Immutable<br>
+✔ StringBuffer → Mutable<br>
+✔ StringBuilder → Mutable
+</p>
+
+<h2>When Immutability is a Problem?</h2>
+
+<p>
+Immutability causes performance issues
+when:
+<br>
+✔ Strings are modified repeatedly<br>
+✔ Concatenation happens inside loops
+</p>
+
+<p>
+In such cases, use:
+<br>
+✔ StringBuilder (fast)<br>
+✔ StringBuffer (thread-safe)
+</p>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+Immutable Strings are useful in:
+<br>
+✔ Login systems<br>
+✔ Configuration values<br>
+✔ Constants and keys<br>
+✔ Multi-threaded applications
+</p>
+
+<h2>Common Interview Questions</h2>
+
+<p>
+✔ Why is String immutable?<br>
+✔ Can String be made mutable?<br>
+✔ Difference between String and StringBuilder?
+</p>
+
+<h2>Immutable Strings (Interview / Exam Ready)</h2>
+
+<p>
+In Java, Strings are immutable, meaning
+once a String object is created, its value
+cannot be changed. Any modification creates
+a new object, providing security, thread safety,
+and better performance through the
+String Constant Pool.
+</p>

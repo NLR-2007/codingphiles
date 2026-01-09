@@ -1,0 +1,286 @@
+<h2>String Methods in Java</h2>
+
+<p>
+The <b>String class</b> in Java provides a rich set of
+built‑in methods to perform operations on strings.
+</p>
+
+<p>
+These methods help in:
+<br>
+✔ Manipulating text<br>
+✔ Comparing strings<br>
+✔ Searching content<br>
+✔ Formatting output
+</p>
+
+<h2>1. length()</h2>
+
+<p>
+Returns the number of characters in the string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java";<br>
+System.out.println(s.length());
+</p>
+
+<p>
+Output:
+<br>
+4
+</p>
+
+<h2>2. charAt()</h2>
+
+<p>
+Returns the character at a specified index.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java";<br>
+System.out.println(s.charAt(1));
+</p>
+
+<p>
+Output:
+<br>
+a
+</p>
+
+<h2>3. toUpperCase()</h2>
+
+<p>
+Converts all characters to uppercase.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "java";<br>
+System.out.println(s.toUpperCase());
+</p>
+
+<p>
+Output:
+<br>
+JAVA
+</p>
+
+<h2>4. toLowerCase()</h2>
+
+<p>
+Converts all characters to lowercase.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "JAVA";<br>
+System.out.println(s.toLowerCase());
+</p>
+
+<p>
+Output:
+<br>
+java
+</p>
+
+<h2>5. trim()</h2>
+
+<p>
+Removes leading and trailing spaces.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "  Java  ";<br>
+System.out.println(s.trim());
+</p>
+
+<h2>6. equals()</h2>
+
+<p>
+Compares the content of two strings.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String a = "Java";<br>
+String b = "Java";<br>
+System.out.println(a.equals(b));
+</p>
+
+<p>
+Output:
+<br>
+true
+</p>
+
+<h2>7. equalsIgnoreCase()</h2>
+
+<p>
+Compares strings ignoring case differences.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String a = "Java";<br>
+String b = "java";<br>
+System.out.println(a.equalsIgnoreCase(b));
+</p>
+
+<h2>8. compareTo()</h2>
+
+<p>
+Compares two strings lexicographically.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+"Java".compareTo("Java"); // 0<br>
+"Java".compareTo("Python"); // negative<br>
+"Python".compareTo("Java"); // positive
+</p>
+
+<h2>9. substring()</h2>
+
+<p>
+Returns a part of the string.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "JavaProgramming";<br>
+System.out.println(s.substring(4));
+</p>
+
+<p>
+Output:
+<br>
+Programming
+</p>
+
+<h2>10. replace()</h2>
+
+<p>
+Replaces characters or substrings.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java";<br>
+System.out.println(s.replace("a", "o"));
+</p>
+
+<p>
+Output:
+<br>
+Jovo
+</p>
+
+<h2>11. contains()</h2>
+
+<p>
+Checks whether a string contains
+a specific sequence of characters.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java Programming";<br>
+System.out.println(s.contains("Java"));
+</p>
+
+<h2>12. startsWith() and endsWith()</h2>
+
+<p>
+Checks starting or ending characters.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+"Java".startsWith("Ja"); // true<br>
+"Java".endsWith("va"); // true
+</p>
+
+<h2>13. split()</h2>
+
+<p>
+Splits a string into an array
+based on a delimiter.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java,Python,C";<br>
+String[] arr = s.split(",");
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Using == instead of equals()<br>
+✔ Forgetting immutability of String<br>
+✔ Ignoring index bounds in charAt()
+</p>
+
+<h2>Real‑Time Use Cases</h2>
+
+<p>
+String methods are used in:
+<br>
+✔ Form validation<br>
+✔ Searching data<br>
+✔ Parsing input<br>
+✔ Web and API responses
+</p>
+
+<h2>String Methods (Interview / Exam Ready)</h2>
+
+<p>
+The String class provides built‑in methods
+such as length(), charAt(), equals(),
+substring(), replace(), and split()
+to manipulate and process string data
+efficiently in Java.
+</p>

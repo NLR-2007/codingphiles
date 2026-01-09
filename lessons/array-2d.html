@@ -1,0 +1,180 @@
+<h2>Two Dimensional Array in Java</h2>
+
+<p>
+A <b>Two Dimensional Array (2D Array)</b> in Java
+is an array of arrays.
+</p>
+
+<p>
+It is used to store data in the form of
+rows and columns, similar to a table or matrix.
+</p>
+
+<h2>Why do we need 2D Arrays?</h2>
+
+<p>
+2D arrays are useful when data is
+naturally represented in tabular form.
+</p>
+
+<p>
+Examples:
+<br>
+✔ Student marks (rows = students, columns = subjects)<br>
+✔ Matrix calculations<br>
+✔ Game boards (chess, tic‑tac‑toe)
+</p>
+
+<h2>Declaration of 2D Array</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+dataType[][] arrayName;
+</p>
+
+<p>
+Example:
+<br>
+int[][] marks;
+</p>
+
+<h2>Creation of 2D Array</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+arrayName = new dataType[rows][columns];
+</p>
+
+<p>
+Example:
+<br>
+marks = new int[3][3];
+</p>
+
+<h2>Declaration and Creation in One Line</h2>
+
+<p>
+int[][] marks = new int[3][3];
+</p>
+
+<h2>Initialization of 2D Array</h2>
+
+<h3>1. Using Index Values</h3>
+
+<p>
+int[][] marks = new int[2][2];<br>
+marks[0][0] = 80;<br>
+marks[0][1] = 85;<br>
+marks[1][0] = 90;<br>
+marks[1][1] = 95;
+</p>
+
+<h3>2. Using Array Literal</h3>
+
+<p>
+int[][] marks = {<br>
+&nbsp;&nbsp;{80, 85},<br>
+&nbsp;&nbsp;{90, 95}<br>
+};
+</p>
+
+<h2>Accessing 2D Array Elements</h2>
+
+<p>
+Elements are accessed using
+row index and column index.
+</p>
+
+<p>
+Example:
+<br>
+System.out.println(marks[1][0]);
+</p>
+
+<h2>Traversing a 2D Array</h2>
+
+<h3>Using Nested for Loop</h3>
+
+<p>
+for(int i = 0; i < marks.length; i++) {<br>
+&nbsp;&nbsp;for(int j = 0; j < marks[i].length; j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(marks[i][j] + " ");<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;System.out.println();<br>
+}
+</p>
+
+<h2>Length in 2D Array</h2>
+
+<p>
+✔ <b>array.length</b> → number of rows<br>
+✔ <b>array[row].length</b> → number of columns
+</p>
+
+<h2>Jagged Array</h2>
+
+<p>
+A jagged array is a 2D array
+where each row can have a different number of columns.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+int[][] arr = new int[3][];<br>
+arr[0] = new int[2];<br>
+arr[1] = new int[3];<br>
+arr[2] = new int[1];
+</p>
+
+<h2>Advantages of 2D Array</h2>
+
+<p>
+✔ Represents data in tabular form<br>
+✔ Easy to process rows and columns<br>
+✔ Useful for mathematical operations
+</p>
+
+<h2>Limitations of 2D Array</h2>
+
+<p>
+✔ Fixed size<br>
+✔ Memory wastage if not fully used<br>
+✔ Complex traversal compared to 1D array
+</p>
+
+<h2>Real‑Time Use Cases</h2>
+
+<p>
+2D arrays are used in:
+<br>
+✔ Student result systems<br>
+✔ Image processing<br>
+✔ Game development<br>
+✔ Matrix operations
+</p>
+
+<h2>Common Errors</h2>
+
+<p>
+✔ ArrayIndexOutOfBoundsException<br>
+✔ Incorrect loop boundaries<br>
+✔ Confusing row and column indexes
+</p>
+
+<h2>Two Dimensional Array (Interview / Exam Ready)</h2>
+
+<p>
+A two dimensional array in Java
+is an array of arrays used to store
+data in rows and columns, accessed using
+two index values starting from zero.
+</p>

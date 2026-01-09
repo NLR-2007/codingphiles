@@ -1,0 +1,191 @@
+<h2>Java Security Model</h2>
+
+<p>
+The Java Security Model is designed to protect systems
+from malicious and untrusted code.
+</p>
+
+<p>
+Java provides strong security at different levels
+to ensure safe execution of programs.
+</p>
+
+<h2>Why Security is Important in Java</h2>
+
+<p>
+Java programs often run in network-based environments
+such as the internet and enterprise systems.
+</p>
+
+<p>
+Security is required to:
+<br>
+✔ Prevent unauthorized access<br>
+✔ Protect system resources<br>
+✔ Avoid malicious attacks<br>
+✔ Ensure data integrity
+</p>
+
+<h2>Layers of Java Security</h2>
+
+<p>
+Java security is implemented in multiple layers:
+<br>
+✔ Class Loader Subsystem<br>
+✔ Bytecode Verifier<br>
+✔ Security Manager<br>
+✔ Access Control Mechanism
+</p>
+
+<h2>Class Loader Subsystem</h2>
+
+<p>
+The Class Loader is responsible for loading class files
+into the Java Virtual Machine.
+</p>
+
+<p>
+Security features of Class Loader:
+<br>
+✔ Prevents loading of unauthorized classes<br>
+✔ Separates trusted and untrusted classes<br>
+✔ Loads classes from trusted sources only
+</p>
+
+<h2>Bytecode Verifier</h2>
+
+<p>
+The Bytecode Verifier checks the bytecode before execution.
+</p>
+
+<p>
+It ensures that:
+<br>
+✔ Code follows Java language rules<br>
+✔ No illegal memory access occurs<br>
+✔ Stack operations are safe<br>
+✔ No data type violations exist
+</p>
+
+<p>
+This prevents malicious code from harming the system.
+</p>
+
+<h2>Security Manager</h2>
+
+<p>
+The Security Manager controls what a Java program
+is allowed to do at runtime.
+</p>
+
+<p>
+It restricts operations such as:
+<br>
+✔ File system access<br>
+✔ Network access<br>
+✔ Creating class loaders<br>
+✔ Accessing system properties
+</p>
+
+<h2>Access Control Mechanism</h2>
+
+<p>
+Java uses access control to protect classes and data.
+</p>
+
+<p>
+Access is controlled using:
+<br>
+✔ Access Modifiers (private, default, protected, public)<br>
+✔ Package-level security
+</p>
+
+<p>
+This ensures proper encapsulation and data hiding.
+</p>
+
+<h2>Sandbox Model</h2>
+
+<p>
+Java uses a <b>Sandbox Security Model</b>.
+</p>
+
+<p>
+In this model:
+<br>
+✔ Untrusted code runs in a restricted environment<br>
+✔ Direct access to system resources is blocked<br>
+✔ Only permitted operations are allowed
+</p>
+
+<p>
+This was especially useful for Java applets.
+</p>
+
+<h2>Role of JVM in Security</h2>
+
+<p>
+The JVM plays a major role in Java security.
+</p>
+
+<p>
+It provides:
+<br>
+✔ Automatic memory management<br>
+✔ No pointer arithmetic<br>
+✔ Runtime checks
+</p>
+
+<p>
+These features reduce common security vulnerabilities.
+</p>
+
+<h2>Java Security APIs</h2>
+
+<p>
+Java provides built-in security APIs for advanced protection.
+</p>
+
+<p>
+These include:
+<br>
+✔ Cryptography APIs<br>
+✔ Authentication and Authorization APIs<br>
+✔ Secure communication (SSL/TLS)
+</p>
+
+<h2>Real-World Use of Java Security</h2>
+
+<p>
+Java security is widely used in:
+<br>
+✔ Banking applications<br>
+✔ Government systems<br>
+✔ Enterprise software<br>
+✔ Secure web applications
+</p>
+
+<h2>Advantages of Java Security Model</h2>
+
+<p>
+✔ Strong protection against malicious code<br>
+✔ Secure execution environment<br>
+✔ Reliable for network applications<br>
+✔ Trusted for enterprise systems
+</p>
+
+<h2>Limitations of Java Security Model</h2>
+
+<p>
+✔ Slight performance overhead due to checks<br>
+✔ Complex configuration for advanced security
+</p>
+
+<h2>Java Security Model (Exam Ready)</h2>
+
+<p>
+The Java Security Model uses class loaders, bytecode verification,
+security manager, and access control mechanisms to provide a secure
+runtime environment that protects systems from unauthorized and
+malicious code execution.
+</p>

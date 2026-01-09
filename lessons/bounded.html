@@ -1,0 +1,55 @@
+<h2>Bounded Types in Java</h2>
+
+<p>
+<b>Bounded Types</b> restrict the types
+that can be used as type arguments.
+</p>
+
+<p>
+They are used to enforce constraints
+on generic types.
+</p>
+
+<hr>
+
+<h2>Upper Bounded Type</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+&lt;T extends Number&gt;
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Test&lt;T extends Number&gt; {<br>
+&nbsp;&nbsp;T value;<br>
+}
+</p>
+
+<hr>
+
+<h2>Why Bounded Types?</h2>
+
+<p>
+✔ Allow only specific class types<br>
+✔ Enable use of specific methods<br>
+✔ Improve type safety
+</p>
+
+<hr>
+
+<h2>Multiple Bounds</h2>
+
+<p>
+Syntax:
+</p>
+
+<p>
+&lt;T extends Class &amp; Interface&gt;
+</p>

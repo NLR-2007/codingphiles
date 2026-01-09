@@ -1,0 +1,145 @@
+<h2>Constructors in Java</h2>
+
+<p>
+A <b>Constructor</b> is a special method
+used to <b>initialize objects</b> in Java.
+</p>
+
+<p>
+It is automatically called when
+an object of a class is created.
+</p>
+
+<hr>
+
+<h2>Key Features of Constructors</h2>
+
+<p>
+✔ Constructor name is same as class name<br>
+✔ Constructor has no return type (not even void)<br>
+✔ Called automatically during object creation<br>
+✔ Used to initialize instance variables
+</p>
+
+<hr>
+
+<h2>Why Do We Need Constructors?</h2>
+
+<p>
+Constructors are used to:
+<br>
+✔ Initialize object data<br>
+✔ Allocate resources<br>
+✔ Ensure object is created in a valid state
+</p>
+
+<hr>
+
+<h2>Example of Constructor</h2>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br><br>
+&nbsp;&nbsp;Student() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id = 101;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Student s = new Student();
+</p>
+
+<p>
+Here, the constructor initializes
+the variable <b>id</b>.
+</p>
+
+<hr>
+
+<h2>Types of Constructors</h2>
+
+<p>
+Java mainly supports:
+<br>
+✔ Default Constructor<br>
+✔ Parameterized Constructor
+</p>
+
+<hr>
+
+<h2>Rules of Constructors</h2>
+
+<p>
+✔ Constructor cannot be static<br>
+✔ Constructor cannot be abstract or final<br>
+✔ Constructors can be overloaded<br>
+✔ Constructor is not inherited
+</p>
+
+<hr>
+
+<h2>Constructor Overloading</h2>
+
+<p>
+Multiple constructors with different
+parameters in the same class
+is called <b>Constructor Overloading</b>.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;Demo() { }<br>
+&nbsp;&nbsp;Demo(int x) { }<br>
+&nbsp;&nbsp;Demo(int x, int y) { }<br>
+}
+</p>
+
+<hr>
+
+<h2>Constructor vs Method</h2>
+
+<p>
+✔ Constructor → Initializes object<br>
+✔ Method → Performs operation<br><br>
+✔ Constructor → Same name as class<br>
+✔ Method → Any valid name<br><br>
+✔ Constructor → No return type<br>
+✔ Method → Has return type
+</p>
+
+<hr>
+
+<h2>Real-Time Example</h2>
+
+<p>
+In real life:
+<br>
+✔ Mobile constructor initializes RAM, OS, Storage<br>
+✔ Car constructor initializes engine, model, color
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Writing return type for constructor<br>
+✔ Forgetting constructor name must match class<br>
+✔ Thinking constructor is optional for initialization
+</p>
+
+<hr>
+
+<h2>Constructors (Interview / Exam Ready)</h2>
+
+<p>
+A constructor is a special method in Java
+used to initialize objects. It has the same
+name as the class, no return type, and is
+automatically called when an object is created.
+</p>

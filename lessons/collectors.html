@@ -1,0 +1,28 @@
+<h2>Collectors in Java</h2>
+
+<p>
+<b>Collectors</b> are used to collect
+stream elements into a result such as
+a List, Set, or Map.
+</p>
+
+<hr>
+
+<h2>Common Collectors</h2>
+
+<p>
+✔ Collectors.toList()<br>
+✔ Collectors.toSet()<br>
+✔ Collectors.toMap()<br>
+✔ Collectors.groupingBy()
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+List<Integer> result = list.stream()<br>
+&nbsp;&nbsp;.filter(n -> n > 10)<br>
+&nbsp;&nbsp;.collect(Collectors.toList());
+</p>

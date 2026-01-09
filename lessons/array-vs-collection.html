@@ -1,0 +1,186 @@
+<h2>Array vs Collection in Java</h2>
+
+<p>
+In Java, <b>Arrays</b> and <b>Collections</b>
+are both used to store multiple values,
+but they are designed for different purposes.
+</p>
+
+<p>
+Understanding the difference between arrays
+and collections is very important for
+writing efficient and industry‑level Java code.
+</p>
+
+<h2>What is an Array?</h2>
+
+<p>
+An <b>Array</b> is a fixed‑size data structure
+that stores elements of the same data type.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+int[] numbers = {10, 20, 30};
+</p>
+
+<h2>What is a Collection?</h2>
+
+<p>
+A <b>Collection</b> is a dynamic data structure
+provided by the Java Collections Framework.
+</p>
+
+<p>
+Collections can grow or shrink in size
+during program execution.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();<br>
+list.add(10);<br>
+list.add(20);
+</p>
+
+<h2>Key Differences Between Array and Collection</h2>
+
+<h3>1. Size</h3>
+
+<p>
+✔ Array → Fixed size<br>
+✔ Collection → Dynamic size
+</p>
+
+<h3>2. Data Type</h3>
+
+<p>
+✔ Array → Can store primitive and objects<br>
+✔ Collection → Stores only objects
+</p>
+
+<h3>3. Performance</h3>
+
+<p>
+✔ Array → Faster access<br>
+✔ Collection → Slightly slower due to overhead
+</p>
+
+<h3>4. Memory</h3>
+
+<p>
+✔ Array → Less memory overhead<br>
+✔ Collection → More memory due to additional features
+</p>
+
+<h3>5. Functionality</h3>
+
+<p>
+✔ Array → Limited methods<br>
+✔ Collection → Rich set of methods (add, remove, search, sort)
+</p>
+
+<h2>Example Comparison</h2>
+
+<h3>Using Array</h3>
+
+<p>
+int[] arr = new int[3];<br>
+arr[0] = 10;<br>
+arr[1] = 20;<br>
+arr[2] = 30;
+</p>
+
+<h3>Using Collection (ArrayList)</h3>
+
+<p>
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();<br>
+list.add(10);<br>
+list.add(20);<br>
+list.add(30);
+</p>
+
+<h2>When to Use Array?</h2>
+
+<p>
+Use arrays when:
+<br>
+✔ Size is fixed<br>
+✔ Performance is critical<br>
+✔ Simple data storage is required
+</p>
+
+<h2>When to Use Collection?</h2>
+
+<p>
+Use collections when:
+<br>
+✔ Size changes dynamically<br>
+✔ Frequent insertion and deletion is needed<br>
+✔ Advanced operations are required
+</p>
+
+<h2>Real‑Time Usage</h2>
+
+<p>
+Arrays are used in:
+<br>
+✔ Low‑level programming<br>
+✔ Performance‑critical applications
+</p>
+
+<p>
+Collections are used in:
+<br>
+✔ Enterprise applications<br>
+✔ Data processing systems<br>
+✔ Real‑world business logic
+</p>
+
+<h2>Advantages of Array</h2>
+
+<p>
+✔ Simple structure<br>
+✔ Fast access<br>
+✔ Less memory usage
+</p>
+
+<h2>Advantages of Collection</h2>
+
+<p>
+✔ Dynamic resizing<br>
+✔ Built‑in methods<br>
+✔ Flexible and powerful
+</p>
+
+<h2>Limitations</h2>
+
+<p>
+Array Limitations:
+<br>
+✔ Fixed size<br>
+✔ No built‑in utilities
+</p>
+
+<p>
+Collection Limitations:
+<br>
+✔ Cannot store primitive types directly<br>
+✔ Slight performance overhead
+</p>
+
+<h2>Array vs Collection (Interview / Exam Ready)</h2>
+
+<p>
+Arrays are fixed‑size data structures
+that can store primitive and object types,
+while Collections are dynamic data structures
+that store objects and provide rich utility methods
+for data manipulation.
+</p>

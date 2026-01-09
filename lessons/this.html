@@ -1,0 +1,184 @@
+<h2>this Keyword in Java</h2>
+
+<p>
+The <b>this</b> keyword in Java is a reference
+variable that refers to the <b>current object</b>.
+</p>
+
+<p>
+It is commonly used inside instance methods
+and constructors.
+</p>
+
+<hr>
+
+<h2>Why Do We Need the this Keyword?</h2>
+
+<p>
+The <b>this</b> keyword is mainly used to:
+<br>
+✔ Differentiate instance variables from local variables<br>
+✔ Refer to the current class object<br>
+✔ Call another constructor of the same class<br>
+✔ Pass the current object as an argument
+</p>
+
+<hr>
+
+<h2>1. this to Differentiate Instance and Local Variables</h2>
+
+<p>
+When instance variables and method/constructor
+parameters have the same name,
+<b>this</b> is used to avoid confusion.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;int id;<br><br>
+&nbsp;&nbsp;Student(int id) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.id = id;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Explanation:
+<br>
+✔ this.id → instance variable<br>
+✔ id → constructor parameter
+</p>
+
+<hr>
+
+<h2>2. this to Refer Current Class Object</h2>
+
+<p>
+The <b>this</b> keyword always points to
+the object that is currently calling the method.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(this);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+Here, <b>this</b> refers to the current object.
+</p>
+
+<hr>
+
+<h2>3. this to Call Another Constructor (Constructor Chaining)</h2>
+
+<p>
+The <b>this()</b> statement is used to call
+another constructor of the same class.
+</p>
+
+<p>
+It must be the <b>first statement</b>
+inside the constructor.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;Demo() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this(10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Default Constructor");<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;Demo(int x) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(x);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>4. this to Pass Current Object as Method Argument</h2>
+
+<p>
+The current object can be passed to
+another method using <b>this</b>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;void display(Test t) { }<br><br>
+&nbsp;&nbsp;void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display(this);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>5. this to Return Current Object</h2>
+
+<p>
+The <b>this</b> keyword can also be used
+to return the current object.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;Demo getObject() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return this;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Rules of this Keyword</h2>
+
+<p>
+✔ this cannot be used in static context<br>
+✔ this refers only to instance members<br>
+✔ this() must be the first statement in constructor
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Using this in static methods<br>
+✔ Forgetting this when variable names are same<br>
+✔ Calling this() not as first statement
+</p>
+
+<hr>
+
+<h2>Real-Time Example</h2>
+
+<p>
+✔ BankAccount → this.balance = balance<br>
+✔ Student → this.id = id<br>
+✔ Employee → this.salary = salary
+</p>
+
+<hr>
+
+<h2>this Keyword (Interview / Exam Ready)</h2>
+
+<p>
+The <b>this</b> keyword in Java is a reference
+to the current object. It is used to differentiate
+instance variables from local variables, call
+constructors of the same class, and pass or return
+the current object.
+</p>

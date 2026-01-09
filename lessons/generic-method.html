@@ -1,0 +1,47 @@
+<h2>Generic Methods in Java</h2>
+
+<p>
+A <b>Generic Method</b> is a method that
+introduces its own type parameter.
+</p>
+
+<p>
+It can be used in both generic and
+non‑generic classes.
+</p>
+
+<hr>
+
+<h2>Syntax</h2>
+
+<p>
+&lt;T&gt; returnType methodName(T param) {<br>
+&nbsp;&nbsp;// code<br>
+}
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;static &lt;T&gt; void display(T value) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(value);<br>
+&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display(10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display("Java");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Key Points</h2>
+
+<p>
+✔ Type parameter before return type<br>
+✔ Improves method flexibility<br>
+✔ Avoids method overloading
+</p>

@@ -1,0 +1,17 @@
+<h2>FileOutputStream in Java</h2>
+
+<p>
+<b>FileOutputStream</b> is used to write
+<b>binary data</b> to a file.
+</p>
+
+<hr>
+
+<h2>Example</h2>
+
+<p>
+FileOutputStream fos = new FileOutputStream("data.txt");<br>
+String msg = "Hello Java";<br>
+fos.write(msg.getBytes());<br>
+fos.close();
+</p>

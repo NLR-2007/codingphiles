@@ -1,0 +1,224 @@
+<h2>public Access Modifier in Java</h2>
+
+<p>
+The <b>public</b> access modifier allows
+class members to be accessed from
+<b>anywhere</b>.
+</p>
+
+<p>
+It is the <b>least restrictive</b>
+access modifier in Java.
+</p>
+
+<hr>
+
+<h2>What is public?</h2>
+
+<p>
+When a class member is declared as <b>public</b>,
+it is accessible:
+</p>
+
+<p>
+✔ Within the same class<br>
+✔ Within the same package<br>
+✔ From subclasses (same or different package)<br>
+✔ From any other class
+</p>
+
+<hr>
+
+<h2>Where Can public Be Used?</h2>
+
+<p>
+The <b>public</b> access modifier can be applied to:
+</p>
+
+<p>
+✔ Classes<br>
+✔ Variables<br>
+✔ Methods<br>
+✔ Constructors
+</p>
+
+<hr>
+
+<h2>public Class</h2>
+
+<p>
+A <b>public class</b> can be accessed
+from anywhere in the application.
+</p>
+
+<h3>Example</h3>
+
+<p>
+public class Test {<br>
+&nbsp;&nbsp;public void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Public Class");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ File name must match public class name
+</p>
+
+<hr>
+
+<h2>public Variables</h2>
+
+<p>
+A <b>public variable</b> can be accessed
+directly from any class.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Student {<br>
+&nbsp;&nbsp;public int id;<br>
+}
+</p>
+
+<p>
+Student s = new Student();<br>
+s.id = 10;
+</p>
+
+<p>
+⚠ Not recommended due to security issues
+</p>
+
+<hr>
+
+<h2>public Methods</h2>
+
+<p>
+A <b>public method</b> can be called
+from anywhere.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;public void display() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Public Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>public Constructor</h2>
+
+<p>
+A <b>public constructor</b> allows
+object creation from anywhere.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Sample {<br>
+&nbsp;&nbsp;public Sample() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Object Created");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>public and Packages</h2>
+
+<p>
+Public members are accessible
+<b>across packages</b>.
+</p>
+
+<p>
+✔ Class must be public<br>
+✔ Member must be public
+</p>
+
+<hr>
+
+<h2>When to Use public?</h2>
+
+<p>
+Use <b>public</b> when:
+</p>
+
+<p>
+✔ Creating APIs<br>
+✔ Writing library methods<br>
+✔ Defining entry points (main method)<br>
+✔ Exposing functionality to other packages
+</p>
+
+<hr>
+
+<h2>public vs Other Access Modifiers</h2>
+
+<p>
+✔ private → Same class only<br>
+✔ default → Same package only<br>
+✔ protected → Same package + subclass<br>
+✔ <b>public → Anywhere</b>
+</p>
+
+<hr>
+
+<h2>Advantages of public</h2>
+
+<p>
+✔ Maximum accessibility<br>
+✔ Supports modular programming<br>
+✔ Essential for reusable libraries
+</p>
+
+<hr>
+
+<h2>Disadvantages of public</h2>
+
+<p>
+✔ Less security<br>
+✔ Breaks encapsulation if misused<br>
+✔ Can expose internal implementation
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ main() method<br>
+✔ Public APIs (Collections, Math)<br>
+✔ Framework service methods
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Making variables public instead of methods<br>
+✔ Overusing public access<br>
+✔ Ignoring encapsulation principles
+</p>
+
+<hr>
+
+<h2>public Access Modifier (Interview / Exam Ready)</h2>
+
+<p>
+The <b>public</b> access modifier in Java
+allows access to classes, methods, variables,
+and constructors from anywhere. It is the
+least restrictive modifier and is commonly
+used for APIs, libraries, and entry points,
+but should be used carefully to maintain
+encapsulation and security.
+</p>

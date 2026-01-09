@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy | CodingPhiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       RESET
+    ================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background: aliceblue;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===============================
+       HEADER
+    ================================ */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 10px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .brand h1 {
+      font-family: "Jersey 10", cursive;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .brand h1 span {
+      color: #6a0dad;
+    }
+
+    .brand p {
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* HEADER LINKS (isolated) */
+    .header-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #6a0dad;
+    }
+
+    .header-links a:hover {
+      color: #4b0082;
+    }
+
+    /* TOGGLE */
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: #6a0dad;
+    }
+
+    /* ===============================
+       MAIN CONTENT
+    ================================ */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    main h2 {
+      color: #6a0dad;
+      margin-bottom: 6px;
+    }
+
+    main h3 {
+      margin-top: 22px;
+      color: #4b0082;
+    }
+
+    main p, main li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 22px;
+    }
+
+    /* ===============================
+       FOOTER (NO NAV TAG)
+    ================================ */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e6e6e6;
+      padding: 40px 16px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .footer-logo h2 {
+      font-family: "Jersey 10", cursive;
+      font-size: 30px;
+      margin-bottom: 4px;
+    }
+
+    .footer-logo h2 span {
+      color: #6a0dad;
+    }
+
+    .footer-logo p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER LINKS — FIXED */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .footer-links a:hover {
+      color: #6a0dad;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* ===============================
+       MOBILE
+    ================================ */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .header-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: transparent;
+        border-top: 1px solid #e6e6e6;
+      }
+
+      .header-links.active {
+        display: flex;
+      }
+
+      .header-links a {
+        padding: 14px;
+        text-align: center;
+      }
+       .header-links a:hover{
+        color: white;
+        background-color: #4b0082;
+        /* width: fit-content; */
+       }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <h1>Coding<span>Philes</span></h1>
+    <p>Where Philes meet Coding</p>
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <div class="header-links" id="headerLinks">
+    <a href="index.html">Home</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="compiler.html">Compiler</a>
+    <a href="quiz.html">Quiz</a>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main>
+  <h2>Privacy Policy</h2>
+  <p><strong>Last updated:</strong> January 2026</p>
+
+  <h3>1. Information We Collect</h3>
+  <ul>
+    <li>Name and email (if provided)</li>
+    <li>Learning activity & usage data</li>
+    <li>Device & browser information</li>
+  </ul>
+
+  <h3>2. How We Use Information</h3>
+  <p>
+    Your information is used only to provide educational services,
+    improve platform experience, and maintain security.
+  </p>
+
+  <h3>3. Cookies</h3>
+  <p>
+    CodingPhiles may use cookies for analytics and performance.
+    You can disable cookies via browser settings.
+  </p>
+
+  <h3>4. Data Protection</h3>
+  <p>
+    We apply reasonable security measures, but no online system
+    can guarantee complete protection.
+  </p>
+
+  <h3>5. Third-Party Tools</h3>
+  <p>
+    CodingPhiles may link to third-party services.
+    We are not responsible for their privacy practices.
+  </p>
+
+  <h3>6. Children’s Privacy</h3>
+  <p>
+    Users under 13 should use the platform with parental guidance.
+  </p>
+
+  <h3>7. Policy Updates</h3>
+  <p>
+    This policy may be updated periodically.
+    Continued use means acceptance.
+  </p>
+
+  <h3>8. Contact</h3>
+  <p>Email: support@codingphiles.in</p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-logo">
+      <h2>Coding<span>Philes</span></h2>
+      <p>Where Philes meet Coding</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2025 CodingPhiles. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menuToggle");
+  const links = document.getElementById("headerLinks");
+
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("active");
+    toggle.textContent = links.classList.contains("active") ? "✖" : "☰";
+  });
+</script>
+
+</body>
+</html>

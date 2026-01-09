@@ -1,0 +1,231 @@
+<h2>Byte Streams in Java</h2>
+
+<p>
+<b>Byte Streams</b> in Java are used to perform
+<b>input and output operations</b> on
+<b>binary data</b> such as images, audio,
+video, and files.
+</p>
+
+<p>
+They work with <b>8-bit bytes</b>.
+</p>
+
+<hr>
+
+<h2>What are Streams?</h2>
+
+<p>
+A <b>stream</b> is a sequence of data.
+</p>
+
+<p>
+✔ Input Stream → Reads data<br>
+✔ Output Stream → Writes data
+</p>
+
+<hr>
+
+<h2>Types of Streams in Java</h2>
+
+<p>
+Java provides two main types of streams:
+</p>
+
+<p>
+✔ Byte Streams<br>
+✔ Character Streams
+</p>
+
+<p>
+Byte Streams → Binary data<br>
+Character Streams → Text data
+</p>
+
+<hr>
+
+<h2>Byte Stream Classes</h2>
+
+<p>
+Byte Streams are divided into:
+</p>
+
+<p>
+✔ InputStream (abstract class)<br>
+✔ OutputStream (abstract class)
+</p>
+
+<hr>
+
+<h2>InputStream</h2>
+
+<p>
+<b>InputStream</b> is used to read
+byte data from a source.
+</p>
+
+<p>
+Common subclasses:
+</p>
+
+<p>
+✔ FileInputStream<br>
+✔ BufferedInputStream<br>
+✔ DataInputStream
+</p>
+
+<hr>
+
+<h2>OutputStream</h2>
+
+<p>
+<b>OutputStream</b> is used to write
+byte data to a destination.
+</p>
+
+<p>
+Common subclasses:
+</p>
+
+<p>
+✔ FileOutputStream<br>
+✔ BufferedOutputStream<br>
+✔ DataOutputStream
+</p>
+
+<hr>
+
+<h2>FileInputStream</h2>
+
+<p>
+Used to read data from a file
+byte by byte.
+</p>
+
+<h3>Example</h3>
+
+<p>
+import java.io.*;<br><br>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) throws Exception {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileInputStream fis = new FileInputStream("data.txt");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while ((i = fis.read()) != -1) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print((char) i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fis.close();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>FileOutputStream</h2>
+
+<p>
+Used to write byte data to a file.
+</p>
+
+<h3>Example</h3>
+
+<p>
+import java.io.*;<br><br>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) throws Exception {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileOutputStream fos = new FileOutputStream("data.txt");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String msg = "Hello Java";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;byte[] b = msg.getBytes();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fos.write(b);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fos.close();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Buffered Byte Streams</h2>
+
+<p>
+Buffered streams improve performance
+by reducing disk access.
+</p>
+
+<p>
+✔ BufferedInputStream<br>
+✔ BufferedOutputStream
+</p>
+
+<hr>
+
+<h2>BufferedInputStream Example</h2>
+
+<p>
+BufferedInputStream bis =
+new BufferedInputStream(new FileInputStream("data.txt"));
+</p>
+
+<hr>
+
+<h2>Advantages of Byte Streams</h2>
+
+<p>
+✔ Can handle all file types<br>
+✔ Suitable for binary data<br>
+✔ Low-level I/O operations
+</p>
+
+<hr>
+
+<h2>Limitations</h2>
+
+<p>
+✔ Not suitable for text processing<br>
+✔ Character encoding not handled
+</p>
+
+<hr>
+
+<h2>Byte Streams vs Character Streams</h2>
+
+<p>
+✔ Byte Streams → Binary data<br>
+✔ Character Streams → Text data<br><br>
+
+✔ Byte Streams → 8-bit<br>
+✔ Character Streams → 16-bit Unicode
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Image file reading/writing<br>
+✔ Audio and video files<br>
+✔ File copy operations<br>
+✔ Network data transfer
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Forgetting to close streams<br>
+✔ Using byte streams for text data<br>
+✔ Ignoring buffer for large files
+</p>
+
+<hr>
+
+<h2>Byte Streams (Interview / Exam Ready)</h2>
+
+<p>
+Byte streams in Java are used to perform
+input and output operations on binary data.
+They are based on InputStream and OutputStream
+classes and are suitable for handling files
+such as images, audio, and videos. Common
+classes include FileInputStream and
+FileOutputStream.
+</p>

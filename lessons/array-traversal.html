@@ -1,0 +1,186 @@
+<h2>Array Traversal in Java</h2>
+
+<p>
+<b>Array Traversal</b> means accessing
+and processing each element of an array
+one by one.
+</p>
+
+<p>
+Traversal is one of the most common operations
+performed on arrays in Java.
+</p>
+
+<h2>Why is Array Traversal Important?</h2>
+
+<p>
+Array traversal is required when we need to:
+</p>
+
+<p>
+✔ Display all elements<br>
+✔ Perform calculations (sum, average, max, min)<br>
+✔ Search for an element<br>
+✔ Modify array values
+</p>
+
+<h2>Traversing a Single Dimensional Array</h2>
+
+<p>
+There are two main ways to traverse
+a 1D array in Java.
+</p>
+
+<h3>1. Using for Loop</h3>
+
+<p>
+The traditional for loop is commonly used
+when index values are required.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+int[] marks = {80, 85, 90, 75};<br>
+for(int i = 0; i < marks.length; i++) {<br>
+&nbsp;&nbsp;System.out.println(marks[i]);<br>
+}
+</p>
+
+<h3>Explanation</h3>
+
+<p>
+✔ Loop starts from index 0<br>
+✔ Continues until length - 1<br>
+✔ Each element is accessed using index
+</p>
+
+<h3>2. Using Enhanced for Loop (for-each)</h3>
+
+<p>
+The enhanced for loop is used
+when index values are not required.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+for(int m : marks) {<br>
+&nbsp;&nbsp;System.out.println(m);<br>
+}
+</p>
+
+<h3>Difference Between for and Enhanced for</h3>
+
+<p>
+✔ for loop → index based access<br>
+✔ enhanced for → value based access<br>
+✔ enhanced for is simpler and cleaner
+</p>
+
+<h2>Traversing a Two Dimensional Array</h2>
+
+<p>
+A 2D array requires nested loops
+for traversal.
+</p>
+
+<h3>Using Nested for Loop</h3>
+
+<p>
+Example:
+</p>
+
+<p>
+int[][] matrix = {<br>
+&nbsp;&nbsp;{1, 2, 3},<br>
+&nbsp;&nbsp;{4, 5, 6}<br>
+};<br><br>
+
+for(int i = 0; i < matrix.length; i++) {<br>
+&nbsp;&nbsp;for(int j = 0; j < matrix[i].length; j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(matrix[i][j] + " ");<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;System.out.println();<br>
+}
+</p>
+
+<h2>Using while Loop for Traversal</h2>
+
+<p>
+Arrays can also be traversed
+using a while loop.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+int i = 0;<br>
+while(i < marks.length) {<br>
+&nbsp;&nbsp;System.out.println(marks[i]);<br>
+&nbsp;&nbsp;i++;<br>
+}
+</p>
+
+<h2>Using do-while Loop for Traversal</h2>
+
+<p>
+The do-while loop ensures
+the array is traversed at least once.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+int i = 0;<br>
+do {<br>
+&nbsp;&nbsp;System.out.println(marks[i]);<br>
+&nbsp;&nbsp;i++;<br>
+} while(i < marks.length);
+</p>
+
+<h2>Common Mistakes During Array Traversal</h2>
+
+<p>
+✔ Using <= instead of < in loop condition<br>
+✔ Forgetting array length<br>
+✔ Accessing invalid index values
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+Array traversal is used in:
+</p>
+
+<p>
+✔ Calculating total and average marks<br>
+✔ Finding maximum and minimum values<br>
+✔ Searching elements<br>
+✔ Displaying data in reports
+</p>
+
+<h2>Advantages of Proper Array Traversal</h2>
+
+<p>
+✔ Prevents runtime errors<br>
+✔ Improves program reliability<br>
+✔ Makes data processing easy
+</p>
+
+<h2>Array Traversal (Interview / Exam Ready)</h2>
+
+<p>
+Array traversal is the process of
+accessing each element of an array
+sequentially using loops such as
+for, while, do-while, or enhanced for loop.
+</p>

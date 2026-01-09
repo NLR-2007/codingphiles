@@ -1,0 +1,263 @@
+<h2>Inter-Thread Communication in Java</h2>
+
+<p>
+<b>Inter‑Thread Communication</b> in Java
+allows multiple threads to <b>communicate
+and coordinate</b> with each other while
+working on shared resources.
+</p>
+
+<p>
+It is mainly used in
+<b>producer–consumer problems</b>.
+</p>
+
+<hr>
+
+<h2>Why Inter-Thread Communication?</h2>
+
+<p>
+When threads depend on each other’s work,
+they need a way to:
+</p>
+
+<p>
+✔ Wait for a condition<br>
+✔ Notify other threads when the condition changes
+</p>
+
+<p>
+This avoids:
+<br>
+✔ Busy waiting<br>
+✔ CPU wastage<br>
+✔ Data inconsistency
+</p>
+
+<hr>
+
+<h2>How Java Supports Inter-Thread Communication?</h2>
+
+<p>
+Java provides inter‑thread communication
+using methods of the <b>Object</b> class:
+</p>
+
+<p>
+✔ wait()<br>
+✔ notify()<br>
+✔ notifyAll()
+</p>
+
+<p>
+⚠ These methods must be used
+<b>inside synchronized context</b>.
+</p>
+
+<hr>
+
+<h2>wait()</h2>
+
+<p>
+The <b>wait()</b> method causes the current
+thread to:
+</p>
+
+<p>
+✔ Release the object lock<br>
+✔ Go into waiting state<br>
+✔ Wait until another thread notifies it
+</p>
+
+<p>
+Syntax:
+</p>
+
+<p>
+obj.wait();
+</p>
+
+<hr>
+
+<h2>notify()</h2>
+
+<p>
+The <b>notify()</b> method wakes up
+<b>one waiting thread</b> on the same object.
+</p>
+
+<p>
+Syntax:
+</p>
+
+<p>
+obj.notify();
+</p>
+
+<hr>
+
+<h2>notifyAll()</h2>
+
+<p>
+The <b>notifyAll()</b> method wakes up
+<b>all waiting threads</b> on the object.
+</p>
+
+<p>
+Syntax:
+</p>
+
+<p>
+obj.notifyAll();
+</p>
+
+<hr>
+
+<h2>Important Rules</h2>
+
+<p>
+✔ wait(), notify(), notifyAll() must be called
+inside synchronized block or method<br>
+✔ They work on object-level lock<br>
+✔ Calling them without synchronization causes
+IllegalMonitorStateException
+</p>
+
+<hr>
+
+<h2>Producer–Consumer Problem</h2>
+
+<p>
+This is the most common example of
+inter‑thread communication.
+</p>
+
+<p>
+✔ Producer → Produces data<br>
+✔ Consumer → Consumes data<br>
+✔ Both share a common resource
+</p>
+
+<hr>
+
+<h2>Example: Producer–Consumer</h2>
+
+<p>
+class SharedResource {<br>
+&nbsp;&nbsp;int data;<br>
+&nbsp;&nbsp;boolean available = false;<br><br>
+
+&nbsp;&nbsp;synchronized void produce(int value) throws InterruptedException {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while (available) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data = value;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;available = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;notify();<br>
+&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;synchronized int consume() throws InterruptedException {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while (!available) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;available = false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;notify();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return data;<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Flow of Inter-Thread Communication</h2>
+
+<p>
+✔ Thread enters synchronized block<br>
+✔ Checks condition<br>
+✔ If condition not satisfied → wait()<br>
+✔ Releases lock and waits<br>
+✔ Another thread calls notify()<br>
+✔ Waiting thread resumes execution
+</p>
+
+<hr>
+
+<h2>wait() vs sleep()</h2>
+
+<p>
+✔ wait() → Releases lock<br>
+✔ sleep() → Does NOT release lock<br><br>
+
+✔ wait() → Used for communication<br>
+✔ sleep() → Used for delay
+</p>
+
+<hr>
+
+<h2>notify() vs notifyAll()</h2>
+
+<p>
+✔ notify() → Wakes one thread<br>
+✔ notifyAll() → Wakes all waiting threads
+</p>
+
+<p>
+✔ notifyAll() is safer when multiple
+threads are waiting
+</p>
+
+<hr>
+
+<h2>Advantages</h2>
+
+<p>
+✔ Efficient CPU usage<br>
+✔ Proper coordination between threads<br>
+✔ Avoids busy waiting
+</p>
+
+<hr>
+
+<h2>Disadvantages</h2>
+
+<p>
+✔ Complex to implement<br>
+✔ Risk of deadlock if misused<br>
+✔ Harder debugging
+</p>
+
+<hr>
+
+<h2>Real‑Time Examples</h2>
+
+<p>
+✔ Producer–Consumer queues<br>
+✔ Thread pools<br>
+✔ Messaging systems<br>
+✔ Background task coordination
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Calling wait() without synchronized<br>
+✔ Using if instead of while for condition check<br>
+✔ Forgetting notify()/notifyAll()
+</p>
+
+<hr>
+
+<h2>Inter-Thread Communication (Interview / Exam Ready)</h2>
+
+<p>
+Inter‑thread communication in Java allows
+threads to coordinate their actions using
+wait(), notify(), and notifyAll() methods.
+These methods are defined in the Object class
+and must be used inside synchronized blocks.
+It is commonly used in producer–consumer
+scenarios to avoid busy waiting and ensure
+efficient CPU utilization.
+</p>

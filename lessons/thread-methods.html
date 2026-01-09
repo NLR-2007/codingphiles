@@ -1,0 +1,269 @@
+<h2>Thread Methods in Java</h2>
+
+<p>
+The <b>Thread</b> class provides several
+<b>methods</b> to control the execution,
+behavior, and life cycle of threads.
+</p>
+
+<p>
+These methods are essential for
+<b>multithreading control</b>.
+</p>
+
+<hr>
+
+<h2>Commonly Used Thread Methods</h2>
+
+<p>
+✔ start()<br>
+✔ run()<br>
+✔ sleep()<br>
+✔ join()<br>
+✔ yield()<br>
+✔ setName()<br>
+✔ getName()<br>
+✔ setPriority()<br>
+✔ getPriority()<br>
+✔ isAlive()<br>
+✔ currentThread()
+</p>
+
+<hr>
+
+<h2>start()</h2>
+
+<p>
+The <b>start()</b> method begins execution
+of a new thread.
+</p>
+
+<p>
+✔ Creates a new thread<br>
+✔ Internally calls run()
+</p>
+
+<p>
+t.start();
+</p>
+
+<p>
+⚠ start() can be called only once
+</p>
+
+<hr>
+
+<h2>run()</h2>
+
+<p>
+The <b>run()</b> method contains the
+code executed by the thread.
+</p>
+
+<p>
+✔ Executed by JVM when start() is called<br>
+✔ Calling run() directly does NOT create new thread
+</p>
+
+<hr>
+
+<h2>sleep()</h2>
+
+<p>
+The <b>sleep()</b> method pauses the
+current thread for a specified time.
+</p>
+
+<p>
+Syntax:
+</p>
+
+<p>
+Thread.sleep(milliseconds);
+</p>
+
+<h3>Example</h3>
+
+<p>
+Thread.sleep(1000); // pauses for 1 second
+</p>
+
+<p>
+✔ Throws InterruptedException<br>
+✔ Thread goes to Blocked state
+</p>
+
+<hr>
+
+<h2>join()</h2>
+
+<p>
+The <b>join()</b> method makes one thread
+wait for another thread to finish.
+</p>
+
+<h3>Example</h3>
+
+<p>
+t1.join(); // main thread waits for t1
+</p>
+
+<p>
+✔ Used for dependency control<br>
+✔ Throws InterruptedException
+</p>
+
+<hr>
+
+<h2>yield()</h2>
+
+<p>
+The <b>yield()</b> method pauses the
+current thread and gives chance to
+other threads of same priority.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+Thread.yield();
+</p>
+
+<p>
+✔ Suggestion to scheduler<br>
+✔ No guarantee of execution order
+</p>
+
+<hr>
+
+<h2>setName() and getName()</h2>
+
+<p>
+Used to set or get the name of a thread.
+</p>
+
+<p>
+t.setName("WorkerThread");<br>
+String name = t.getName();
+</p>
+
+<hr>
+
+<h2>setPriority() and getPriority()</h2>
+
+<p>
+Thread priority determines execution preference.
+</p>
+
+<p>
+Priority range:
+<br>
+✔ MIN_PRIORITY = 1<br>
+✔ NORM_PRIORITY = 5<br>
+✔ MAX_PRIORITY = 10
+</p>
+
+<p>
+t.setPriority(Thread.MAX_PRIORITY);
+</p>
+
+<p>
+⚠ Priority depends on OS and JVM
+</p>
+
+<hr>
+
+<h2>isAlive()</h2>
+
+<p>
+Checks whether a thread is alive.
+</p>
+
+<p>
+✔ true → thread is running or ready<br>
+✔ false → thread is terminated
+</p>
+
+<p>
+t.isAlive();
+</p>
+
+<hr>
+
+<h2>currentThread()</h2>
+
+<p>
+Returns reference to the currently
+executing thread.
+</p>
+
+<p>
+Thread t = Thread.currentThread();
+</p>
+
+<hr>
+
+<h2>Deprecated Thread Methods</h2>
+
+<p>
+The following methods are deprecated
+due to security issues:
+</p>
+
+<p>
+✖ stop()<br>
+✖ suspend()<br>
+✖ resume()
+</p>
+
+<p>
+⚠ Do NOT use these methods
+</p>
+
+<hr>
+
+<h2>Thread Methods and Life Cycle</h2>
+
+<p>
+✔ start() → New → Runnable<br>
+✔ sleep() → Running → Blocked<br>
+✔ join() → Running → Waiting<br>
+✔ run() end → Terminated
+</p>
+
+<hr>
+
+<h2>Real‑Time Examples</h2>
+
+<p>
+✔ sleep() → Game animation delay<br>
+✔ join() → Wait for file download<br>
+✔ yield() → CPU sharing<br>
+✔ isAlive() → Thread monitoring
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Calling run() instead of start()<br>
+✔ Ignoring InterruptedException<br>
+✔ Assuming thread priority guarantees order
+</p>
+
+<hr>
+
+<h2>Thread Methods (Interview / Exam Ready)</h2>
+
+<p>
+Thread methods in Java control thread
+execution and behavior. Common methods
+include start(), run(), sleep(), join(),
+yield(), isAlive(), and currentThread().
+These methods help manage thread life
+cycle, synchronization, and execution
+flow in multithreaded applications.
+</p>

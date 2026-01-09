@@ -1,0 +1,186 @@
+
+
+<h2>Heap Memory in Java</h2>
+
+<p>
+<b>Heap Memory</b> is a runtime memory area in Java
+used to store <b>objects</b> and <b>instance variables</b>.
+</p>
+
+<p>
+Heap memory is created when the <b>JVM starts</b>
+and is shared among all threads.
+</p>
+
+<!-- Optional Image -->
+<!-- <img src="heap-memory-diagram.png" alt="Java Heap Memory Diagram"> -->
+
+<h2>Why do we need Heap Memory?</h2>
+
+<p>
+Heap memory is required to store objects dynamically
+so they can be accessed throughout the program.
+</p>
+
+<p>
+Without heap memory:
+<br>
+✔ Java cannot create objects dynamically<br>
+✔ Objects cannot be shared between methods<br>
+✔ Garbage collection is not possible
+</p>
+
+<h2>How Objects are Stored in Heap Memory</h2>
+
+<p>
+Whenever we use the <b>new</b> keyword,
+memory is allocated in the heap.
+</p>
+
+<p>
+Example:
+<br>
+Student s = new Student();
+</p>
+
+<p>
+👉 The object <b>Student</b> is stored in heap memory<br>
+👉 Reference variable <b>s</b> is stored in stack memory
+</p>
+
+<h2>Characteristics of Heap Memory</h2>
+
+<p>
+✔ Stores objects and instance variables<br>
+✔ Shared among all threads<br>
+✔ Larger than stack memory<br>
+✔ Slower access compared to stack<br>
+✔ Managed by Garbage Collector
+</p>
+
+<h2>Heap Memory Structure</h2>
+
+<p>
+Heap memory is divided into:
+</p>
+
+<p>
+✔ Young Generation<br>
+✔ Old Generation<br>
+✔ Metaspace (stores class metadata)
+</p>
+
+<h3>Young Generation</h3>
+
+<p>
+Stores newly created objects.
+</p>
+
+<p>
+It consists of:
+<br>
+✔ Eden Space<br>
+✔ Survivor Spaces (S0 and S1)
+</p>
+
+<h3>Old Generation</h3>
+
+<p>
+Stores long-living objects
+that survived multiple garbage collections.
+</p>
+
+<h2>Garbage Collection in Heap Memory</h2>
+
+<p>
+<b>Garbage Collector</b> automatically removes
+objects that are no longer referenced.
+</p>
+
+<p>
+Example:
+<br>
+Student s = new Student();<br>
+s = null;
+</p>
+
+<p>
+👉 The object becomes eligible for garbage collection
+</p>
+
+<h2>Heap Memory Example Program</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;int x = 10;<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test t = new Test();<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Object <b>t</b> is stored in heap memory<br>
+✔ Variable <b>x</b> is part of the object<br>
+✔ Reference <b>t</b> is stored in stack memory
+</p>
+
+<h2>Heap Memory vs Stack Memory</h2>
+
+<p>
+<b>Heap Memory:</b><br>
+✔ Stores objects<br>
+✔ Dynamic allocation<br>
+✔ Slower access
+</p>
+
+<p>
+<b>Stack Memory:</b><br>
+✔ Stores method calls and references<br>
+✔ Fixed size<br>
+✔ Faster access
+</p>
+
+<h2>Advantages of Heap Memory</h2>
+
+<p>
+✔ Supports dynamic memory allocation<br>
+✔ Objects can be shared across methods<br>
+✔ Automatic memory management
+</p>
+
+<h2>Limitations of Heap Memory</h2>
+
+<p>
+✔ Slower than stack memory<br>
+✔ Memory leaks if objects are not handled properly<br>
+✔ Uses more memory
+</p>
+
+<h2>Real-Time Use Cases</h2>
+
+<p>
+Heap memory is used in:
+<br>
+✔ Creating objects (Student, Employee, Product)<br>
+✔ Storing collections (ArrayList, HashMap)<br>
+✔ Large-scale applications<br>
+✔ Web and enterprise systems
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Creating unnecessary objects<br>
+✔ Holding unused object references<br>
+✔ Ignoring memory leaks
+</p>
+
+<h2>Heap Memory (Interview / Exam Ready)</h2>
+
+<p>
+Heap memory in Java is a runtime memory area
+used to store objects and instance variables.
+It is shared among all threads and managed
+automatically by the garbage collector.
+</p>

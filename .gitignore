@@ -1,0 +1,12 @@
+# Firebase logs
+firebase-debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (if any later)
+node_modules/
+
+# Environment secrets (future-proof)
+.env

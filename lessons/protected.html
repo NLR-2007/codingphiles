@@ -1,0 +1,203 @@
+<h2>protected Access Modifier in Java</h2>
+
+<p>
+The <b>protected</b> access modifier allows
+class members to be accessed within the
+<b>same package</b> and by <b>subclasses</b>
+even if they are in different packages.
+</p>
+
+<hr>
+
+<h2>What is protected?</h2>
+
+<p>
+The <b>protected</b> access modifier is
+less restrictive than <b>private</b> and <b>default</b>,
+but more restrictive than <b>public</b>.
+</p>
+
+<p>
+It is mainly used to support
+<b>inheritance</b>.
+</p>
+
+<hr>
+
+<h2>Where Can protected Be Used?</h2>
+
+<p>
+The <b>protected</b> access modifier can be applied to:
+</p>
+
+<p>
+✔ Variables<br>
+✔ Methods<br>
+✔ Constructors
+</p>
+
+<p>
+Note:
+<br>
+Classes themselves cannot be protected.
+</p>
+
+<hr>
+
+<h2>protected Variables</h2>
+
+<p>
+A variable declared as protected can be accessed:
+</p>
+
+<p>
+✔ Within the same package<br>
+✔ In subclasses outside the package
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Parent {<br>
+&nbsp;&nbsp;protected int data = 100;<br>
+}
+</p>
+
+<hr>
+
+<h2>Accessing protected Variable (Same Package)</h2>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parent p = new Parent();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(p.data);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Accessing protected Variable (Different Package)</h2>
+
+<p>
+package pack2;<br><br>
+import pack1.Parent;<br><br>
+class Child extends Parent {<br>
+&nbsp;&nbsp;void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(data);<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+✔ Access allowed because Child extends Parent
+</p>
+
+<hr>
+
+<h2>protected Methods</h2>
+
+<p>
+Protected methods follow the same access rules
+as protected variables.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Parent {<br>
+&nbsp;&nbsp;protected void display() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Protected Method");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>protected Constructor</h2>
+
+<p>
+A <b>protected constructor</b> can be used
+to restrict object creation while allowing
+inheritance.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Base {<br>
+&nbsp;&nbsp;protected Base() { }<br>
+}
+</p>
+
+<p>
+✔ Object creation allowed in subclasses<br>
+✖ Not allowed from unrelated classes
+</p>
+
+<hr>
+
+<h2>protected and Inheritance</h2>
+
+<p>
+Protected members are inherited by child classes.
+</p>
+
+<p>
+✔ Accessible using inheritance<br>
+✔ Supports code reuse
+</p>
+
+<hr>
+
+<h2>protected vs Other Access Modifiers</h2>
+
+<p>
+✔ private → Same class only<br>
+✔ default → Same package only<br>
+✔ protected → Same package + subclass<br>
+✔ public → Anywhere
+</p>
+
+<hr>
+
+<h2>Advantages of protected</h2>
+
+<p>
+✔ Supports inheritance<br>
+✔ Provides controlled access<br>
+✔ Helps design extensible classes
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Framework base classes (Spring, Hibernate)<br>
+✔ Template method design pattern<br>
+✔ Shared logic in parent classes
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Trying to access protected members without inheritance<br>
+✔ Assuming protected is same as default<br>
+✔ Using protected for unrelated classes
+</p>
+
+<hr>
+
+<h2>protected Access Modifier (Interview / Exam Ready)</h2>
+
+<p>
+The <b>protected</b> access modifier in Java
+allows access to class members within the
+same package and in subclasses outside the
+package. It is mainly used to support
+inheritance and controlled extensibility.
+</p>

@@ -1,0 +1,227 @@
+<h2>try-catch in Java</h2>
+
+<p>
+The <b>try-catch</b> block in Java is used
+to handle <b>runtime exceptions</b> and prevent
+program termination.
+</p>
+
+<p>
+It allows a program to handle errors
+<b>gracefully</b> and continue execution.
+</p>
+
+<hr>
+
+<h2>What is try Block?</h2>
+
+<p>
+The <b>try</b> block contains code that
+may cause an exception.
+</p>
+
+<p>
+✔ Risky code is placed inside try block<br>
+✔ Cannot exist alone without catch or finally
+</p>
+
+<h3>Syntax</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;// code that may cause exception<br>
+}
+</p>
+
+<hr>
+
+<h2>What is catch Block?</h2>
+
+<p>
+The <b>catch</b> block handles the exception
+that occurs in the try block.
+</p>
+
+<p>
+✔ Executes only if exception occurs<br>
+✔ Prevents program crash
+</p>
+
+<h3>Syntax</h3>
+
+<p>
+catch(ExceptionType e) {<br>
+&nbsp;&nbsp;// handling code<br>
+}
+</p>
+
+<hr>
+
+<h2>Basic try-catch Example</h2>
+
+<p>
+class Demo {<br>
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = 10 / 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Cannot divide by zero");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Program continues");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Flow of try-catch</h2>
+
+<p>
+✔ If no exception → try block executes completely<br>
+✔ If exception occurs → control moves to catch block<br>
+✔ After catch → normal program flow continues
+</p>
+
+<hr>
+
+<h2>Multiple catch Blocks</h2>
+
+<p>
+Multiple catch blocks can be used
+to handle different exceptions.
+</p>
+
+<h3>Example</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;int[] arr = {1, 2, 3};<br>
+&nbsp;&nbsp;System.out.println(arr[5]);<br>
+} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;System.out.println("Arithmetic Error");<br>
+} catch (ArrayIndexOutOfBoundsException e) {<br>
+&nbsp;&nbsp;System.out.println("Invalid Array Index");<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;System.out.println("General Exception");<br>
+}
+</p>
+
+<p>
+✔ Specific exceptions first<br>
+✔ General exception last
+</p>
+
+<hr>
+
+<h2>try-catch-finally</h2>
+
+<p>
+The <b>finally</b> block always executes
+whether an exception occurs or not.
+</p>
+
+<p>
+Used for:
+<br>
+✔ Closing resources<br>
+✔ Cleanup operations
+</p>
+
+<h3>Example</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;int a = 10 / 2;<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;System.out.println("Exception occurred");<br>
+} finally {<br>
+&nbsp;&nbsp;System.out.println("Finally block executed");<br>
+}
+</p>
+
+<hr>
+
+<h2>Important Rules of try-catch</h2>
+
+<p>
+✔ try must be followed by catch or finally<br>
+✔ Multiple catch blocks allowed<br>
+✔ Nested try-catch is possible<br>
+✔ Parent exception must be caught after child
+</p>
+
+<hr>
+
+<h2>Nested try-catch</h2>
+
+<p>
+A try-catch inside another try block
+is called nested try-catch.
+</p>
+
+<h3>Example</h3>
+
+<p>
+try {<br>
+&nbsp;&nbsp;try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a = 10 / 0;<br>
+&nbsp;&nbsp;} catch (ArithmeticException e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Inner catch");<br>
+&nbsp;&nbsp;}<br>
+} catch (Exception e) {<br>
+&nbsp;&nbsp;System.out.println("Outer catch");<br>
+}
+</p>
+
+<hr>
+
+<h2>try-catch vs throws</h2>
+
+<p>
+✔ try-catch → Handles exception immediately<br>
+✔ throws → Passes exception to calling method
+</p>
+
+<hr>
+
+<h2>Best Practices</h2>
+
+<p>
+✔ Catch specific exceptions<br>
+✔ Do not use empty catch blocks<br>
+✔ Do not catch Exception unnecessarily<br>
+✔ Use finally or try-with-resources
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ ATM → divide by zero handling<br>
+✔ File upload → file not found handling<br>
+✔ Login system → invalid input handling
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Catching generic Exception everywhere<br>
+✔ Writing code after throw statement<br>
+✔ Ignoring exception messages
+</p>
+
+<hr>
+
+<h2>try-catch (Interview / Exam Ready)</h2>
+
+<p>
+The try-catch block in Java is used to handle
+runtime exceptions. Code that may cause an
+exception is placed inside the try block, and
+the exception is handled in the catch block.
+This prevents abnormal termination of the
+program and allows graceful error handling.
+</p>

@@ -1,0 +1,141 @@
+<h2>Anonymous Array in Java</h2>
+
+<p>
+An <b>Anonymous Array</b> in Java is an array
+that is created without assigning it to a variable.
+</p>
+
+<p>
+It is mainly used when an array is required
+only once, usually at the time of method calling.
+</p>
+
+<h2>Why is it called Anonymous Array?</h2>
+
+<p>
+It is called anonymous because:
+<br>
+✔ No reference variable is used<br>
+✔ The array has no name<br>
+✔ It is used directly
+</p>
+
+<h2>Syntax of Anonymous Array</h2>
+
+<p>
+new dataType[] { value1, value2, value3, ... }
+</p>
+
+<h2>Example of Anonymous Array</h2>
+
+<p>
+System.out.println(new int[] {10, 20, 30}[1]);
+</p>
+
+<p>
+Output:
+<br>
+20
+</p>
+
+<h2>Anonymous Array with Method</h2>
+
+<p>
+Anonymous arrays are most commonly
+used while passing data to methods.
+</p>
+
+<h3>Example</h3>
+
+<p>
+class Test {<br>
+&nbsp;&nbsp;static void printArray(int[] arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(int i : arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printArray(new int[] {5, 10, 15});<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<h2>Explanation</h2>
+
+<p>
+✔ Array is created at runtime<br>
+✔ Passed directly to the method<br>
+✔ No variable is declared
+</p>
+
+<h2>Anonymous Array in 2D</h2>
+
+<p>
+Anonymous arrays can also be used
+with two dimensional arrays.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+printMatrix(new int[][] {<br>
+&nbsp;&nbsp;{1, 2},<br>
+&nbsp;&nbsp;{3, 4}<br>
+});
+</p>
+
+<h2>When to Use Anonymous Arrays?</h2>
+
+<p>
+Anonymous arrays are useful when:
+<br>
+✔ Array is used only once<br>
+✔ Temporary data is needed<br>
+✔ Clean and short code is preferred
+</p>
+
+<h2>Advantages of Anonymous Array</h2>
+
+<p>
+✔ No need to declare a variable<br>
+✔ Saves memory for short‑term usage<br>
+✔ Makes code concise
+</p>
+
+<h2>Limitations of Anonymous Array</h2>
+
+<p>
+✔ Cannot reuse the array<br>
+✔ Hard to debug for beginners<br>
+✔ Not suitable for complex logic
+</p>
+
+<h2>Real‑Time Use Cases</h2>
+
+<p>
+Anonymous arrays are used in:
+<br>
+✔ Method calls with fixed values<br>
+✔ Test cases<br>
+✔ One‑time calculations
+</p>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Trying to reuse anonymous array<br>
+✔ Using it for large datasets<br>
+✔ Overusing and reducing readability
+</p>
+
+<h2>Anonymous Array (Interview / Exam Ready)</h2>
+
+<p>
+An anonymous array in Java is an array
+created without a reference variable
+and is mainly used for one‑time operations,
+especially while passing values to methods.
+</p>

@@ -1,0 +1,230 @@
+<h2>Thread Life Cycle in Java</h2>
+
+<p>
+The <b>Thread Life Cycle</b> in Java describes
+the different states a thread goes through
+from its creation to its termination.
+</p>
+
+<p>
+Understanding the thread life cycle is
+<b>very important</b> for multithreading
+and interview questions.
+</p>
+
+<hr>
+
+<h2>What is Thread Life Cycle?</h2>
+
+<p>
+A thread does not run continuously.
+It moves through <b>multiple states</b>
+during its execution.
+</p>
+
+<p>
+These states are managed by the
+<b>JVM and Thread Scheduler</b>.
+</p>
+
+<hr>
+
+<h2>Thread Life Cycle States</h2>
+
+<p>
+A thread goes through the following states:
+</p>
+
+<p>
+✔ New<br>
+✔ Runnable<br>
+✔ Running<br>
+✔ Blocked / Waiting<br>
+✔ Terminated (Dead)
+</p>
+
+<hr>
+
+<h2>1. New State</h2>
+
+<p>
+A thread is in the <b>New</b> state when
+it is created but not yet started.
+</p>
+
+<h3>Example</h3>
+
+<p>
+Thread t = new Thread(); // New state
+</p>
+
+<p>
+✔ Thread object created<br>
+✖ start() not called yet
+</p>
+
+<hr>
+
+<h2>2. Runnable State</h2>
+
+<p>
+A thread enters the <b>Runnable</b> state
+after calling the <b>start()</b> method.
+</p>
+
+<p>
+The thread is ready to run, but CPU
+execution depends on the scheduler.
+</p>
+
+<h3>Example</h3>
+
+<p>
+t.start(); // Runnable state
+</p>
+
+<p>
+✔ Thread is ready<br>
+✔ Waiting for CPU time
+</p>
+
+<hr>
+
+<h2>3. Running State</h2>
+
+<p>
+A thread is in the <b>Running</b> state
+when the CPU starts executing its
+<b>run()</b> method.
+</p>
+
+<p>
+✔ Only one thread can run on a CPU core at a time<br>
+✔ Controlled by thread scheduler
+</p>
+
+<hr>
+
+<h2>4. Blocked / Waiting State</h2>
+
+<p>
+A thread enters <b>Blocked</b> or <b>Waiting</b>
+state when it is temporarily inactive.
+</p>
+
+<p>
+Reasons include:
+<br>
+✔ sleep() method<br>
+✔ wait() method<br>
+✔ join() method<br>
+✔ Waiting for I/O operation<br>
+✔ Waiting for lock (synchronization)
+</p>
+
+<h3>Example</h3>
+
+<p>
+Thread.sleep(1000); // Blocked for 1 second
+</p>
+
+<p>
+After the condition is satisfied,
+the thread moves back to Runnable state.
+</p>
+
+<hr>
+
+<h2>5. Terminated (Dead) State</h2>
+
+<p>
+A thread enters the <b>Terminated</b> state when:
+</p>
+
+<p>
+✔ run() method completes execution<br>
+✔ Thread execution ends normally or abnormally
+</p>
+
+<p>
+Once terminated:
+<br>
+✔ Thread cannot be restarted
+</p>
+
+<hr>
+
+<h2>Thread Life Cycle Diagram (Textual)</h2>
+
+<p>
+New<br>
+&nbsp;&nbsp;↓ start()<br>
+Runnable<br>
+&nbsp;&nbsp;↓ CPU allocation<br>
+Running<br>
+&nbsp;&nbsp;↓ sleep / wait / join / I/O<br>
+Blocked / Waiting<br>
+&nbsp;&nbsp;↓ condition satisfied<br>
+Runnable<br>
+&nbsp;&nbsp;↓ run() ends<br>
+Terminated
+</p>
+
+<hr>
+
+<h2>Important Methods Affecting Life Cycle</h2>
+
+<p>
+✔ start() → New → Runnable<br>
+✔ run() → Running logic<br>
+✔ sleep() → Running → Blocked<br>
+✔ wait() → Running → Waiting<br>
+✔ join() → Running → Waiting<br>
+✔ stop() → Terminated (deprecated)
+</p>
+
+<hr>
+
+<h2>Key Points to Remember</h2>
+
+<p>
+✔ start() can be called only once<br>
+✔ run() should not be called directly<br>
+✔ Thread scheduler decides execution order<br>
+✔ Life cycle is managed by JVM
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Download thread → sleep while waiting<br>
+✔ Web server → threads waiting for requests<br>
+✔ Banking system → blocked for database lock
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Calling start() twice<br>
+✔ Confusing Runnable with Running<br>
+✔ Assuming threads run in order
+</p>
+
+<hr>
+
+<h2>Thread Life Cycle (Interview / Exam Ready)</h2>
+
+<p>
+The thread life cycle in Java represents
+the various states a thread goes through
+during its execution: New, Runnable, Running,
+Blocked/Waiting, and Terminated. The life
+cycle is controlled by the JVM and thread
+scheduler, and understanding it is essential
+for effective multithreading and concurrency
+management.
+</p>

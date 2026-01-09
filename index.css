@@ -1,0 +1,205 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: aliceblue;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+/* LOGO */
+#heading h2 {
+  font-family: "Jersey 10", sans-serif;
+  font-size: clamp(2.1rem, 6vw, 3rem);
+}
+#heading span {
+  color: #6a0dad;
+}
+#heading p {
+  font-family: "Jersey 10", sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+
+/* NAVBAR */
+#navbar {
+  display: flex;
+  gap: 20px;
+}
+
+#navbar a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #6a0dad;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#navbar a:hover {
+  background-color: #efe6ff;
+}
+
+/* TOGGLE */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #6a0dad;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: clamp(40px, 8vw, 80px) 20px 40px;
+}
+
+.hero h1 {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  margin-bottom: 20px;
+}
+
+/* SLIDER */
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide-track {
+  display: inline-flex;
+  gap: 50px;
+  animation: scroll 20s linear infinite;
+}
+
+.slide-track span {
+  font-size: clamp(0.8rem, 2.2vw, 1rem);
+  color: #6a0dad;
+  font-weight: 500;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  min-width: min(220px, 90%);
+}
+
+.btn.primary {
+  background: #6a0dad;
+  color: white;
+}
+
+.btn.secondary {
+  border: 2px solid #6a0dad;
+  color: #6a0dad;
+}
+
+/* FOOTER */
+.nlr-footer {
+  margin-top: 90px;
+  padding: 50px 20px 60px;
+  text-align: center;
+}
+
+.nlr-seal {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+}
+
+.nlr-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed #6a0dad;
+  animation: spin 14s linear infinite;
+}
+
+.nlr-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #6a0dad;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.reveal-footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.9s ease;
+}
+
+.reveal-footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   MOBILE NAV TOGGLE
+========================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: aliceblue;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px 0;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    justify-content: center;
+    padding: 12px;
+    font-size: 16px;
+  }
+}

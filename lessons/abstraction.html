@@ -1,0 +1,197 @@
+<h2>Abstraction in Java</h2>
+
+<p>
+<b>Abstraction</b> is one of the core
+Object-Oriented Programming (OOP) concepts.
+</p>
+
+<p>
+Abstraction means <b>hiding implementation details</b>
+and showing only <b>essential features</b> to the user.
+</p>
+
+<hr>
+
+<h2>What is Abstraction?</h2>
+
+<p>
+Abstraction focuses on <b>what an object does</b>
+rather than <b>how it does it</b>.
+</p>
+
+<p>
+It helps reduce complexity and
+improves code maintainability.
+</p>
+
+<hr>
+
+<h2>Why Do We Need Abstraction?</h2>
+
+<p>
+Abstraction provides:
+<br>
+✔ Security (hide internal logic)<br>
+✔ Reduced complexity<br>
+✔ Loose coupling<br>
+✔ Easy maintenance and scalability
+</p>
+
+<hr>
+
+<h2>How to Achieve Abstraction in Java?</h2>
+
+<p>
+In Java, abstraction is achieved using:
+<br>
+✔ <b>Abstract Class</b><br>
+✔ <b>Interface</b>
+</p>
+
+<hr>
+
+<h2>Abstract Class</h2>
+
+<p>
+An <b>abstract class</b> is a class
+that is declared using the <b>abstract</b> keyword.
+</p>
+
+<p>
+Features:
+<br>
+✔ Can have abstract methods (no body)<br>
+✔ Can have concrete methods (with body)<br>
+✔ Cannot be instantiated
+</p>
+
+<h3>Example of Abstract Class</h3>
+
+<p>
+abstract class Vehicle {<br>
+&nbsp;&nbsp;abstract void start();<br><br>
+&nbsp;&nbsp;void fuel() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fuel is required");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<p>
+class Car extends Vehicle {<br>
+&nbsp;&nbsp;void start() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Car starts with key");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Abstract Method</h2>
+
+<p>
+An <b>abstract method</b> is a method
+that does not have a body.
+</p>
+
+<p>
+It must be implemented by child classes.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+abstract void start();
+</p>
+
+<hr>
+
+<h2>Rules of Abstract Class</h2>
+
+<p>
+✔ Abstract class can have constructors<br>
+✔ Abstract class can have static methods<br>
+✔ If a class has an abstract method, class must be abstract<br>
+✔ Child class must implement all abstract methods
+</p>
+
+<hr>
+
+<h2>Abstraction Using Interface (Overview)</h2>
+
+<p>
+An <b>interface</b> provides complete abstraction.
+</p>
+
+<p>
+It contains abstract methods by default
+(before Java 8).
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+interface Shape {<br>
+&nbsp;&nbsp;void draw();<br>
+}
+</p>
+
+<hr>
+
+<h2>Abstraction vs Encapsulation</h2>
+
+<p>
+✔ Abstraction → Hides implementation details<br>
+✔ Encapsulation → Hides data using access modifiers
+</p>
+
+<p>
+✔ Abstraction → Focus on design<br>
+✔ Encapsulation → Focus on security
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ ATM → User knows withdraw(), not internal process<br>
+✔ Car → User drives, doesn't know engine logic<br>
+✔ Mobile → User taps icons, OS handles logic
+</p>
+
+<hr>
+
+<h2>Advantages of Abstraction</h2>
+
+<p>
+✔ Improves code flexibility<br>
+✔ Supports scalability<br>
+✔ Enhances security<br>
+✔ Reduces code dependency
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Trying to create object of abstract class<br>
+✔ Not implementing abstract methods in child class<br>
+✔ Confusing abstraction with encapsulation
+</p>
+
+<hr>
+
+<h2>Abstraction (Interview / Exam Ready)</h2>
+
+<p>
+Abstraction in Java is an OOP concept that hides
+implementation details and shows only essential
+features to the user. It is achieved using
+abstract classes and interfaces, improving
+security, flexibility, and maintainability.
+</p>

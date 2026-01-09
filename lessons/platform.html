@@ -1,0 +1,166 @@
+<h2>Platform Independence in Java</h2>
+
+<p>
+Platform independence is one of the most important features of Java.
+</p>
+
+<p>
+Platform independence means that a Java program can run on
+different operating systems without changing the code.
+</p>
+
+<h2>What is a Platform?</h2>
+
+<p>
+A platform refers to the combination of:
+<br>
+✔ Operating System (Windows, Linux, Mac)<br>
+✔ Hardware (CPU architecture)
+</p>
+
+<p>
+Normally, programs written for one platform do not work on another.
+</p>
+
+<h2>Problem with Traditional Languages</h2>
+
+<p>
+Languages like C and C++ are platform dependent.
+</p>
+
+<p>
+This means:
+<br>
+✔ Code compiled on Windows will not run on Linux<br>
+✔ Separate compilation is required for each OS<br>
+✔ Maintenance becomes difficult
+</p>
+
+<h2>How Java Achieves Platform Independence</h2>
+
+<p>
+Java achieves platform independence using:
+<br>
+✔ Bytecode<br>
+✔ Java Virtual Machine (JVM)
+</p>
+
+<h2>Role of Bytecode</h2>
+
+<p>
+When Java source code is compiled, it is converted into
+an intermediate form called <b>bytecode</b>.
+</p>
+
+<p>
+Bytecode:
+<br>
+✔ Is not machine specific<br>
+✔ Is the same on all platforms<br>
+✔ Can run on any system with JVM
+</p>
+
+<h2>Role of JVM</h2>
+
+<p>
+The Java Virtual Machine (JVM) is responsible for executing bytecode.
+</p>
+
+<p>
+Each operating system has its own JVM implementation.
+</p>
+
+<p>
+Examples:
+<br>
+✔ JVM for Windows<br>
+✔ JVM for Linux<br>
+✔ JVM for Mac OS
+</p>
+
+<p>
+The JVM converts bytecode into machine-specific instructions.
+</p>
+
+<h2>Write Once, Run Anywhere (WORA)</h2>
+
+<p>
+Java follows the principle:
+<br>
+<b>Write Once, Run Anywhere</b>
+</p>
+
+<p>
+This means:
+<br>
+✔ Write code once<br>
+✔ Compile once<br>
+✔ Run on any platform with JVM
+</p>
+
+<h2>Java Execution Flow for Platform Independence</h2>
+
+<p>
+The flow is:
+<br>
+✔ Java Source Code (.java)<br>
+✔ Java Compiler (javac)<br>
+✔ Bytecode (.class)<br>
+✔ JVM<br>
+✔ Operating System
+</p>
+
+<h2>Why Java is Not 100% Platform Independent</h2>
+
+<p>
+Java is mostly platform independent, but not completely.
+</p>
+
+<p>
+Reasons:
+<br>
+✔ Some native libraries are OS dependent<br>
+✔ GUI look and feel may vary across platforms
+</p>
+
+<p>
+However, core Java programs remain portable.
+</p>
+
+<h2>Advantages of Platform Independence</h2>
+
+<p>
+✔ No need to rewrite code for different platforms<br>
+✔ Easy software maintenance<br>
+✔ Cost-effective development<br>
+✔ Wide user reach
+</p>
+
+<h2>Real-World Example</h2>
+
+<p>
+A Java application developed on Windows can be deployed
+on Linux servers without modifying the code.
+</p>
+
+<h2>Platform Independence vs Portability</h2>
+
+<p>
+Platform independence means execution without modification.
+</p>
+
+<p>
+Portability means easy adaptation with minimal changes.
+</p>
+
+<p>
+Java provides both platform independence and portability.
+</p>
+
+<h2>Platform Independence in Java (Exam Ready)</h2>
+
+<p>
+Platform independence in Java means that Java programs are compiled
+into bytecode, which can run on any operating system using the JVM,
+allowing the same program to execute without modification.
+</p>

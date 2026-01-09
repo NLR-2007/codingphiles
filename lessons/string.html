@@ -1,0 +1,206 @@
+<h2>String Class in Java</h2>
+
+<p>
+The <b>String class</b> in Java is used to
+create and manipulate a sequence of characters.
+</p>
+
+<p>
+It is one of the most important and
+frequently used classes in Java programming.
+</p>
+
+<h2>Package of String Class</h2>
+
+<p>
+The String class belongs to the
+<b>java.lang</b> package.
+</p>
+
+<p>
+Because of this, it is automatically
+imported into every Java program.
+</p>
+
+<h2>String is an Object</h2>
+
+<p>
+In Java, String is not a primitive type.
+It is a <b>class</b>, and every string
+you create is an object.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String name = "Java";
+</p>
+
+<h2>How String Objects are Stored</h2>
+
+<p>
+Java stores string objects in two memory areas:
+</p>
+
+<p>
+✔ String Constant Pool (SCP)<br>
+✔ Heap Memory
+</p>
+
+<h3>String Constant Pool</h3>
+
+<p>
+When a string literal is created,
+Java checks the SCP first.
+If the value already exists,
+the reference is reused.
+</p>
+
+<p>
+This improves memory efficiency.
+</p>
+
+<h3>Heap Memory</h3>
+
+<p>
+When a string is created using
+the <b>new</b> keyword, a new object
+is always created in heap memory.
+</p>
+
+<h2>Example</h2>
+
+<p>
+String s1 = "Java";<br>
+String s2 = "Java";<br>
+String s3 = new String("Java");
+</p>
+
+<p>
+✔ s1 and s2 refer to the same object<br>
+✔ s3 refers to a different object
+</p>
+
+<h2>Immutability of String Class</h2>
+
+<p>
+Strings in Java are <b>immutable</b>.
+Once a string object is created,
+its value cannot be changed.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+String s = "Java";<br>
+s.concat(" Programming");
+</p>
+
+<p>
+The original string remains unchanged.
+</p>
+
+<h2>Why String Class is Immutable?</h2>
+
+<p>
+✔ Security (used in passwords, URLs)<br>
+✔ Thread safety<br>
+✔ Performance optimization using SCP
+</p>
+
+<h2>Commonly Used String Class Methods</h2>
+
+<p>
+✔ length()<br>
+✔ charAt()<br>
+✔ substring()<br>
+✔ equals()<br>
+✔ equalsIgnoreCase()<br>
+✔ compareTo()<br>
+✔ toUpperCase()<br>
+✔ toLowerCase()<br>
+✔ trim()<br>
+✔ replace()
+</p>
+
+<h2>Example Using String Methods</h2>
+
+<p>
+String s = " Java Programming ";<br>
+s.length();<br>
+s.trim();<br>
+s.toUpperCase();<br>
+s.charAt(0);
+</p>
+
+<h2>String Comparison</h2>
+
+<p>
+String objects can be compared using:
+</p>
+
+<p>
+✔ == operator (reference comparison)<br>
+✔ equals() method (content comparison)
+</p>
+
+<h3>Example</h3>
+
+<p>
+String a = "Java";<br>
+String b = "Java";<br>
+a == b; // true<br>
+a.equals(b); // true
+</p>
+
+<h2>Advantages of String Class</h2>
+
+<p>
+✔ Easy text handling<br>
+✔ Secure and reliable<br>
+✔ Rich built-in methods<br>
+✔ Memory efficient
+</p>
+
+<h2>Limitations of String Class</h2>
+
+<p>
+✔ Immutable (not suitable for frequent modifications)<br>
+✔ Performance issues with heavy concatenation
+</p>
+
+<h2>String vs StringBuffer vs StringBuilder</h2>
+
+<p>
+✔ String → Immutable<br>
+✔ StringBuffer → Mutable & Thread-safe<br>
+✔ StringBuilder → Mutable & Faster
+</p>
+
+<h2>Real-Time Use Cases of String Class</h2>
+
+<p>
+The String class is used in:
+</p>
+
+<p>
+✔ User input handling<br>
+✔ Login and authentication systems<br>
+✔ File paths and URLs<br>
+✔ Database queries<br>
+✔ Web and API responses
+</p>
+
+<h2>String Class (Interview / Exam Ready)</h2>
+
+<p>
+The String class in Java represents
+an immutable sequence of characters,
+stored in the String Constant Pool or heap memory,
+and provides a rich set of methods
+to manipulate and compare text data.
+</p>

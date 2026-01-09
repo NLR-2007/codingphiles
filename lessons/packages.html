@@ -1,0 +1,242 @@
+<h2>Packages in Java</h2>
+
+<p>
+A <b>Package</b> in Java is a namespace that
+groups related classes and interfaces together.
+</p>
+
+<p>
+It helps organize large programs into
+logical units, similar to folders in a file system.
+</p>
+
+<hr>
+
+<h2>What is a Package?</h2>
+
+<p>
+A package is a collection of:
+<br>
+✔ Classes<br>
+✔ Interfaces<br>
+✔ Sub-packages
+</p>
+
+<p>
+Example:
+<br>
+java.lang<br>
+java.util<br>
+java.io
+</p>
+
+<hr>
+
+<h2>Why Do We Need Packages?</h2>
+
+<p>
+Packages are used to:
+<br>
+✔ Organize large applications<br>
+✔ Avoid class name conflicts<br>
+✔ Improve code readability<br>
+✔ Provide access control and security<br>
+✔ Support reusability
+</p>
+
+<hr>
+
+<h2>Types of Packages in Java</h2>
+
+<p>
+Java supports two main types of packages:
+</p>
+
+<p>
+✔ Built-in Packages<br>
+✔ User-Defined Packages
+</p>
+
+<hr>
+
+<h2>Built-in Packages</h2>
+
+<p>
+Built-in packages are provided by the
+Java API (Application Programming Interface).
+</p>
+
+<p>
+Common built-in packages:
+<br>
+✔ <b>java.lang</b> → Object, String, Math<br>
+✔ <b>java.util</b> → ArrayList, Scanner, Date<br>
+✔ <b>java.io</b> → File, InputStream, OutputStream<br>
+✔ <b>java.sql</b> → JDBC classes
+</p>
+
+<p>
+Note:
+<br>
+The <b>java.lang</b> package is imported automatically.
+</p>
+
+<hr>
+
+<h2>User-Defined Packages</h2>
+
+<p>
+A <b>user-defined package</b> is created
+by the programmer to organize application code.
+</p>
+
+<h3>Creating a Package</h3>
+
+<p>
+package mypackage;
+</p>
+
+<p>
+Rules:
+<br>
+✔ Must be the first statement in the source file<br>
+✔ Written before class definition
+</p>
+
+<h3>Example</h3>
+
+<p>
+package mypack;<br><br>
+public class Test {<br>
+&nbsp;&nbsp;public void show() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Welcome to Packages");<br>
+&nbsp;&nbsp;}<br>
+}
+</p>
+
+<hr>
+
+<h2>Directory Structure of Package</h2>
+
+<p>
+Package name determines folder structure.
+</p>
+
+<p>
+Example:
+</p>
+
+<p>
+package com.company.project;
+</p>
+
+<p>
+Creates directories:
+<br>
+com/company/project
+</p>
+
+<hr>
+
+<h2>Accessing Classes from a Package</h2>
+
+<p>
+There are three ways to access a package:
+</p>
+
+<h3>1. Import a Specific Class</h3>
+
+<p>
+import java.util.Scanner;
+</p>
+
+<h3>2. Import Entire Package</h3>
+
+<p>
+import java.util.*;
+</p>
+
+<h3>3. Fully Qualified Name</h3>
+
+<p>
+java.util.Scanner sc = new java.util.Scanner(System.in);
+</p>
+
+<hr>
+
+<h2>Sub-Packages</h2>
+
+<p>
+A package inside another package
+is called a <b>sub-package</b>.
+</p>
+
+<p>
+Example:
+<br>
+java.util.concurrent
+</p>
+
+<p>
+✔ util → parent package<br>
+✔ concurrent → sub-package
+</p>
+
+<hr>
+
+<h2>Advantages of Packages</h2>
+
+<p>
+✔ Better project structure<br>
+✔ Avoids class name duplication<br>
+✔ Improves security using access control<br>
+✔ Easy maintenance and scalability
+</p>
+
+<hr>
+
+<h2>Packages and Access Control</h2>
+
+<p>
+Packages work together with
+<b>access modifiers</b> to control visibility.
+</p>
+
+<p>
+✔ private → same class<br>
+✔ default → same package<br>
+✔ protected → same package + subclass<br>
+✔ public → everywhere
+</p>
+
+<hr>
+
+<h2>Real-Time Examples</h2>
+
+<p>
+✔ Banking app → account, loan, customer packages<br>
+✔ Web app → controller, service, repository packages<br>
+✔ Enterprise apps → layered architecture
+</p>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<p>
+✔ Writing package statement after imports<br>
+✔ Forgetting directory structure<br>
+✔ Overusing default package
+</p>
+
+<hr>
+
+<h2>Packages (Interview / Exam Ready)</h2>
+
+<p>
+A package in Java is a namespace that groups
+related classes and interfaces together. It helps
+organize large applications, avoid naming conflicts,
+and support access control and code reusability.
+Packages can be built-in or user-defined.
+</p>
